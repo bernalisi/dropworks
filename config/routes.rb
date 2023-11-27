@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :venues do
-    resources :booking, only: %i[new create show edit update destroy]
+    resources :bookings, only: %i[new create show edit update destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
