@@ -1,8 +1,7 @@
 // Specific CSS for your home-page
 .map-card {
   display: flex;
-  border: 1px solid #ddd; /* Add border or box-shadow for a card-like appearance */
-  margin: 10px;
+  // margin: 10px;
   overflow: hidden;
   border-radius: 8px; /* Optional: add border radius for rounded corners */
 }
@@ -11,16 +10,24 @@
   flex: 1;
 }
 
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 5px;
+.info-card {
+  flex: 2;
+  padding: 10px;
 }
 
 .info-container {
-  flex: 2;
-  padding: 10px;
+  width: 70%;
+}
+
+.venue-image {
+  width: 30%;
+}
+
+.venue-image img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 5px;
 }
 
 h4 {

@@ -1,14 +1,13 @@
 <div class="map-card">
-  <div class="row">
-    <div class="col-4">
-      <div class="image-container">
-        <img src="<%= venue.image_url %>">
-      </div>
+  <div class="d-flex", style="height: 100px">
+    <div class="venue-image">
+      <img src="<%= venue.image_url %>">
     </div>
-    <div class="col-8">
-      <div class="info-container">
+    <div class="info-container">
+      <div class="info-card">
         <h4><%= venue.name %></h4>
         <p><%= venue.address %></p>
+        <p><%= venue.rating %></p>
       </div>
     </div>
   </div>
