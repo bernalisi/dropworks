@@ -3,12 +3,19 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :venues do
-    resources :bookings, only: %i[new create show edit update destroy]
+    member do
+        patch :favorite
+    end
+    resources :bookings, only: %i[new create]
+
+
   end
 
-  resources :bookings, only: [] do
+  resources :bookings, only: %i[show edit update destroy] do
     resources :reviews,  only: %i[new create]
   end
+
+
 
   get "/dashboard", to: "pages#dashboard"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

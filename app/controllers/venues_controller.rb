@@ -7,7 +7,8 @@ class VenuesController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { venue: venue })
+        info_window_html: render_to_string(partial: "info_window", locals: { venue: venue }),
+        marker_html: render_to_string(partial: "marker", locals: { venue: venue })
       }
     end
   end
@@ -42,6 +43,11 @@ class VenuesController < ApplicationController
 
   def destroy
     @venue.destroy
+    redirect_to venues_path
+  end
+
+  # member_route
+  def favorite
     redirect_to venues_path
   end
 

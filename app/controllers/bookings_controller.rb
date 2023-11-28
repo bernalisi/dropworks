@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :define_venue, only: %i[new create show edit update destroy]
+  before_action :define_venue, only: %i[new create show edit update]
 
   def new
     @booking = Booking.new
@@ -11,15 +11,15 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to new_venue_booking_path(@venue), notice: "You successfully booked #{@venue.name} venue 🎉"
+      redirect_to dashboard_path(@venue), notice: "You successfully booked #{@venue.name} venue 🎉"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  # def show
-  #   @booking = Booking.find(params[:id])
-  # end
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
   def edit
   end
@@ -28,6 +28,11 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    # @venue = Venue.find(params[:venue_id])
+    # @booking.venue_id = @venue.id
+    @booking.destroy
+    redirect_to dashboard_path
   end
 
   private
