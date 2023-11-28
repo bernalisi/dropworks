@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to new_venue_booking_path(@venue), notice: "You successfully booked #{@venue.name} venue 🎉"
+      redirect_to dashboard_path(@venue), notice: "You successfully booked #{@venue.name} venue 🎉"
     else
       render :new, status: :unprocessable_entity
     end
