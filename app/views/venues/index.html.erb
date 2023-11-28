@@ -1,2 +1,17 @@
-<h1>Venues#index</h1>
-<p>Find me in app/views/venues/index.html.erb</p>
+<h1>Venues available </h1>
+
+<%# test to see if #index, show, new actions works -> delete when necessary %>
+<%= link_to "Create new venue", new_venue_path, class: "btn btn-primary btn-sm" %>
+<hr>
+
+<% @venues.each do |v| %>
+
+  <h5> <%= v.name %> </h5>
+  <p>
+    <%= v.overview %>
+    <%= v.price %>
+    <%= v.name %>
+  </p>
+  <%= link_to "Show venue", venue_path(v), class: "btn btn-dark btn-sm"%>
+  <hr>
+<% end %>

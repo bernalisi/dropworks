@@ -1,20 +1,20 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
 
-Venue.destroy_all
+#run rails db:seed my friend
+
+#destroy instances
+puts("1. Destroying old instances")
 User.destroy_all
+Venue.destroy_all
 
+#seeding users
+puts("2. Seeding Users Anna & Gio...")
 anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Subotenko")
 gio = User.create!(email: "gio@gmail.com", password: "123456", first_name: "Giorgio", last_name: "Mazzuca")
 
-puts("Seeding Venues for Anna...")
+#seeding venues
+#note: @Franz lets add rating and any other field once the venue model is complete!
+
+puts("3. Seeding Venues for Anna...")
 venue1 = Venue.create!(name: "The Rusty Spoon", overview: "A cozy restaurant with a rustic atmosphere, serving delicious local cuisine.", address: "123 Main Street, Cityville", price: "25", image_url: "https://example.com/rusty_spoon.jpg", user: anna)
 venue2 = Venue.create!(name: "Tech Hub", overview: "A vibrant co-working space with state-of-the-art facilities for tech enthusiasts.", address: "456 Tech Avenue, Silicon Valley", price: "20", image_url: "https://example.com/tech_hub.jpg", user: anna)
 venue3 = Venue.create!(name: "Zen Yoga Studio", overview: "Relaxing yoga studio offering classes for all levels, surrounded by a serene environment.", address: "789 Tranquil Lane, Zen City", price: "15", image_url: "https://example.com/zen_yoga.jpg", user: anna)
@@ -26,7 +26,8 @@ venue8 = Venue.create!(name: "Skyline Rooftop Bar", overview: "Chic rooftop bar 
 venue9 = Venue.create!(name: "Fitness Fusion Studio", overview: "Innovative fitness studio offering a mix of yoga, HIIT, and dance classes.", address: "678 Health Street, Fitville", price: "15", image_url: "https://example.com/fitness_fusion.jpg", user: anna)
 venue10 = Venue.create!(name: "Classic Cinema Palace", overview: "Historic cinema showcasing a selection of classic and indie films.", address: "111 Movie Lane, Cinematown", price: "14", image_url: "https://example.com/cinema_palace.jpg", user: anna)
 
-puts("Seeding Bookings for Giorgio...")
+#seeding bookings
+puts("4. Seeding Bookings for Gio...")
 
 venues = [
   venue1,
@@ -52,20 +53,10 @@ booking_dates = [
   "2023-08-14",
   "2023-09-27",
   "2023-10-08",
-  "2023-11-19",
-  "2023-12-02",
-  "2024-01-13",
-  "2024-02-26",
-  "2024-03-08",
-  "2024-04-20",
-  "2024-05-03",
-  "2024-06-16",
-  "2024-07-29",
-  "2024-08-11"
 ]
 
 venues.each_with_index do |v, i|
   Booking.create!(booking_date: booking_dates[i], venue: v, user: gio)
 end
 
-puts("Done :)")
+puts("5. Seeding completed")
