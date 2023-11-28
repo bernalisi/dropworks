@@ -1,7 +1,20 @@
 <h1> <%= current_user.first_name %></h1>
 <hr>
-<p><%= @user_bookings %></p>
+<h3>Bookings</h3>
+
+<% @user_bookings.each do |b| %>
+  <p><%= b.booking_date %></p>
+  <%= link_to "Delete your Booking", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-sm text-white"%>
+  <%= link_to "Make a Review", new_booking_review_path(b), class: "btn btn-primary btn-sm" %>
+<% end %>
+
 <hr>
-<p><%= @user_venues %></p>
+
+<h3>Owned Venues</h3>
+<% @user_venues.each do |v| %>
+<p><%= v.name%></p>
+<% end %>
+
+<hr>
 
 <%= link_to "Add new Venue", new_venue_path, class: "btn btn-dark btn-sm"%>
