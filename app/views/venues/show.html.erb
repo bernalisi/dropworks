@@ -1,3 +1,6 @@
 <h1><%= @venue.name %></h1>
 <p><%= @venue.address %></p>
 <p><%= @venue.price %></p>
+
+<%= link_to "Edit your Venue", edit_venue_path(@venue), class: "btn btn-dark btn-sm"%>
+<%= link_to "Delete your Venue", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-sm text-white"%>

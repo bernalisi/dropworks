@@ -1,0 +1,9 @@
+<%= simple_form_for(venue) do |f| %>
+  <%= f.input :name, placeholder: "Type name..." %>
+  <%= f.input :overview, placeholder: "Overview..." %>
+  <%= f.input :address, placeholder: "Address..." %>
+  <%= f.input :price, placeholder: "Daily rate" %>
+  <%= f.input :rating, placeholder: "Rating" %>
+  <%= f.input :image_url, placeholder: "Image url" %>
+  <%= f.submit "Add to my Venues", class: "btn bg-dark text-white" %>
+<% end %>
