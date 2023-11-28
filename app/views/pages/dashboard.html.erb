@@ -1,0 +1,7 @@
+<h1> <%= current_user.first_name %></h1>
+<hr>
+<p><%= @user_bookings %></p>
+<hr>
+<p><%= @user_venues %></p>
+
+<%= link_to "Add new Venue", new_venue_path, class: "btn btn-dark btn-sm"%>
