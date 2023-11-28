@@ -2,5 +2,8 @@
 <p><%= @venue.address %></p>
 <p><%= @venue.price %></p>
 
+<h2> Bookings for venue </h2>
+
 <%= link_to "Edit your Venue", edit_venue_path(@venue), class: "btn btn-dark btn-sm"%>
 <%= link_to "Delete your Venue", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-sm text-white"%>
+<%= link_to "Book this Venue", new_venue_booking_path(@venue), class: "btn btn-primary btn-sm"%>
