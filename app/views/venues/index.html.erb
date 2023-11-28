@@ -1,17 +1,24 @@
-<h1>Venues available </h1>
+<%# <h1>Venues available </h1> %>
 
 <%# test to see if #index, show, new actions works -> delete when necessary %>
-<%= link_to "Create new venue", new_venue_path, class: "btn btn-primary btn-sm" %>
-<hr>
+<%#= link_to "Create new venue", new_venue_path, class: "btn btn-primary btn-sm" %>
+<%# <hr> %>
 
-<% @venues.each do |v| %>
+<%# @venues.each do |v| %>
 
-  <h5> <%= v.name %> </h5>
-  <p>
-    <%= v.overview %>
-    <%= v.price %>
-    <%= v.name %>
-  </p>
-  <%= link_to "Show venue", venue_path(v), class: "btn btn-dark btn-sm"%>
-  <hr>
-<% end %>
+  <%# <h5> %>
+  <%#= v.name %>
+  <%# </h5> %>
+  <%# <p> %>
+    <%#= v.overview %>
+    <%#= v.price %>
+    <%#= v.name %>
+  <%# </p> %>
+  <%#= link_to "Show venue", venue_path(v), class: "btn btn-dark btn-sm"%>
+  <%# <hr> %>
+<%# end %>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
