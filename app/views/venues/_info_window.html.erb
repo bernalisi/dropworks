@@ -1,3 +1,15 @@
-<img><%= venue.image_url %>
-<h2><%= venue.name %></h2>
-<p><%= venue.address %></p>
+<div class="map-card">
+  <div class="row">
+    <div class="col-4">
+      <div class="image-container">
+        <img src="<%= venue.image_url %>">
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="info-container">
+        <h4><%= venue.name %></h4>
+        <p><%= venue.address %></p>
+      </div>
+    </div>
+  </div>
+</div>
