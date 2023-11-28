@@ -22,3 +22,30 @@
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <% @venues.each do |venue| %>
+<div class="venue-card" >
+  <h2>
+    <%= venue.name  %>
+    <% favorite = Favorite.find_by(venue:venue) %>
+    <% if favorite && favorite.liked %>
+      <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
+      <i class="fa-solid fa-heart"></i>
+    <% end %>
+    <% else %>
+      <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
+      <i class="fa-regular fa-heart"></i>
+    <% end %>
+  <% end %>
+
+  </h2> 
+  <h4><%= venue.address %></h4>
+  <p2><%= venue.overview %></p2>
+  <h2><%= venue.rating %></h2>
+
+
+</div>
+<% end %>
+
+
+

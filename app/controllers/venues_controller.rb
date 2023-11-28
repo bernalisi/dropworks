@@ -47,7 +47,19 @@ class VenuesController < ApplicationController
 
   # member_route
   def favorite
-    redirect_to venues_path
+    @venue = Venue.find(params[:id])
+    @favorite = Favorite.find_by(venue: @venue)
+    if @favorite
+      @favorite.update(liked: !@favorite.liked)
+      redirect_to venues_path
+    else
+      @favorite = Favorite.new
+      @favorite.venue = @venue
+      @favorite.user = current_user
+      @favorite.liked = true
+      @favorite.save
+      redirect_to venues_path
+    end
   end
 
   private
