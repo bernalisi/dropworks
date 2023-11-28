@@ -3,6 +3,13 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
+    @markers = @venues.geocoded.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { venue: venue })
+      }
+    end
   end
 
   def show
@@ -35,6 +42,11 @@ class VenuesController < ApplicationController
 
   def destroy
     @venue.destroy
+    redirect_to venues_path
+  end
+
+  # member_route
+  def favorite
     redirect_to venues_path
   end
 
