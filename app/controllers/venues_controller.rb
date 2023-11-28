@@ -45,6 +45,11 @@ class VenuesController < ApplicationController
     redirect_to venues_path
   end
 
+  # member_route
+  def favorite
+    redirect_to venues_path
+  end
+
   private
 
   def venue_params
