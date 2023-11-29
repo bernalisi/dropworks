@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new()
     @booking = Booking.find(params[:booking_id])
+    @venue= @booking.venue
   end
 
   def create
@@ -24,6 +25,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, photos: [])
   end
 end
