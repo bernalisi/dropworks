@@ -2,20 +2,20 @@
   <div class="venue-card" data-controller="favorite" >
     <h2>
       <%= venue.name  %>
-      <% favorite = Favorite.find_by(venue:venue) %>
-      <% if favorite && favorite.liked %>
-      <%= link_to  favorite_venue_path(venue, favorite: favorite), data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
-        <i class="fa-solid fa-heart"  data-favorite-target="heartIcon"></i>
-      <% end %>
-      <% else %>
-        <%= link_to  favorite_venue_path(venue, favorite: favorite), data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
-        <i class="fa-regular fa-heart"  data-favorite-target="heartIcon"></i>
-      <% end %>
-<% end %>
-    </h2> 
-    <h4><%= venue.address %></h4>
-    <p2><%= venue.overview %></p2>
-    <h2><%= venue.rating %></h2>
+        <% favorite = Favorite.find_by(venue:venue) %>
+        <% if favorite && favorite.liked %>
+          <%= link_to  favorite_venue_path(venue, favorite: favorite),remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch} do %>
+            <i class="fa-solid fa-heart"  data-favorite-target="heartIcon"></i>
+          <% end %>
+        <% else %>
+          <%= link_to favorite_venue_path(venue, favorite: favorite),remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
+            <i class="fa-regular fa-heart" data-favorite-target="heartIcon"></i>
+          <% end %>
+        <% end %>
+    </h2>
+    <h3><%= venue.address %></h3>
+    <p><%= venue.overview %></p>
+    <p><%= venue.rating %></p>
   </div>
 <% end %>
 
