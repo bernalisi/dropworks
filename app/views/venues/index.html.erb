@@ -1,15 +1,15 @@
 <% @venues.each do |venue| %>
-  <div class="venue-card" >
+  <div class="venue-card" data-controller="favorite" >
     <h2>
       <%= venue.name  %>
       <% favorite = Favorite.find_by(venue:venue) %>
       <% if favorite && favorite.liked %>
-        <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
-        <i class="fa-solid fa-heart"></i>
+      <%= link_to  favorite_venue_path(venue, favorite: favorite), data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
+        <i class="fa-solid fa-heart"  data-favorite-target="heartIcon"></i>
       <% end %>
       <% else %>
-        <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
-        <i class="fa-regular fa-heart"></i>
+        <%= link_to  favorite_venue_path(venue, favorite: favorite), data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
+        <i class="fa-regular fa-heart"  data-favorite-target="heartIcon"></i>
       <% end %>
 <% end %>
     </h2> 
