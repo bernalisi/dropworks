@@ -10,12 +10,10 @@
 <%= link_to "Book this Venue", new_venue_booking_path(@venue), class: "btn btn-primary btn-sm"%>
 
 <% @venue.bookings.each do |booking| %>
-  
+
   <% if booking.review %>
     <% booking.review.photos.each do |photo| %>
-      <%= cl_image_tag photo.key %>
+      <%= cl_image_tag(photo.key) %>
     <% end %>
-    
   <% end %>
-  
 <% end %>
