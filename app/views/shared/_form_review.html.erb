@@ -1,5 +1,6 @@
 <%= simple_form_for [booking, review] do |f| %>
   <%= f.input :content, placeholder: "Describe your experience..." %>
   <%= f.input :rating, placeholder: "rate it" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add review", class: "btn bg-dark text-white" %>
 <% end %>
