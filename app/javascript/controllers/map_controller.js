@@ -10,6 +10,7 @@ export default class extends Controller {
     connect() {
       // console.log('API Key:', this.apiKeyValue);
       // console.log('Markers:', this.markersValue);
+      console.log(this.markersValue);
       mapboxgl.accessToken = this.apiKeyValue
 
       this.map = new mapboxgl.Map({

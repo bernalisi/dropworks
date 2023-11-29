@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :venues do
     member do
-        patch :favorite
+      patch :favorite
     end
     resources :bookings, only: %i[new create]
 

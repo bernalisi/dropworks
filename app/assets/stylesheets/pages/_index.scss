@@ -1,2 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+.venue-card {
+  font-family: "JetBrains Mono", "monospace";
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.30);
+  margin-bottom: 30px;
+  padding: 20px;
+  }
