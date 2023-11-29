@@ -2,5 +2,6 @@
   <%= f.input :name, placeholder: "Type name..." %>
   <%= f.input :overview, placeholder: "Overview..." %>
   <%= f.input :address, placeholder: "Address..." %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add to my Venues", class: "btn bg-dark text-white" %>
 <% end %>

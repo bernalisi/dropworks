@@ -25,5 +25,9 @@
 
 
 <hr>
-
+<% @user_venues.each do |venue|  %>
+  <% venue.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>
 <%= link_to "Add new Venue", new_venue_path, class: "btn btn-dark btn-sm"%>
