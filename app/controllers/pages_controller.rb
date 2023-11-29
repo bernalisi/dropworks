@@ -7,6 +7,7 @@ class PagesController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
+        id: venue.id,
         info_window_html: render_to_string(partial: "venues/info_window", locals: { venue: venue }),
         marker_html: render_to_string(partial: "venues/marker", locals: { venue: venue })
       }
