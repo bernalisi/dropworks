@@ -10,7 +10,7 @@ export default class extends Controller {
     connect() {
       // console.log('API Key:', this.apiKeyValue);
       // console.log('Markers:', this.markersValue);
-      console.log(this.markersValue);
+      // console.log(this.markersValue);
       mapboxgl.accessToken = this.apiKeyValue
 
       this.map = new mapboxgl.Map({
@@ -18,11 +18,15 @@ export default class extends Controller {
         style: "mapbox://styles/mapbox/streets-v10"
       })
 
-      this.#addMarkersToMap()
-      this.#fitMapToMarkers()
+      if (this.hasMarkersValue) {
+        this.#addMarkersToMap()
+        this.#fitMapToMarkers()
+      }
+      this.myLocation()
     }
 
     #addMarkersToMap () {
+      console.log(this.markersValue);
       this.markersValue.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
         new mapboxgl.Marker()
@@ -36,5 +40,19 @@ export default class extends Controller {
       const bounds = new mapboxgl.LngLatBounds()
       this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
       this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    }
+
+    myLocation() {
+      // Add geolocate control to the map.
+      this.map.addControl(new mapboxgl.GeolocateControl({
+
+          positionOptions: {
+              enableHighAccuracy: true
+          },
+          // When active the map will receive updates to the device's location as it changes.
+          trackUserLocation: true,
+          // Draw an arrow next to the location dot to indicate which direction the device is heading.
+          showUserHeading: true,
+        }))
     }
 }
