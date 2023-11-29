@@ -1,12 +1,12 @@
 <% @venues.each do |venue| %>
-<% if venue.photos.attached? %>
-    <div>
-      <h2>Photos</h2>
-      <% venue.photos.each do |photo| %>
-        <%= cl_image_tag venue.photos.first.key %>
-      <% end %>
-    </div>
-  <% end %>
+  <% if venue.photos.attached? %>
+      <div>
+        <h2>Photos</h2>
+        <% venue.photos.each do |photo| %>
+          <%= cl_image_tag venue.photos.first.key %>
+        <% end %>
+      </div>
+<% end %>
   <div class="venue-card" data-controller="favorite" >
     <h2>
       <%= venue.name  %>

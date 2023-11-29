@@ -8,3 +8,14 @@
 <%= link_to "Edit your Venue", edit_venue_path(@venue), class: "btn btn-dark btn-sm"%>
 <%= link_to "Delete your Venue", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-sm text-white"%>
 <%= link_to "Book this Venue", new_venue_booking_path(@venue), class: "btn btn-primary btn-sm"%>
+
+<% @venue.bookings.each do |booking| %>
+  
+  <% if booking.review %>
+    <% booking.review.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+    <% end %>
+    
+  <% end %>
+  
+<% end %>
