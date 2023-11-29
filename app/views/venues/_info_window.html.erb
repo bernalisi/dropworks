@@ -1,13 +1,12 @@
 <div class="map-card">
   <div class="d-flex", style="height: 100px">
     <div class="venue-image">
-      <img src="<%= venue.image_url %>">
+      <img src="<%= venue.image_urls.first %>">
     </div>
     <div class="info-container">
       <div class="info-card">
         <h4><%= venue.name %></h4>
         <p><%= venue.address %></p>
-        <p><%= venue.rating %></p>
       </div>
     </div>
   </div>
