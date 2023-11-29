@@ -17,4 +17,13 @@
 
 <hr>
 
+<h3>Reviews</h3>
+<% @user_reviews.each do |r| %>
+<p><%= r.content%></p>
+<p><%= r.rating%></p>
+<% end %>
+
+
+<hr>
+
 <%= link_to "Add new Venue", new_venue_path, class: "btn btn-dark btn-sm"%>
