@@ -1,4 +1,4 @@
-<%= simple_form_for(review) do |f| %>
+<%= simple_form_for [booking, review] do |f| %>
   <%= f.input :content, placeholder: "Describe your experience..." %>
   <%= f.input :rating, placeholder: "rate it" %>
   <%= f.submit "Add review", class: "btn bg-dark text-white" %>
