@@ -8,15 +8,14 @@ export default class extends Controller {
     markers: Array
   }
     connect() {
-      // console.log('API Key:', this.apiKeyValue);
-      // console.log('Markers:', this.markersValue);
-      // console.log(this.markersValue);
       mapboxgl.accessToken = this.apiKeyValue
 
       this.map = new mapboxgl.Map({
         container: this.element,
         style: "mapbox://styles/mapbox/streets-v10"
       })
+
+      this.markersArray = []
 
       if (this.hasMarkersValue) {
         this.#addMarkersToMap()
@@ -26,13 +25,31 @@ export default class extends Controller {
     }
 
     #addMarkersToMap () {
-      console.log(this.markersValue);
+      let currentMarker = null;
+
       this.markersValue.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
-        new mapboxgl.Marker()
+
+        const mapMarker = new mapboxgl.Marker()
           .setLngLat([ marker.lng, marker.lat ])
           .setPopup(popup)
           .addTo(this.map)
+
+          mapMarker.getElement().addEventListener("click", () => {
+            // Check if there is a currently selected marker
+            if (currentMarker) {
+              // Reset the color of the previously selected marker
+              this.changeMarkerColor(currentMarker, '#3FB1CE');
+            }
+
+            // Update the color of the clicked marker
+            this.changeMarkerColor(mapMarker, '#0500FF');
+
+            // Set the current marker to the clicked marker
+            currentMarker = mapMarker;
+          });
+
+          this.markersArray.push(mapMarker);
       })
     }
 
@@ -54,5 +71,13 @@ export default class extends Controller {
           // Draw an arrow next to the location dot to indicate which direction the device is heading.
           showUserHeading: true,
         }))
+    }
+
+    changeMarkerColor(marker, color) {
+      // Change marker color
+      const svg = marker.getElement().querySelector("svg");
+      const path = svg.querySelector("path");
+      path.style.fill = color;
+      svg.style.fill = color;
     }
 }
