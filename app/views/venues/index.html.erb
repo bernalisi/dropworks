@@ -1,46 +1,22 @@
-<h1>Venues available </h1>
-
-<%# test to see if #index, show, new actions works -> delete when necessary %>
-<%= link_to "Create new venue", new_venue_path, class: "btn btn-primary btn-sm" %>
-<hr>
-
-<% @venues.each do |v| %>
-
-  <%# <h5> %>
-  <%#= v.name %>
-  <%# </h5> %>
-  <%# <p> %>
-    <%#= v.overview %>
-    <%#= v.price %>
-    <%#= v.name %>
-  <%# </p> %>
-  <%#= link_to "Show venue", venue_path(v), class: "btn btn-dark btn-sm"%>
-  <%# <hr> %>
-<%# end %>
-
-  <% @venues.each do |venue| %>
-<div class="venue-card" >
-  <h2>
-    <%= venue.name  %>
-    <% favorite = Favorite.find_by(venue:venue) %>
-    <% if favorite && favorite.liked %>
-      <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
-      <i class="fa-solid fa-heart"></i>
-    <% end %>
-    <% else %>
-      <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
-      <i class="fa-regular fa-heart"></i>
-    <% end %>
-  <% end %>
-
-  </h2> 
-  <h4><%= venue.address %></h4>
-  <p2><%= venue.overview %></p2>
-  <h2><%= venue.rating %></h2>
-
-
-</div>
+<% @venues.each do |venue| %>
+  <div class="venue-card" >
+    <h2>
+      <%= venue.name  %>
+      <% favorite = Favorite.find_by(venue:venue) %>
+      <% if favorite && favorite.liked %>
+        <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
+        <i class="fa-solid fa-heart"></i>
+      <% end %>
+      <% else %>
+        <%= link_to  favorite_venue_path(venue, favorite: favorite), data: {turbo_method: :patch} do %>
+        <i class="fa-regular fa-heart"></i>
+      <% end %>
+<% end %>
+    </h2> 
+    <h4><%= venue.address %></h4>
+    <p2><%= venue.overview %></p2>
+    <h2><%= venue.rating %></h2>
+  </div>
 <% end %>
 
-<%= link_to "Show venue", venue_path(v), class: "btn btn-dark btn-sm"%>
 
