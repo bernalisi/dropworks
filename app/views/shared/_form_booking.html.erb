@@ -1,4 +1,6 @@
 <%= simple_form_for [venue, booking] do |f| %>
-  <%= f.input :booking_date, placeholder: "Type date..." %>
+  <%= f.input :booking_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
   <%= f.submit "Add to my Venues", class: "btn bg-dark text-white" %>
 <% end %>
