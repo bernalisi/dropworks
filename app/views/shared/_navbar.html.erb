@@ -1,7 +1,13 @@
 <div class="navbar-dropworks">
   <div class="navbar-icons">
-    <i class="bi-pin-map"></i>
-    <p>Map</p>
+    <% if params[:controller] == "pages" && params[:action] == "home" %>
+      <i class="bi-pin-map active-item"></i>
+      <p class="active-item">Map</p>
+    <% else %>
+      <i class="bi-pin-map"></i>
+      <p>Map</p>
+    <% end %>
+    <%# todo: repeat for the other items in the nav. %>
   </div>
   <div class="navbar-icons">
     <i class="bi-search"></i>
