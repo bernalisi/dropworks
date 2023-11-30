@@ -12,6 +12,9 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
+# Use pg_search gem to implement search feature
+gem "pg_search"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -57,7 +60,6 @@ gem "sassc-rails"
 gem "cloudinary"
 
 group :development, :test do
-  gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
 end
