@@ -39,11 +39,11 @@ export default class extends Controller {
             // Check if there is a currently selected marker
             if (currentMarker) {
               // Reset the color of the previously selected marker
-              this.changeMarkerColor(currentMarker, '#3FB1CE');
+              this.changeMarkerColor(currentMarker, "#3FB1CE", false);
             }
 
             // Update the color of the clicked marker
-            this.changeMarkerColor(mapMarker, '#0500FF');
+            this.changeMarkerColor(mapMarker, "#0500FF", true);
 
             // Set the current marker to the clicked marker
             currentMarker = mapMarker;
@@ -73,11 +73,17 @@ export default class extends Controller {
         }))
     }
 
-    changeMarkerColor(marker, color) {
+    changeMarkerColor(marker, color, applyDropShadow) {
       // Change marker color
       const svg = marker.getElement().querySelector("svg");
       const path = svg.querySelector("path");
       path.style.fill = color;
       svg.style.fill = color;
+
+      if (applyDropShadow) {
+        svg.style.filter = "drop-shadow(0px 0px 30px rgba(5, 0, 255, 0.80))";
+      } else {
+        svg.style.filter = "none";
+      }
     }
 }
