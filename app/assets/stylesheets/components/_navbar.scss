@@ -28,13 +28,15 @@
   gap: 9px;
 
   .active-item {
+    text-decoration: none !important;
     color: #007AFF
   }
 
   // styling the navbar icon text
   p {
     font-size: 10px;
-    color: #999999
+    color: #999999;
+    text-decoration: none !important;
   }
 
   // styling the icons size
