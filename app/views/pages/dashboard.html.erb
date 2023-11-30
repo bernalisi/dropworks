@@ -5,7 +5,11 @@
 <% @user_bookings.each do |b| %>
   <p><%= b.booking_date %></p>
   <%= link_to "Delete your Booking", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-sm text-white"%>
-  <%= link_to "Make a Review", new_booking_review_path(b), class: "btn btn-primary btn-sm" %>
+  <% if b.review.nil? %>
+    <%= link_to "Make a Review",  new_booking_review_path(b), class: "btn btn-primary btn-sm" %>
+  <% else %>
+    <%= link_to "Update a Review",  edit_booking_review_path(b, b.review), class: "btn btn-primary btn-sm" %>
+  <% end %>
 <% end %>
 
 <hr>
