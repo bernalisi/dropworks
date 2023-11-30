@@ -19,7 +19,8 @@
       <% if params[:controller] == "venues" && params[:action] == "index" %>
       <%= yield %>
       <% else %>
-      <div class="container">
+      <%# I deleted the container class, as we agreed to only use CSS and not bootstrap %>
+      <div>
         <%= yield %>
       </div>
       <% end %>
