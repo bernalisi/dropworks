@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :define_booking, only: %i[new create]
+  before_action :define_booking, only: %i[new create edit update]
 
   def new
     @review = Review.new()
@@ -11,10 +11,26 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking_id = @booking.id
     @venue = Venue.find(@booking.venue_id)
+    
     if @review.save
       redirect_to venue_path(@venue)
     else
       render :new
+    end
+  end
+
+  def edit
+    
+    @review = @booking.review
+  
+  end
+
+  def update
+     @review = @booking.review
+    if @review.update(review_params)
+      redirect_to dashboard_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,6 +41,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, photos: [])
+    params.require(:review).permit(:content,:rating, photos: [])
   end
 end

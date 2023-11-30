@@ -2,14 +2,11 @@ class VenuesController < ApplicationController
   before_action :set_venue, only: %i[show edit update destroy]
 
   def index
-    @venues = Venue.all
-    @markers = @venues.geocoded.map do |venue|
-      {
-        lat: venue.latitude,
-        lng: venue.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { venue: venue }),
-        marker_html: render_to_string(partial: "marker", locals: { venue: venue })
-      }
+    #scrip 5-9 responsible for search bar feature
+    if params[:query].present?
+      @venues = Venue.search_by_name_and_address(params[:query])
+    else
+      @venues = Venue.all
     end
   end
 

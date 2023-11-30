@@ -1,12 +1,43 @@
-.navbar-icons {
-  background: white;
-  top: 768px !important;
-  z-index: 9999;
-}
-.navbar {
+.navbar-dropworks {
+  display: flex;
+  // flex-wrap: nowrap;
+  justify-content: space-around;
   height: 83px;
-  align-items: flex-start;
-  padding-top: 7px;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  padding: 7px 5px;
+  align-items: top;
+  flex-shrink: 0;
+
+  // background blur stuff:
+  background: rgba(255, 255, 255, 0.20);
+  background-blend-mode: soft-light;
+  box-shadow: 0px -0.5px 0px 0px rgba(121, 121, 121, 0.3);
+  backdrop-filter: blur(25px);
+}
+
+.navbar-icons {
+  width: 15%;
+  padding: 3px 0.5px 0px 0.5px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 9px;
+
+  // styling the navbar icon text
+  p {
+    font-size: 10px;
+    color: #999999
+  }
+
+  // styling the icons size
+  i {
+    font-size: large;
+    color: #999999
+  }
 }
 
 // .navbar-lewagon .navbar-collapse {

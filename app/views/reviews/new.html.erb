@@ -1,19 +1,6 @@
   <h1><%= @venue.name %></h1>
 
-  <% if @venue.photos.attached? %>
-    <div>
-      <h2>Photos</h2>
-      <% @venue.reviews.each do |review| %>
-        <% if review.photos.attached? %>
-          <div>
-            <h3>Review Photos</h3>
-            <% review.photos.each do |photo| %>
-              <%= cl_image_tag photo.key %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+ 
 
-<% end %>
+
   <%= render "shared/form_review", booking: @booking, review: @review %>

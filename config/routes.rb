@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: %i[show edit update destroy] do
-    resources :reviews,  only: %i[new create]
+    resources :reviews,  only: %i[new create edit update]
   end
 
 
