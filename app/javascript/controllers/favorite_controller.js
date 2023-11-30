@@ -13,7 +13,7 @@ export default class extends Controller {
   // The action to be called when the "favorite" button is clicked
   favorite(event) {
     // Toggle the heart icon class based on the favorite status
-    this.heartIconTarget.classList.toggle("fa-regular");
-    this.heartIconTarget.classList.toggle("fa-solid");
+    this.heartIconTarget.classList.toggle("bi-bookmark-heart-fill");
+    this.heartIconTarget.classList.toggle("bi-bookmark-heart");
   }
 }
