@@ -1,14 +1,22 @@
 
 .simple-form-sb {
   margin: 0 auto;
-  width: 370px;
+  width: auto;
   height: 42px;
   flex-shrink: 0;
   align-self: stretch;
 }
 
+.search-bar-wrapper {
+   display: flex;
+   align-items: center;
+   width: auto;
+}
+
 .form-inputs-sb {
-  margin: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .custom-input-class-sb {

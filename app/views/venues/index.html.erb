@@ -1,4 +1,9 @@
+<%# search bar component - begin of script -BL %>
+  <%= render "shared/search_bar" %>
+
+<%# grid system to display venues %>
  <div class="row">
+  <h1> Spaces close to you... </h1>
     <% @venues.each do |venue| %>
 
       <div class="venue-card mb-3" data-controller="favorite">
@@ -52,9 +57,6 @@
           </div>
 
 
-<%# search bar component - begin of script -BL %>
-<%= render "shared/search_bar" %>
-<%# search bar component - end of script - BL %>
 
       </div>
         <% end %>
