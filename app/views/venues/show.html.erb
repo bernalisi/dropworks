@@ -9,11 +9,13 @@
 <%= link_to "Delete your Venue", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-sm text-white"%>
 <%= link_to "Book this Venue", new_venue_booking_path(@venue), class: "btn btn-primary btn-sm"%>
 
-<% @venue.bookings.each do |booking| %>
 
-  <% if booking.review %>
-    <% booking.review.photos.each do |photo| %>
+<h1>Reviews</h1>
+<% @venue.bookings.each do |booking| %>
+  <h2><%= booking.review.content %></h2>
+  <% booking.review.photos.each do |photo| %>
       <%= cl_image_tag(photo.key) %>
     <% end %>
-  <% end %>
-<% end %>
+      <h2><%= booking.review.rating %></h2>
+      
+<%end %>
