@@ -2,7 +2,7 @@ class Venue < ApplicationRecord
   belongs_to :user
 
   has_many_attached :photos
-  has_many :reviews, through: :bookings
+#  has_many :reviews, through: :bookings
   has_many :bookings, dependent: :destroy
   has_many  :favorites, dependent: :destroy
   has_many  :opening_hours, dependent: :destroy
