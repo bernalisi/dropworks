@@ -1,9 +1,8 @@
 // Specific CSS for your home-page
 .map-card {
   display: flex;
-  // margin: 10px;
   overflow: hidden;
-  border-radius: 8px; /* Optional: add border radius for rounded corners */
+  border-radius: 8px;
 }
 
 .image-container {
@@ -36,4 +35,13 @@ h4 {
 
 p {
   margin-bottom: 0;
+}
+
+.favorite-heart {
+  width: 11px;
+  height: 5px;
+  position: relative;
+  top: -224px;
+  left: 310px;
+  font-size: 25px;
 }

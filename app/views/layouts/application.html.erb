@@ -15,10 +15,13 @@
 
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
+    <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
       <% if params[:controller] == "venues" && params[:action] == "index" %>
-      <%= yield %>
+      <div class="container" style="width: 90%">
+        <%= yield %>
+      </div>
       <% else %>
       <%# I deleted the container class, as we agreed to only use CSS and not bootstrap %>
       <div>
