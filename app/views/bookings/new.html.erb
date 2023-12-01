@@ -1,11 +1,17 @@
 
-<div class="container">
+<div class="booking-container">
   <img class="img-properties-form" src="<%= @booking.venue.image_urls.first %>" alt="Venue-picture">
+  <div class="title-bf">
+    <h2>Reserve at </h1>
+    <h1> <%= @booking.venue.name %> </h1>
+  </div>
 
-  <h1>Reserve at <%= @booking.venue.name %></h1>
-  <p>Choose Date & Time</p>
+  <div class="second-text-bf">
+    <h3>Choose Date & Time</h3>
+    <p>Please choose the desired reservation spot below</p>
+  </div>
 
-  <div class="mt-5">
+  <div class="container-bf">
     <%= render "shared/form_booking", venue: @venue, booking: @booking %>
   </div>
 </div>

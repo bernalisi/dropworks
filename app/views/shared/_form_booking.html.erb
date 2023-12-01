@@ -1,6 +1,12 @@
-<%= simple_form_for [venue, booking] do |f| %>
-  <%= f.input :booking_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.submit "Add to my Venues", class: "btn bg-dark text-white" %>
-<% end %>
+
+  <%= simple_form_for [venue, booking] do |f| %>
+   <div>
+      <%= f.input :booking_date,
+      as: :string,
+      input_html: { data: { controller: "datepicker" } }, class: "input-bf" %>
+    </div>
+
+    <div class="button-container-bf ">
+      <%= f.submit "Reserve now", class: "btn-booking-form" %>
+    </div>
+  <% end %>
