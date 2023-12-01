@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@font-face {
+  font-family: "SF-Pro-Display-Regular";
+  src: url("/app/assets/fonts/SF-Pro-Display-Regular.otf");
+}
