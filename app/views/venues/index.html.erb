@@ -3,7 +3,7 @@
 
 <%# grid system to display venues %>
   <h1> Spaces close to you...</h1>
-  <div class="row">
+  <div class="row" style="margin-bottom: 100px">
       <% @venues.each do |venue| %>
         <div class="venue-card mb-3" data-controller="favorite">
           <div class="image">
@@ -34,18 +34,18 @@
 
           <div class="info">
             <div class="mt-3">
-              <h6 style="width:43%;"><%= venue.name %></h6>
+              <h6 style="width:43%; margin-bottom: 0"><%= venue.name %></h6>
               <p style="width:35%;">
               <% 5.times do %>
                 <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
               <% end %></p>
-              <p style="width:22%;"><i class="bi-wifi">200 mbit/s</i></p>
+              <p style="width:22%; text-align: right"><i class="bi-wifi"></i> 200 mbit/s</p>
             </div>
 
-            <div class="mt-2 mb-2">
-              <p style="width:43%;"><%= venue.overview.truncate(20) %></p>
-              <p style="width:35%;"><i class="bi-person-add">12 <strong>seats available</strong></i></p>
-              <p style="width:22%;"><i class="bi-cursor">600 m</i></p>
+            <div class="mt-2">
+              <p style="width:43%;"><%= venue.overview.truncate(25) %></p>
+              <p style="width:35%;"><i class="bi-person-add"></i> 12 <strong>seats available</strong></p>
+              <p style="width:22%; text-align: right"><i class="bi-cursor"></i> 600 m</p>
             </div>
           </div>
         </div>
