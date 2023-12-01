@@ -7,15 +7,16 @@
       <% @venues.each do |venue| %>
         <div class="venue-card mb-3" data-controller="favorite">
             <div class="image">
-              <img class="img-properties-form" src="<%= venue.image_urls.first %>" alt="Venue-picture">
-                <div>
-                  <% if venue.photos.attached? %>
+              <%= link_to venue_path(venue) do %>
+                <img class="img-properties-form" src="<%= venue.image_urls.first %>" alt="Venue-picture">
                   <div>
-                    <% venue.photos.each do |photo| %>
-                    <%= cl_image_tag photo.key %>
+                    <% if venue.photos.attached? %>
+                    <div>
+                      <% venue.photos.each do |photo| %>
+                      <%= cl_image_tag photo.key %>
+                      <% end %>
+                    </div>
                     <% end %>
-                  </div>
-                  <% end %>
                   </div>
 
                   <div class="favorite-heart">
@@ -30,7 +31,8 @@
                         <% end %>
                       <% end %>
                   </div>
-            </div>
+              </div>
+            <% end %>
 
               <div class="info">
                 <div class="mt-3">
