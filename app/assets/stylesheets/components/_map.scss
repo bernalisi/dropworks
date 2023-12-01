@@ -69,6 +69,16 @@
   font-size: 15px;
 }
 
+.info-card h4 {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.info-card p {
+  text-decoration: none !important;
+  color: black !important;
+}
+
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-center .mapboxgl-popup-tip,

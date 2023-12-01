@@ -1,13 +1,15 @@
 <div class="map-card">
-  <div class="d-flex" style="height: 100px; width: 100%;">
-    <div class="venue-image" style="background-image: url('<%= venue.image_urls.first %>')">
-      <%# <img src="<%= venue.image_urls.first %>
-    </div>
-    <div class="info-container">
-      <div class="info-card">
-        <h4><%= venue.name %></h4>
-        <p><%= venue.address %></p>
+    <div class="d-flex" style="height: 100px; width: 100%;">
+      <div class="venue-image" style="background-image: url('<%= venue.image_urls.first %>')">
+        <%# <img src="<%= venue.image_urls.first %>
+      </div>
+      <div class="info-container">
+        <div class="info-card">
+          <%= link_to venue_path(venue.id) do %>
+            <h4><%= venue.name %></h4>
+            <p><%= venue.address %></p>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 </div>
