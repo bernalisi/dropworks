@@ -1,6 +1,10 @@
 <%= simple_form_for [booking, review] do |f| %>
-  <%= f.input :content, placeholder: "Describe your experience..." %>
-  <%= f.input :rating, placeholder: "rate it" %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Add review", class: "btn bg-dark text-white" %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Give a star rating...", prompt: false, input_html: {data: {controller: "star-rating"}}%>
+  <%= f.input :content, label: "Write your review...", placeholder: "Type something..."%>
+  <p style="font-size: 17px;"> Add pictures (optional) </p>
+  <%= f.input :photos, as: :file, input_html: { multiple: true, class:  "tag-selector" }, label: "+", wrapper_html: {class: "tag-item"}, prompt: ""%>
+    <div>
+      <i class="bi bi-calendar-plus"></i>
+      <%= f.submit "Save review", class: "btn bg-primary text-white" %>
+    </div>
 <% end %>
