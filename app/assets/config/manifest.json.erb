@@ -1,18 +1,27 @@
 {
-  "background_color": "black",
-  "description": "DropWorks is the best flexible co-working space option",
-  "display": "fullscreen",
-
- "name": "DropWorks",
- "icons": [
-  <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
-  <% files.each_with_index do |file, index| %>
-    <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
-    {
-      "src": "<%= image_path "icons/#{file}" %>",
-      "sizes": "<%= match && match[:size] %>",
-      "type": "image/png"
-    }<%= "," unless (files.size - 1) == index %>
-  <% end %>
- ]
+  "name": "DropWorks",
+  "short_name": "DropWorks",
+  "description": "The best flexible co-working space option",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "prefer_related_applications": false,
+  "icons": [
+    <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
+    <% files.each_with_index do |file, index| %>
+      <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
+      {
+        "src": "<%= image_path "icons/#{file}" %>",
+        "sizes": "<%= match && match[:size] %>",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }<%= "," unless (files.size - 1) == index %>
+    <% end %>
+  ],
+  "splash_pages": null,
+  "scope": "/",
+  "dir": "ltr",
+  "lang": "en-US"
 }
