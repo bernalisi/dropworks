@@ -1,9 +1,11 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
 
-<div class="mt-5">
-  <%= render "shared/form_booking", venue: @venue, booking: @booking %>
+<div class="container">
+  <img class="img-properties-form" src="<%= @booking.venue.image_urls.first %>" alt="Venue-picture">
+
+  <h1>Reserve at <%= @booking.venue.name %></h1>
+  <p>Choose Date & Time</p>
+
+  <div class="mt-5">
+    <%= render "shared/form_booking", venue: @venue, booking: @booking %>
+  </div>
 </div>
-
-
-
