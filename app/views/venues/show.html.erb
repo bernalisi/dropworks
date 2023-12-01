@@ -12,10 +12,15 @@
 
 <h1>Reviews</h1>
 <% @venue.bookings.each do |booking| %>
-  <h2><%= booking.review.content %></h2>
-  <% booking.review.photos.each do |photo| %>
-      <%= cl_image_tag(photo.key) %>
+  
+  <% if !booking.review.nil? %>
+    <h2><%= booking.review.content %></h2>
+    <% if booking.review.photos.attached? %>
+      <% booking.review&.photos.each do |photo| %>
+          <%= cl_image_tag(photo.key) %>
+        <% end %>
     <% end %>
-      <h2><%= booking.review.rating %></h2>
-      
+    <h2><%= booking.review.rating %></h2>
+  <% end %>
+  
 <%end %>

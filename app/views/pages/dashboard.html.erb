@@ -8,7 +8,8 @@
   <% if b.review.nil? %>
     <%= link_to "Make a Review",  new_booking_review_path(b), class: "btn btn-primary btn-sm" %>
   <% else %>
-    <%= link_to "Update a Review",  edit_booking_review_path(b, b.review), class: "btn btn-primary btn-sm" %>
+    <%# link_to "Update a Review",  edit_booking_review_path(b, b.review), class: "btn btn-primary btn-sm" %>
+    <p> Review Already Sent </p>
   <% end %>
 <% end %>
 
