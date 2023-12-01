@@ -1,23 +1,54 @@
 <div class="navbar-dropworks">
   <div class="navbar-icons">
-    <i class="bi-pin-map"></i>
-    <p>Map</p>
+    <%= link_to root_path do %>
+      <% if params[:controller] == "pages" && params[:action] == "home" %>
+        <i class="bi-pin-map active-item"></i>
+        <p class="active-item">Map</p>
+      <% else %>
+        <i class="bi-pin-map"></i>
+        <p>Map</p>
+      <% end %>
+    <% end %>
   </div>
   <div class="navbar-icons">
-    <i class="bi-search"></i>
-    <p>Search</p>
+    <%= link_to venues_path do %>
+      <% if params[:controller] == "venues" && params[:action] == "index" %>
+        <i class="bi-search active-item"></i>
+        <p class="active-item">Search</p>
+      <% else %>
+        <i class="bi-search"></i>
+        <p>Search</p>
+      <% end %>
+    <% end %>
   </div>
   <div class="navbar-icons">
-    <i class="bi-qr-code-scan"></i>
-    <p>Check-in</p>
+    <% if params[:controller] == "pages" && params[:action] == "checkin" %>
+      <i class="bi-qr-code-scan active-item"></i>
+      <p class="active-item">Check-in</p>
+    <% else %>
+      <i class="bi-qr-code-scan"></i>
+      <p>Check-in</p>
+    <% end %>
   </div>
   <div class="navbar-icons">
-    <i class="bi-bell"></i>
-    <p>Activity</p>
+    <% if params[:controller] == "pages" && params[:action] == "activity" %>
+      <i class="bi-bell active-item"></i>
+      <p class="active-item">Activity</p>
+    <% else %>
+      <i class="bi-bell"></i>
+      <p>Activity</p>
+    <% end %>
   </div>
   <div class="navbar-icons">
-    <i class="bi-person"></i>
-    <p>Profile</p>
+    <%= link_to dashboard_path do %>
+      <% if params[:controller] == "pages" && params[:action] == "dashboard" %>
+        <i class="bi-person active-item"></i>
+        <p class="active-item">Profile</p>
+      <% else %>
+        <i class="bi-person"></i>
+        <p>Profile</p>
+      <% end %>
+    <% end %>
   </div>
 </div>
     <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -12,7 +12,7 @@
 
 <h1>Reviews</h1>
 <% @venue.bookings.each do |booking| %>
-  
+
   <% if !booking.review.nil? %>
     <h2><%= booking.review.content %></h2>
     <% if booking.review.photos.attached? %>
