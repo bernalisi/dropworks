@@ -11,6 +11,7 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @booking = Booking.find_by(venue: @venue)
   end
 
   def new
