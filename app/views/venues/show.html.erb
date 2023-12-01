@@ -14,8 +14,7 @@
 <% @venue.bookings.each do |booking| %>
   <h2><%= booking.review.content %></h2>
   <% booking.review.photos.each do |photo| %>
-      <%= cl_image_tag(photo.key) %>
-    <% end %>
-      <h2><%= booking.review.rating %></h2>
-      
-<%end %>
+    <%= cl_image_tag(photo.key) %>
+  <% end %>
+    <h2><%= booking.review.rating %></h2>
+<% end %>

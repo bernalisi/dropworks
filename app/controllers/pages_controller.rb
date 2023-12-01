@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
+  # def index
+  #   @venues = Venue.all
+  # end
 
   def home
     @venues = Venue.all
@@ -19,4 +22,5 @@ class PagesController < ApplicationController
     @user_venues = current_user.venues
     @user_reviews = current_user.reviews
   end
+
 end

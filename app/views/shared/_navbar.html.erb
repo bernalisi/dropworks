@@ -11,12 +11,14 @@
     <% end %>
   </div>
   <div class="navbar-icons">
-    <% if params[:controller] == "pages" && params[:action] == "index" %>
-      <i class="bi-search active-item"></i>
-      <p class="active-item">Search</p>
-    <% else %>
-      <i class="bi-search"></i>
-      <p>Search</p>
+    <%= link_to venues_path do %>
+      <% if params[:controller] == "venues" && params[:action] == "index" %>
+        <i class="bi-search active-item"></i>
+        <p class="active-item">Search</p>
+      <% else %>
+        <i class="bi-search"></i>
+        <p>Search</p>
+      <% end %>
     <% end %>
   </div>
   <div class="navbar-icons">
