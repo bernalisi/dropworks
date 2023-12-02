@@ -252,28 +252,41 @@ a {
   text-decoration-line: underline;
 }
 
-.scroll-container {
-  overflow-y: auto;
-  height: 100px; /* Adjust the height as needed */
-  margin-bottom: 16px; /* Add margin as needed */
+.day-dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.day-list {
+.day-dropdown button {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.day-dropdown ul {
   list-style: none;
   padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: none;
 }
 
-.day-list li {
-  margin-bottom: 8px; /* Adjust as needed */
+.day-dropdown.open ul {
+  display: block;
+}
+
+.day-dropdown ul li {
+  padding: 8px;
+  cursor: pointer;
 }
 
 /* Add styling for the selected day if necessary */
-.day-list li a.selected {
-  color: blue; /* Adjust the color as needed */
-  font:13px;
-
+.day-dropdown button:hover,
+.day-dropdown ul li:hover {
+  background-color: #f0f0f0;
 }
-
 .title-reviews {
   display: flex;
   align-items: center;

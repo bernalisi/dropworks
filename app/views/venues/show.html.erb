@@ -95,23 +95,39 @@
         </div>
     </div>
   </div>
-  <div class="block-opening-hours">
+  <!-- app/views/venues/show.html.erb -->
+
+<div class="block-opening-hours">
   <h3>Opening Hours</h3>
-  <div class="scroll-container">
-    <% if @opening_hours.any? %>
-      <ul class="day-list">
-        <% @opening_hours.each do |opening_hour| %>
-          <li>
-            <strong style="font-size:13px"><%= opening_hour.day.capitalize %> </strong>from
-            <%= opening_hour.open_time.strftime('%H:%M') %> to <%= opening_hour.closing_time.strftime('%H:%M') %>
-          </li>
+  
+  <div class="day-dropdown" data-controller="day-selector">
+    <button type="button" data-action="click->day-selector#toggleDropdown">
+      <%= @selected_day.present? ? @selected_day.capitalize : 'Select Day' %>
+    </button>
+  
+    <ul class="day-list"  data-day-selector-target="dropdown">
+      <% OpeningHour.days.keys.each do |day| %>
+        <li><a href="#" data-action="click->day-selector#selectDay" data-day="<%= day %>"><%= day.capitalize %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <!-- Display opening hours for the selected day -->
+  <% if @selected_day.present? %>
+    <p><strong><%= @selected_day.capitalize %> Opening Hours:</strong></p>
+    <% opening_hours_for_selected_day = @opening_hours.select { |oh| oh.day.to_s == @selected_day } %>
+    <% if opening_hours_for_selected_day.any? %>
+      <ul>
+        <% opening_hours_for_selected_day.each do |opening_hour| %>
+          <li><%= "#{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %></li>
         <% end %>
       </ul>
     <% else %>
-      <p>No opening hours available.</p>
+      <p>No opening hours available for <%= @selected_day.capitalize %>.</p>
     <% end %>
-  </div>
+  <% end %>
 </div>
+
   <div class="address">
     <h3>Address</h3>
       <p>Rudi-Dutschke-Straße 26, 10965 Berlin</p>
