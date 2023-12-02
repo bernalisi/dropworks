@@ -105,10 +105,11 @@
     <div class="title-reviews">
       <h2 style="margin:0">Reviews</h2>
       <div class="circle-container-add-review">
-        <i class="bi bi-plus-circle-fill"></i>
+        <%= link_to new_booking_review_path(@venue) do %>
+          <i class="bi bi-plus-circle-fill"></i>
+        <% end %>
       </div>
     </div>
-      <%= link_to "Edit your Venue", edit_venue_path(@venue), class: "btn btn-dark btn-sm" %>
       <%= link_to "Delete your Venue", venue_path(@venue), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm text-white" %>
     <% @venue.bookings.each do |booking| %>
       <% if !booking.review.nil? %>
