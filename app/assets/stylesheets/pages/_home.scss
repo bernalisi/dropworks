@@ -86,6 +86,14 @@ a {
   gap: 14px;
 }
 
+.container-title-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  align-self: stretch;
+}
+
 .block-text-overview p {
   color: var(--Dark-Grey, #48484A);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -98,7 +106,6 @@ a {
 
 .container-bootstrap-icons {
   border-top: 0.5px solid #999;
-  border-bottom: 0.5px solid #999;
   display: flex;
   padding: 18px;
   justify-content: space-between;
@@ -149,7 +156,14 @@ a {
   color: white;
 }
 
+.gap {
+  padding: 0px;
+  align-self: stretch;
+  border-bottom: 0.5px solid #999;
+}
+
 .infos-venue {
+  padding-top:10px;
   display: flex;
   padding: 0px 7px;
   justify-content: space-between;
@@ -171,13 +185,18 @@ a {
 }
 
 
-.open-hour-text  {
+.open-hour-text {
   display: flex;
   width: 138px;
   height: 22px;
   justify-content: flex-end;
   align-items: center;
   margin-right: 12px; 
+  color:#007AFF;
+}
+
+.open-hour-text i {
+ color: #007AFF;
 }
 
 .seat-available .wifi-speed {
@@ -189,6 +208,10 @@ a {
   margin-right: 12px; 
 }
 
+.seat-available i, .wifi-speed i {
+  color:#007AFF;
+}
+
 .other-value {
   display: flex;
   width: 138px;
@@ -196,6 +219,10 @@ a {
   justify-content: flex-end;
   align-items: center;
   margin-right: 12px; 
+}
+
+.other-value i {
+  color:#007AFF;
 }
 
 .block-opening-hours > p {
@@ -223,6 +250,28 @@ a {
   font-weight: 400;
   line-height: 22px; /* 169.231% */
   text-decoration-line: underline;
+}
+
+.scroll-container {
+  overflow-y: auto;
+  height: 100px; /* Adjust the height as needed */
+  margin-bottom: 16px; /* Add margin as needed */
+}
+
+.day-list {
+  list-style: none;
+  padding: 0;
+}
+
+.day-list li {
+  margin-bottom: 8px; /* Adjust as needed */
+}
+
+/* Add styling for the selected day if necessary */
+.day-list li a.selected {
+  color: blue; /* Adjust the color as needed */
+  font:13px;
+
 }
 
 .title-reviews {

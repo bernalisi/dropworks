@@ -101,13 +101,28 @@ booking_dates = [
   "2023-09-27"
 ]
 
-OpeningHour.create!(venue: @venue, day: :monday, open_time: '09:00', close_time: '17:00')
-OpeningHour.create!(venue: @venue, day: :tuesday, open_time: '10:00', close_time: '18:00')
+# Seed opening hours for Venue 1
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue1)  # Assuming Monday is represented by 1
+OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1)  # Assuming Tuesday is represented by 2
 # Add more opening hours as needed...
 
-OpeningHour.create!(venue: @venue, day: :wednesday, open_time: '11:00', close_time: '19:00')
-OpeningHour.create!(venue: @venue, day: :thursday, open_time: '12:00', close_time: '20:00')
+# Seed opening hours for Venue 2
+OpeningHour.create(day: 3, open_time: '08:00:00', closing_time: '16:00:00', venue: venue2)  # Assuming Wednesday is represented by 3
+OpeningHour.create(day: 4, open_time: '11:00:00', closing_time: '19:00:00', venue: venue2)  # Assuming Thursday is represented by 4
 # Add more opening hours as needed...
+
+opening_hours_data = [
+  { day: 'monday', open_time: '09:00', closing_time: '17:00' },
+  { day: 'tuesday', open_time: '10:00', closing_time: '18:00' },
+  # Add more opening hours data as needed
+]
+
+if @venue
+  opening_hour = @venue.opening_hours.find_or_initialize_by(day: data[:day])
+  # Rest of your logic
+else
+  puts "Venue not found or created."
+end
 
 venues.each_with_index do |v, i|
   Booking.create!(booking_date: booking_dates[i], venue: v, user: gio)

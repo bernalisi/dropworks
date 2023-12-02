@@ -26,55 +26,57 @@
 </div>
 
 <div class="container-venue">
-    <h1><%= @venue.name %></h1>
-    <p style="width:45%;">
-      <% 5.times do %>
-        <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
-      <% end %>
-    </p>
-<div class="block-text-overview">
-  <p><%= @venue.overview %></p>
-</div>
-
-  <div class="container-bootstrap-icons">
-    <div class="navigate">
-      <div class="circle-container">
-        <i class="bi bi-cursor"></i>
-      </div>
-        <p><%= link_to "Navigate", root_path%></p>
-    </div>
-    <!-- Assuming you have a Turbo Frame with the ID "favorite_frame" -->
-    <div class="save">
-      <div class="circle-container" data-controller="favorite">
-        <%= turbo_frame_tag 'favorite_frame' do %>
-          <% favorite = Favorite.find_by(venue_id: @venue) %>
-          <% unless favorite && favorite.liked %>
-            <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
-              <i class="bi bi-bookmark-heart" data-favorite-target="heartIcon"></i>
-              <p data-favorite-target="saveText">Save</p>
-            <% end %>
-          <% else %>
-            <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
-              <i class="bi bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
-            <% end %>
-            <p data-favorite-target="saveText">Saved</p>
+  <div class="container-title-description">
+        <h1><%= @venue.name %></h1>
+        <p style="width:45%;">
+          <% 5.times do %>
+            <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
           <% end %>
-        <% end %>
+        </p>
+        <div class="block-text-overview">
+          <p><%= @venue.overview %></p>
+        </div>
+  </div>
+    <div class="container-bootstrap-icons">
+      <div class="navigate">
+        <div class="circle-container">
+          <i class="bi bi-cursor"></i>
+        </div>
+          <p><%= link_to "Navigate", root_path%></p>
+      </div>
+      <!-- Assuming you have a Turbo Frame with the ID "favorite_frame" -->
+      <div class="save">
+        <div class="circle-container" data-controller="favorite">
+          <%= turbo_frame_tag 'favorite_frame' do %>
+            <% favorite = Favorite.find_by(venue_id: @venue) %>
+            <% unless favorite && favorite.liked %>
+              <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
+                <i class="bi bi-bookmark-heart" data-favorite-target="heartIcon"></i>
+                <p data-favorite-target="saveText">Save</p>
+              <% end %>
+            <% else %>
+              <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
+                <i class="bi bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
+              <% end %>
+              <p data-favorite-target="saveText">Saved</p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="review">
+        <div class="circle-container">
+        <i class="bi bi-chat-square-text"></i>
+      </div>
+        <p>Review</p>
+      </div>
+      <div class="reserve">
+        <div class="circle-container circle-container-booking">
+        <i class="bi bi-calendar-plus"></i>
+      </div>
+        <p><%= link_to "Reserve", new_venue_booking_path(@venue)%></p>
       </div>
     </div>
-    <div class="review">
-      <div class="circle-container">
-      <i class="bi bi-chat-square-text"></i>
-    </div>
-      <p>Review</p>
-    </div>
-    <div class="reserve">
-      <div class="circle-container circle-container-booking">
-      <i class="bi bi-calendar-plus"></i>
-    </div>
-      <p><%= link_to "Reserve", new_venue_booking_path(@venue)%></p>
-    </div>
-  </div>
+    <div class="gap"></div>
   <div class="infos-venue">
     <div class="first-column-values">
       <div class="open-hour-text">
@@ -94,16 +96,22 @@
     </div>
   </div>
   <div class="block-opening-hours">
-    <h3>Opening hours</h3>
-      <!-- Display existing opening hours -->
-      <% @venue.opening_hours.each do |opening_hour| %>
-        <p>
-          <%= opening_hour.day.capitalize %>: <%= opening_hour.open_time %> - <%= opening_hour.close_time %>
-        </p>
-      <% end %>
-    <!-- Render the opening hour form partial -->
-    <%= render 'opening_hours/opening_hour_form', venue: @venue %>
+  <h3>Opening Hours</h3>
+  <div class="scroll-container">
+    <% if @opening_hours.any? %>
+      <ul class="day-list">
+        <% @opening_hours.each do |opening_hour| %>
+          <li>
+            <strong style="font-size:13px"><%= opening_hour.day.capitalize %> </strong>from
+            <%= opening_hour.open_time.strftime('%H:%M') %> to <%= opening_hour.closing_time.strftime('%H:%M') %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No opening hours available.</p>
+    <% end %>
   </div>
+</div>
   <div class="address">
     <h3>Address</h3>
       <p>Rudi-Dutschke-Straße 26, 10965 Berlin</p>

@@ -12,6 +12,8 @@ class VenuesController < ApplicationController
 
   def show
     @booking = Booking.find_by(venue: @venue)
+    @opening_hours = @venue.opening_hours
+
   end
 
   def new
@@ -59,17 +61,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  def create_opening_hour
-    @venue = Venue.find(params[:id])
-    @opening_hour = @venue.opening_hours.build(opening_hour_params)
-
-    if @opening_hour.save
-      redirect_to @venue, notice: 'Opening hour added successfully.'
-    else
-      # Handle validation errors or other failure cases
-      render 'show'
-    end
-  end
 
   def show_opening_hours
     @venue = Venue.find(params[:id])
@@ -99,5 +90,8 @@ class VenuesController < ApplicationController
 
   def set_venue
     @venue = Venue.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Venue with ID #{params[:id]} not found."
+    redirect_to root_path # or handle the error in a way that makes sense for your application
   end
 end
