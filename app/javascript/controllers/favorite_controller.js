@@ -2,7 +2,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["heartIcon", "saveText"];
+  static targets = ["heartIcon", "saveText];
 
   connect() {
     console.log("Item favorited!");
