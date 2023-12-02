@@ -5,6 +5,7 @@ puts("1. Destroying old instances")
 Booking.destroy_all
 User.destroy_all
 Venue.destroy_all
+OpeningHour.destroy_all
 
 # seeding users
 puts("2. Seeding Users Anna & Gio...")
@@ -99,6 +100,14 @@ booking_dates = [
   "2023-08-14",
   "2023-09-27"
 ]
+
+OpeningHour.create!(venue: @venue, day: :monday, open_time: '09:00', close_time: '17:00')
+OpeningHour.create!(venue: @venue, day: :tuesday, open_time: '10:00', close_time: '18:00')
+# Add more opening hours as needed...
+
+OpeningHour.create!(venue: @venue, day: :wednesday, open_time: '11:00', close_time: '19:00')
+OpeningHour.create!(venue: @venue, day: :thursday, open_time: '12:00', close_time: '20:00')
+# Add more opening hours as needed...
 
 venues.each_with_index do |v, i|
   Booking.create!(booking_date: booking_dates[i], venue: v, user: gio)

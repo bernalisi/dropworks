@@ -1,0 +1,13 @@
+<!-- app/views/opening_hours/_opening_hour_form.html.erb -->
+<%= form_with(model: [@venue, OpeningHour.new], url: create_opening_hour_venue_path(@venue), method: :post) do |form| %>
+  <%= form.label :day %>
+  <%= form.select :day, OpeningHour.days.keys %>
+
+  <%= form.label :open_time %>
+  <%= form.time_field :open_time %>
+
+  <%= form.label :close_time %>
+  <%= form.time_field :close_time %>
+
+  <%= form.submit 'Add Opening Hour' %>
+<% end %>

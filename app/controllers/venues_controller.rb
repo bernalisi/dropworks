@@ -71,6 +71,22 @@ class VenuesController < ApplicationController
     end
   end
 
+  def show_opening_hours
+    @venue = Venue.find(params[:id])
+    @opening_hours = @venue.opening_hours.order(:day)
+  end
+
+  def update_opening_hour
+    @opening_hour = OpeningHour.find(params[:opening_hour_id])
+
+    if @opening_hour.update(opening_hour_params)
+      redirect_to @opening_hour.venue, notice: 'Opening hour updated successfully.'
+    else
+      # Handle validation errors or other failure cases
+      render 'show'
+    end
+  end
+
   private
 
   def venue_params

@@ -76,26 +76,33 @@
     </div>
   </div>
   <div class="infos-venue">
-  <div class="first-column-values">
-    <div class="open-hour-text">
-      <p class="gap-text-icon"><i class="bi bi-clock"></i>Open • Closes at 18.00</p>
-    </div>
-    <div class="other-value">
-      <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
-    </div>
-  </div>
-  <div class="second-column-values">
-      <div class="seat-available">        
-        <p class="gap-text-icon"><i class= "bi bi-people"></i> 5/12 seats available</p>
+    <div class="first-column-values">
+      <div class="open-hour-text">
+        <p class="gap-text-icon"><i class="bi bi-clock"></i>Open • Closes at 18.00</p>
       </div>
-      <div class="wifi-speed">        
-        <p class="gap-text-icon"><i class="bi bi-wifi"></i> 200 mbit/s</p>
+      <div class="other-value">
+        <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
       </div>
-  </div>
+    </div>
+    <div class="second-column-values">
+        <div class="seat-available">        
+          <p class="gap-text-icon"><i class= "bi bi-people"></i> 5/12 seats available</p>
+        </div>
+        <div class="wifi-speed">        
+          <p class="gap-text-icon"><i class="bi bi-wifi"></i> 200 mbit/s</p>
+        </div>
+    </div>
   </div>
   <div class="block-opening-hours">
     <h3>Opening hours</h3>
-      <p>Mondays (Today) from 8.00 to 18.00</p>
+      <!-- Display existing opening hours -->
+      <% @venue.opening_hours.each do |opening_hour| %>
+        <p>
+          <%= opening_hour.day.capitalize %>: <%= opening_hour.open_time %> - <%= opening_hour.close_time %>
+        </p>
+      <% end %>
+    <!-- Render the opening hour form partial -->
+    <%= render 'opening_hours/opening_hour_form', venue: @venue %>
   </div>
   <div class="address">
     <h3>Address</h3>
