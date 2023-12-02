@@ -84,6 +84,8 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 14px;
+  margin-bottom:100px;
+
 }
 
 .container-title-description {
@@ -92,6 +94,17 @@ a {
   align-items: flex-start;
   gap: 6px;
   align-self: stretch;
+}
+
+.container-title-description h1{
+  color: var(--Black, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px; /* 121.429% */
+  letter-spacing: -0.4px;
 }
 
 .block-text-overview p {
@@ -235,6 +248,17 @@ a {
   font-size: 13px;
 }
 
+.block-opening-hours h3, .address h3 {
+  color: var(--Black, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.4px;
+}
+
 .address p {
   display: flex;
   padding: 8px 0px;
@@ -260,6 +284,8 @@ a {
 .day-dropdown button {
   padding: 8px;
   cursor: pointer;
+  border: none;
+  border-radius: 20%;
 }
 
 .day-dropdown ul {

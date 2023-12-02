@@ -1,5 +1,5 @@
 <div class="show-page-container container">
-  <div class="container d-flex pb-4">
+  <div class="container d-flex">
     <div class="container image-container p-0">
       <div class="splide" data-controller="splide">
         <div class="splide__track">
@@ -141,7 +141,6 @@
         <% end %>
       </div>
     </div>
-      <%= link_to "Delete your Venue", venue_path(@venue), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm text-white" %>
     <% @venue.bookings.each do |booking| %>
       <% if !booking.review.nil? %>
         <h2><%= booking.review.content %></h2>
