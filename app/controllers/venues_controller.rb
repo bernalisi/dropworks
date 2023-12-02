@@ -59,10 +59,26 @@ class VenuesController < ApplicationController
     end
   end
 
+  def create_opening_hour
+    @venue = Venue.find(params[:id])
+    @opening_hour = @venue.opening_hours.build(opening_hour_params)
+
+    if @opening_hour.save
+      redirect_to @venue, notice: 'Opening hour added successfully.'
+    else
+      # Handle validation errors or other failure cases
+      render 'show'
+    end
+  end
+
   private
 
   def venue_params
     params.require(:venue).permit(:name, :address, :overview, image_urls:[], photos: [])
+  end
+
+  def opening_hour_params
+    params.require(:opening_hour).permit(:day, :open_time, :close_time)
   end
 
   def set_venue
