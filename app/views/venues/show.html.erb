@@ -40,9 +40,11 @@
     <div class="container-bootstrap-icons">
       <div class="navigate">
         <div class="circle-container">
+          <%= link_to root_path do %>
           <i class="bi bi-cursor"></i>
         </div>
-          <p><%= link_to "Navigate", root_path%></p>
+          <p>Navigate</p>
+      <%end%>
       </div>
       <!-- Assuming you have a Turbo Frame with the ID "favorite_frame" -->
       <div class="save">
@@ -63,17 +65,21 @@
           <% end %>
         </div>
       </div>
-      <div class="review">
+      <div class="review" data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
         <div class="circle-container">
-        <i class="bi bi-chat-square-text"></i>
-      </div>
-        <p>Review</p>
+          <%= link_to new_booking_review_path(@venue) do %>
+          <i class="bi bi-chat-square-text"></i>
+        </div>
+      <p>Review</p>
+      <% end %>
       </div>
       <div class="reserve">
+          <%= link_to new_venue_booking_path(@venue) do %>
         <div class="circle-container circle-container-booking">
         <i class="bi bi-calendar-plus"></i>
       </div>
-        <p><%= link_to "Reserve", new_venue_booking_path(@venue)%></p>
+        <p>Reserve</p>
+        <% end %>
       </div>
     </div>
     <div class="gap"></div>
