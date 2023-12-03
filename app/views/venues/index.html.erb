@@ -6,7 +6,6 @@
   <div class="row" style="margin-bottom: 100px">
       <% @venues.each do |venue| %>
         <div class="venue-card" data-controller="favorite">
-
           <div class="favorite-heart">
             <% favorite = Favorite.find_by(venue: venue) %>
             <% if favorite && favorite.liked %>
@@ -19,36 +18,38 @@
               <% end %>
             <% end %>
           </div>
+          <%= link_to venue_path(venue.id) do %>
+            <div class="image">
+              <img class="img-properties-form" src="<%= venue.image_urls.first %>" alt="Venue-picture">
+                <div>
+                  <% if venue.photos.attached? %>
+                    <div>
+                      <% venue.photos.each do |photo| %>
+                      <%= cl_image_tag photo.key %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+            </div>
 
-          <div class="image">
-            <img class="img-properties-form" src="<%= venue.image_urls.first %>" alt="Venue-picture">
-              <div>
-                <% if venue.photos.attached? %>
-                  <div>
-                    <% venue.photos.each do |photo| %>
-                    <%= cl_image_tag photo.key %>
-                    <% end %>
-                  </div>
-                <% end %>
+            <div class="info">
+              <div class="mt-2">
+                <h6 style="width:43%; margin-bottom: 0"><%= venue.name %></h6>
+                <p style="width:35%;">
+                  <% 5.times do %>
+                    <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
+                  <% end %>
+                </p>
+                <p style="width:22%; text-align: right" class="card-wifi-speed"><i class="bi-wifi"></i> 200 mbit/s</p>
               </div>
-          </div>
 
-          <div class="info">
-            <div class="mt-2">
-              <h6 style="width:43%; margin-bottom: 0"><%= venue.name %></h6>
-              <p style="width:35%;">
-              <% 5.times do %>
-                <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
-              <% end %></p>
-              <p style="width:22%; text-align: right"><i class="bi-wifi"></i> 200 mbit/s</p>
+              <div class="mt-2">
+                <p style="width:43%;" class="card-overview-text"><%= venue.overview.truncate(29) %></p>
+                <p class="seat-available" style="width:35%;"><i class="bi-person-add"></i> 12 seats available</p>
+                <p style="width:22%; text-align: right" class="card-distance"><i class="bi-cursor"></i> 600 m</p>
+              </div>
             </div>
-
-            <div class="mt-2">
-              <p style="width:43%;"><%= venue.overview.truncate(25) %></p>
-              <p class="seat-available" style="width:35%;"><i class="bi-person-add"></i> 12 seats available</p>
-              <p style="width:22%; text-align: right"><i class="bi-cursor"></i> 600 m</p>
-            </div>
-          </div>
+          <% end %>
 
         </div>
       <% end %>
