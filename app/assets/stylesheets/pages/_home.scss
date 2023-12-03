@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 body {
   font-family: "SF Pro Display";
+  overflow-x: hidden;
 }
 
 .map-card {
@@ -11,7 +12,6 @@ body {
 
 .image-container {
   flex: 1;
-
 }
 
 .info-card {
@@ -74,4 +74,4 @@ a {
   // position: relative;
   // font-size: 25px;
 }
-// To me it was better to have this in the the index.scss file.
+// To me it was better to have the styling for the favorite-heart in the the index.scss file.
