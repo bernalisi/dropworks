@@ -5,7 +5,19 @@
   <h1> Spaces close to you...</h1>
   <div class="row" style="margin-bottom: 100px">
       <% @venues.each do |venue| %>
-        <div class="venue-card mb-3" data-controller="favorite">
+        <div class="venue-card" data-controller="favorite">
+          <div class="favorite-heart">
+            <% favorite = Favorite.find_by(venue: venue) %>
+            <% if favorite && favorite.liked %>
+              <%= link_to favorite_venue_path(venue, favorite: favorite), remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
+                <i class="bi bi-bookmark-heart" data-favorite-target="heartIcon"></i>
+              <% end %>
+            <% else %>
+              <%= link_to favorite_venue_path(venue, favorite: favorite), remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
+                <i class="bi bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
+              <% end %>
+            <% end %>
+          </div>
           <div class="image">
             <img class="img-properties-form" src="<%= venue.image_urls.first %>" alt="Venue-picture">
               <div>
@@ -18,18 +30,6 @@
                 <% end %>
               </div>
 
-              <div class="favorite-heart">
-                <% favorite = Favorite.find_by(venue: venue) %>
-                <% if favorite && favorite.liked %>
-                  <%= link_to favorite_venue_path(venue, favorite: favorite), remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
-                    <i class="bi bi-bookmark-heart" data-favorite-target="heartIcon"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to favorite_venue_path(venue, favorite: favorite), remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
-                    <i class="bi bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
-                  <% end %>
-                <% end %>
-              </div>
           </div>
 
           <div class="info">

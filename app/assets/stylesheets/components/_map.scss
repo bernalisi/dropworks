@@ -46,7 +46,7 @@
 }
 
 .mapboxgl-popup-content {
-  position: relative;
+  position: fixed;
   pointer-events: auto;
   top: 140px !important;
   width: 97vw;
@@ -106,5 +106,6 @@
 // }
 
 .mapboxgl-ctrl-top-right {
+  position: fixed;
   top: 69% !important;
 }
