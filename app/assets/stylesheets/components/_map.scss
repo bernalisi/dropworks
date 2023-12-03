@@ -39,21 +39,22 @@
   transform: none !important;
   margin-left: 6px;
   margin-right: 6px;
-  top: 59vh  !important;;
-  .anchor-left {
-    transform: none !important;
-  }
+  position: relative;
+
+  // top: 59vh  !important;;
+  // .anchor-left {
+  //   transform: none !important;
+  // }
 }
 
 .mapboxgl-popup-content {
-  position: fixed;
+
+  position: fixed !important;
+  top: calc(100vh + -205px);
   pointer-events: auto;
-  top: 140px !important;
   width: 97vw;
-  // height: 200px;
   background: rgba(255, 255, 255, 0.95) !important;
   border-radius: 10px !important;
-  // padding: 3px;
   padding: 6px 6px 6px 6px !important;
   backdrop-filter: blur( 1px ) !important;;
   box-shadow: 0 8px 32px 0 rgba(17, 17, 17, 0.37);
