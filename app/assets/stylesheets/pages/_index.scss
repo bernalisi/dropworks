@@ -1,11 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
 
-h1 {
-  position: sticky;
-  top: 0px;
-}
-
 .venue-card {
   font-family: "SF Pro Display";
   box-shadow: 0 0 10px rgba(128, 128, 128, 0.3);
@@ -21,7 +16,7 @@ h1 {
   position: absolute;
   top: 15px;
   right: 30px;
-  z-index: 100;
+  z-index: 1;
   width: 11px;
   height: 5px;
   font-size: 25px;
