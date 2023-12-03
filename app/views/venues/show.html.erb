@@ -65,14 +65,14 @@
           <% end %>
         </div>
       </div>
-      <div class="review" data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
-        <div class="circle-container">
-          <%= link_to new_booking_review_path(@venue) do %>
+    <div class="review" data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
+      <div class="circle-container">
+        <%= link_to new_booking_review_path(@venue), data: { turbo_frame: "review_frame" } do %>
           <i class="bi bi-chat-square-text"></i>
-        </div>
-      <p>Review</p>
-      <% end %>
+        <% end %>
       </div>
+      <p>Review</p>
+    </div>
       <div class="reserve">
           <%= link_to new_venue_booking_path(@venue) do %>
         <div class="circle-container circle-container-booking">

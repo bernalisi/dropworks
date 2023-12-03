@@ -1,4 +1,3 @@
-// app/javascript/controllers/favorite_controller.js
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
@@ -14,24 +13,20 @@ export default class extends Controller {
 
     // Check if the Save text content is "Saved"
     const reviewEnabled = heartIcon.classList.contains("bi-bookmark-heart-fill");
-    console.log(reviewButton);
-    // Optionally, update the review button state based on the reviewEnabled status
-    if (reviewEnabled) {
+
+    // Update the review button state based on the reviewEnabled status
+    if (reviewButton && reviewEnabled) {
       reviewButton.style.pointerEvents = "auto"; // Enable click events
       reviewButton.style.opacity = "1"; // Optionally, reset opacity
-    } else {
+    } else if (reviewButton) {
       reviewButton.style.pointerEvents = "none"; // Disable click events
       reviewButton.style.opacity = "0.5"; // Optionally, reduce opacity to visually indicate it's disabled
     }
   }
 
-
-
-
   favorite() {
     const heartIcon = this.heartIconTarget;
     const saveText = this.saveTextTarget;
-
 
     // Toggle the heart icon class based on the favorite status
     heartIcon.classList.toggle("bi-bookmark-heart-fill");
@@ -43,7 +38,8 @@ export default class extends Controller {
     } else {
       saveText.textContent = "Save";
     }
-    // Update the review button status after changing the Save text content
+
+    // Update the review button state after changing the Save text content
     this.checkReviewStatus();
   }
 }

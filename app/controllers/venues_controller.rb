@@ -59,8 +59,12 @@ class VenuesController < ApplicationController
       @favorite.liked = true
       @favorite.save!
     end
-  end
 
+    respond_to do |format|
+      format.html { redirect_to @venue }
+      format.js # Assuming you're using AJAX with TurboDrive
+    end
+  end
 
   def show_opening_hours
     @venue = Venue.find(params[:id])
