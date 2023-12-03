@@ -147,16 +147,16 @@
         <% end %>
       </div>
     </div>
-    <% @venue.bookings.each do |booking| %>
-      <% if !booking.review.nil? %>
-        <h2><%= booking.review.content %></h2>
-        <% if booking.review.photos.attached? %>
-          <% booking.review&.photos.each do |photo| %>
-            <%= cl_image_tag(photo.key) %>
-          <% end %>
+    <div class="container-reserve-button">
+      <div class="reserve-button">
+      <%= link_to new_venue_booking_path(@venue) do %>
+        <div class="circle-container-white">
+        <i class="bi bi-calendar-plus"></i>
+      </div>
+        <p>Reserve</p>
         <% end %>
-        <h2><%= booking.review.rating %></h2>
-      <% end %>
-    <% end %>
+    </div>
+    </div>
+    
   </div>
 </div>
