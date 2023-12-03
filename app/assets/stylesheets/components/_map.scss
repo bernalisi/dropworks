@@ -107,6 +107,6 @@
 // }
 
 .mapboxgl-ctrl-top-right {
-  position: fixed;
-  top: 69% !important;
+  position: fixed !important;
+  top: calc(100vh + -255px) !important;
 }
