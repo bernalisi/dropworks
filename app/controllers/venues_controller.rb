@@ -29,9 +29,8 @@ class VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
 
     @current_user_bookings = @venue.bookings.select do |booking|
-      booking.user == current_user
+      booking.user == current_user && @venue.bookings.joins(:review).exists?
     end
-
   end
 
   def new

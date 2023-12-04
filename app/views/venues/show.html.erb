@@ -27,15 +27,15 @@
 
 <div class="container-venue">
   <div class="container-title-description">
-        <h1><%= @venue.name %></h1>
-        <p style="width:45%;">
-          <% 5.times do %>
-            <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
-          <% end %>
-        </p>
-        <div class="block-text-overview">
-          <p><%= @venue.overview %></p>
-        </div>
+    <h1><%= @venue.name %></h1>
+    <p style="width:45%;">
+      <% 5.times do %>
+        <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
+      <% end %>
+    </p>
+    <div class="block-text-overview">
+      <p><%= @venue.overview %></p>
+    </div>
   </div>
     <div class="container-bootstrap-icons">
       <div class="navigate">
@@ -44,7 +44,7 @@
           <i class="bi bi-cursor"></i>
         </div>
           <p>Navigate</p>
-      <%end%>
+          <%end%>
       </div>
       <!-- Assuming you have a Turbo Frame with the ID "favorite_frame" -->
       <div class="save">
