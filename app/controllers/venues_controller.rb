@@ -78,7 +78,7 @@ class VenuesController < ApplicationController
       redirect_to @opening_hour.venue, notice: 'Opening hour updated successfully.'
     else
       # Handle validation errors or other failure cases
-      render 'show'
+      render 'show', status: :unprocessable_entity
     end
   end
 

@@ -19,7 +19,7 @@ export default class extends Controller {
   }
 
   toggleDropdown() {
-    this.dropdownTarget.classList.toggle('open');
+    this.dropdownTarget.classList.toggle('closed');
   }
 
   selectDay(event) {
