@@ -35,8 +35,8 @@
 
             <div class="info">
               <div class="mt-2">
-                <h6 style="width:43%; margin-bottom: 0"><%= venue.name %></h6>
-                <p style="width:35%;">
+                <h6 style="width:45%; margin-bottom: 0"><%= venue.name %></h6>
+                <p style="width:33%;">
                   <% 5.times do %>
                     <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
                   <% end %>
@@ -44,10 +44,10 @@
                 <p style="width:22%; text-align: right" class="card-wifi-speed"><i class="bi-wifi"></i> 200 mbit/s</p>
               </div>
 
-              <div class="mt-2">
-                <p style="width:43%;" class="card-overview-text"><%= venue.overview.truncate(29) %></p>
-                <p class="seat-available" style="width:35%;"><i class="bi-person-add"></i> 12 seats available</p>
-                <p style="width:22%; text-align: right" class="card-distance"><i class="bi-cursor"></i> 600 m</p>
+              <div>
+                <p style="width:45%;" class="card-overview-text"><%= venue.overview.truncate(29) %></p>
+                <p class="seat-available" style="width:35%;"><i class="bi-person-add"></i> <span style="color: #4CD964">12</span> seats available</p>
+                <p style="width:20%; text-align: right" class="card-distance"><i class="bi-cursor"></i> 600 m</p>
               </div>
             </div>
           <% end %>
