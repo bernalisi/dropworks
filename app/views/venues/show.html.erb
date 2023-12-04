@@ -49,6 +49,18 @@
         <% end %>
     </div>
   </div>
+
+
+  <!-- Circular container with Bootstrap icon -->
+  <!-- app/views/venues/show.html.erb -->
+
+<div class="block-opening-hours">
+  <h3>Opening Hours</h3>
+  
+  <div class="day-dropdown" data-controller="day-selector">
+    <button type="button" data-action="click->day-selector#toggleDropdown">
+      Show hours
+    </button>
   
   <!-- Circular container with Bootstrap icon -->
 
@@ -71,3 +83,8 @@
     <% end %>
   <% end %>
 </div>
+
+<%# Hide generated QR code %>
+<%# <div class="d-none"> %>
+ <%#= @svg.html_safe %>
+<%# </div> %>

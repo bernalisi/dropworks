@@ -33,6 +33,9 @@ gem "jbuilder"
 # Use geocode to have map
 gem "geocoder"
 
+# QR code gem
+gem 'rqrcode'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

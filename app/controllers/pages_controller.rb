@@ -23,4 +23,8 @@ class PagesController < ApplicationController
     @user_reviews = current_user.reviews
   end
 
+  def checkin
+
+  end
+
 end
