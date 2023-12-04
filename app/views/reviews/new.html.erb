@@ -1,7 +1,9 @@
+<div style="min-height: 100%">
+<%= image_tag @venue.image_urls.first, height: "250px", width: "390px" %>
+
 <div class="container" style="width: 90%">
-<h1><strong>Write a review for</strong><br>
-
- <strong><%= @venue.name %></h1></strong>
-
+  <h1>Write a review for<br>
+  <strong><%= @venue.name %></h1></strong>
   <%= render "shared/form_review", booking: @booking, review: @review %>
+</div>
 </div>
