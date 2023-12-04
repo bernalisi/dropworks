@@ -8,10 +8,27 @@ body {
   // This is for spacing the stars out evenly
 }
 
-.btn {
+.btn.btn-primary{
   // display: block;
   width: 100%;
-  border-radius: 6px;
+  display: flex;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+
+  color: var(--White, #FFF);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.4px;
+
+  border-radius: 12px;
+  background: var(--Label-Item-Blue, #007AFF);
   box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
 }
 
@@ -27,7 +44,8 @@ body {
   font-size: 50px;
   border-radius: 6px;
   background: var(--White, #FFF);
-  border: var(--bs-border-width) solid var(--bs-border-color);
+  border: none !important;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
 }
 
 .tag-selector {
@@ -50,6 +68,9 @@ body {
 textarea.form-control {
   background-color: white;
   min-height: 6em;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
 }
 
 ::placeholder {
