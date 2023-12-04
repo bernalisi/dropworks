@@ -2,18 +2,27 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  // Connect this controller to a "favorite" button
-  static targets = ["heartIcon"];
+  static targets = ["heartIcon", "saveText", ];
 
   connect() {
-    // Your favorite logic goes here
-    console.log("Item favorited!");
+    console.log("Item favorited!")
   }
 
-  // The action to be called when the "favorite" button is clicked
-  favorite(event) {
+  favorite() {
+    const heartIcon = this.heartIconTarget;
+    const saveText = this.saveTextTarget;
+    const reviewButton = this.reviewButtonTarget;
+
+
     // Toggle the heart icon class based on the favorite status
-    this.heartIconTarget.classList.toggle("bi-bookmark-heart-fill");
-    this.heartIconTarget.classList.toggle("bi-bookmark-heart");
+    heartIcon.classList.toggle("bi-bookmark-heart-fill");
+    heartIcon.classList.toggle("bi-bookmark-heart");
+
+    // Update the text content based on the class of the heart icon
+    if (heartIcon.classList.contains("bi-bookmark-heart-fill")) {
+      saveText.textContent = "Saved";
+    } else {
+      saveText.textContent = "Save";
+    }
   }
 }

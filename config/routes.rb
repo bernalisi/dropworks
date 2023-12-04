@@ -7,6 +7,11 @@ Rails.application.routes.draw do
       patch :favorite
     end
     resources :bookings, only: %i[new create]
+      member do
+      post 'create_opening_hour'
+      patch 'update_opening_hour/:opening_hour_id', to: 'venues#update_opening_hour', as: :update_opening_hour
+      get 'show_opening_hours'
+      end
   end
 
   resources :bookings, only: %i[show edit update destroy] do

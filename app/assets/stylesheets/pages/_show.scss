@@ -1,0 +1,323 @@
+// Specific CSS for your home-page
+
+.splide__slide {
+  // height: 500px;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.container-venue {
+  display: flex;
+  padding: 0px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom:100px;
+
+}
+
+.container-title-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  align-self: stretch;
+}
+
+.container-title-description h1{
+  color: var(--Black, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px; /* 121.429% */
+  letter-spacing: -0.4px;
+}
+
+.block-text-overview p {
+  color: var(--Dark-Grey, #48484A);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.container-bootstrap-icons {
+  border-top: 0.5px solid #999;
+  display: flex;
+  padding: 18px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.navigate p, .save p, .review p, .reserve p {
+  width: 31px;
+  height: 16px;
+  color:#007AFF;
+  font-size: 10px;
+  text-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  position:absolute;
+}
+
+.save p {
+  width: 31px;
+  height: 16px;
+  color:#007AFF;
+  font-size: 10px;
+  position:absolute;
+  top:32px;
+  left:0px;
+}
+
+.circle-container {
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px; /* Set the desired width and height for the circle */
+  height: 31px;
+  border-radius: 50%; /* Make it a circle */
+  background-color: white; /* Set the background color */
+}
+
+// .circle-container-review {
+//   background-color: #D1D1D6;
+//   color: white;
+// }
+
+.circle-container-booking {
+  background-color: #007AFF ;
+  color: white;
+}
+
+.gap {
+  padding: 0px;
+  align-self: stretch;
+  border-bottom: 0.5px solid #999;
+}
+
+.infos-venue {
+  padding-top:10px;
+  display: flex;
+  padding: 0px 7px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  align-self: stretch;
+}
+
+.gap-text-icon i {
+  margin-right: 12px;
+}
+
+.first-column-values .second-column-values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1 0 0;
+}
+
+
+.open-hour-text {
+  display: flex;
+  width: 138px;
+  height: 22px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 12px; 
+  color:#007AFF;
+}
+
+.open-hour-text i {
+  color: #007AFF;
+}
+
+.seat-available .wifi-speed {
+  display: flex;
+  width: 144.5px;
+  height: 22px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 12px; 
+}
+
+.seat-available i, .wifi-speed i {
+  color:#007AFF;
+}
+
+.other-value {
+  display: flex;
+  width: 138px;
+  height: 22px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 12px; 
+}
+
+.other-value i {
+  color:#007AFF;
+}
+
+.block-opening-hours > p {
+  display: flex;
+  padding: 8px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  font-size: 13px;
+  position:relative;
+}
+
+.container-reserve-button {
+  width: 73px;
+  height: 73px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Make it a circle */
+  background-color: #007AFF;
+  position: sticky;
+  position: absolute;
+  bottom:126px;
+  right: 20px;
+}
+
+.circle-container-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px; 
+  height: 31px;
+  border-radius: 50%; 
+  background-color: white;
+  margin:auto;
+}
+
+.reserve-button {
+  width: 39px;
+  height: 47px;
+  fill: var(--Label-Item-Blue, #007AFF);
+  filter: drop-shadow(0px 1px 4px rgba(153, 153, 153, 0.25));
+
+  p {
+    color:white;
+  }
+}
+
+.block-opening-hours h3, .address h3 {
+  color: var(--Black, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.4px;
+}
+
+.address p {
+  display: flex;
+  padding: 8px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  font-size: 13px;
+  color: var(--Dark-Grey, #48484A);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 169.231% */
+  text-decoration-line: underline;
+}
+
+.day-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.day-dropdown button {
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 20%;
+}
+
+.day-dropdown ul {
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.closed {
+  display:none;
+}
+
+.day-dropdown ul li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Add styling for the selected day if necessary */
+.day-dropdown button:hover,
+.day-dropdown ul li:hover {
+  background-color: #f0f0f0;
+}
+.title-reviews {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-reviews i {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-container-add-review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px; /* Set the desired width and height for the circle */
+  height: 31px;
+  border-radius: 50%; /* Make it a circle */
+  color: #007AFF; 
+}
+
+.reviews-block {
+  border-top: 0.5px solid var(--Label-Item-Grey, #999);
+  display: flex;
+  padding: 16px 0px 12px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+}
+
+
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
