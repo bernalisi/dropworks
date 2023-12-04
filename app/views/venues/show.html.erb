@@ -65,14 +65,15 @@
           <% end %>
         </div>
       </div>
-    <div class="review <%= 'isDisabled' if @current_user_bookings.empty? %>" data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
-      <div class="circle-container">
-        <%= link_to new_booking_review_path(@venue), data: { turbo_frame: "review_frame" } do %>
-          <i class="bi bi-chat-square-text"></i>
-        <% end %>
+          <div class="review <%= 'isDisabled' unless @current_user_bookings.present? %>" 
+          data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
+        <div class="circle-container">
+          <%= link_to new_booking_review_path(@venue), data: { turbo_frame: "review_frame" } do %>
+            <i class="bi bi-chat-square-text"></i>
+          <% end %>
+        </div>
+        <p>Review</p>
       </div>
-      <p>Review</p>
-    </div>
       <div class="reserve">
           <%= link_to new_venue_booking_path(@venue) do %>
         <div class="circle-container circle-container-booking">
