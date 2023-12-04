@@ -5,7 +5,6 @@ puts("1. Destroying old instances")
 Booking.destroy_all
 User.destroy_all
 Venue.destroy_all
-OpeningHour.destroy_all
 
 # seeding users
 puts("2. Seeding Users Anna & Gio...")
@@ -27,7 +26,7 @@ puts("3. Seeding Venues for Anna...")
 # venue10 = Venue.create!(name: "Classic Cinema Palace", overview: "Historic cinema showcasing a selection of classic and indie films.", address: "Spandauer Damm 10-22, 14059 Berlin", image_urls: ["https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29mZmVlJTIwc2hvcHxlbnwwfHwwfHx8MA%3D%3D"], user: anna)
 
 
-venue1 = Venue.create!(name: "St. Oberholz Mitte",
+venue1 = Venue.create!(name: "St. Oberholz",
   overview: "Dive into the heart of Berlin at St. Oberholz Mitte, a trendy coworking space fostering collaboration and creativity. This vibrant workspace offers a terrific environment with a café, bar, and lounge for work, relaxation, and socializing.",
   address: "Rosenthaler Str. 72A, 10119 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipOXv-uGu9PoYe9bJPxAAxLLlJjQXRjEYCp7LpY=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMN-Kbe0wlFKp2OYv51DtX47SXYrMoUO-YbNcpC=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipO3BVEy-N-u-q2CGCjPubwxQEKFtmSNShwMh-Lq=s1360-w1360-h1020"],
@@ -42,7 +41,7 @@ venue3 = Venue.create!(name: "Denizen Eiswerk",
   address: "Köpenicker Str. 40, 10179 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipOLZQx718ZhjSmJ_DdzQiNqnjfmrphz9TDB3Csx=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipML0YLHcy146sIA-ehoaslQ2MXXgUcwf15YM--x=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipOWWxtDSjepQQrchdhqRLfL6b9koqdcniH2QA28=s1360-w1360-h1020"],
   user: anna)
-venue4 = Venue.create!(name: "Techspace Kreuzberg",
+venue4 = Venue.create!(name: "Techspace X-Berg",
   overview: "Tech enthusiasts, welcome to Techspace Kreuzberg – a cutting-edge coworking experience in Berlin. Designed for innovation, this space provides state-of-the-art facilities and a tech-driven community, where collaboration meets technology for boundless productivity.",
   address: "Lobeckstraße 36-40, 10969 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipP7DMZQ7WOVFkbpvBeBJ99e1sYP7E9kb7psK3EL=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMZH_o_gRW4uBA__b2YRmubM6rH9EVmHT-gEzwT=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMi8ZdXRt6aN3sPsnW5ePVYS5iTqB2gBbTuLGJE=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipO88YKLk-2rxG-ldE9axNvUPVohkLFO1-Wu2830=s1360-w1360-h1020"],
@@ -100,38 +99,6 @@ booking_dates = [
   "2023-08-14",
   "2023-09-27"
 ]
-# Seed opening hours for Venue 1
-OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue1);
-OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
-OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
-OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
-OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
-OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
-
-
-# Seed opening hours for Venue 2
-OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue2)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue2);
-OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue2) 
-OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue2) 
-OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue2) 
-OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue2) 
-OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue2) 
-
-
-# opening_hours_data = [
-#   { day: 'monday', open_time: '09:00', closing_time: '17:00' },
-#   { day: 'tuesday', open_time: '10:00', closing_time: '18:00' },
-#   # Add more opening hours data as needed
-# ]
-
-# if @venue
-#   opening_hour = @venue.opening_hours.find_or_initialize_by(day: data[:day])
-#   # Rest of your logic
-# else
-#   puts "Venue not found or created."
-# end
 
 venues.each_with_index do |v, i|
   Booking.create!(booking_date: booking_dates[i], venue: v, user: gio)

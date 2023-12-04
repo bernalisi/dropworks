@@ -1,5 +1,5 @@
 <div class="show-page-container container">
-  <div class="container d-flex">
+  <div class="container d-flex pb-4">
     <div class="container image-container p-0">
       <div class="splide" data-controller="splide">
         <div class="splide__track">
@@ -111,37 +111,29 @@
       <p>Current Day: <%= @current_day %></p>
     </button>
   
-    <ul class="day-list closed"  data-day-selector-target="dropdown">
-      <% @opening_hours.each do |opening_hour| %>
-        <li>
-          <%= "#{opening_hour.day} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="container-reserve-button">
-      <div class="reserve-button">
-      <%= link_to new_venue_booking_path(@venue) do %>
-        <div class="circle-container-white">
-        <i class="bi bi-calendar-plus"></i>
-      </div>
-        <p>Reserve</p>
+  <!-- Circular container with Bootstrap icon -->
+
+  <h2>Reviews for venue</h2>
+  <%= link_to "Edit your Venue", edit_venue_path(@venue), class: "btn btn-dark btn-sm" %>
+  <%= link_to "Delete your Venue", venue_path(@venue), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm text-white" %>
+  <%= link_to "Book this Venue", new_venue_booking_path(@venue), class: "btn btn-primary btn-sm" %>
+  <h2 style="font-weight: bold;">Address</h2>
+  <p><%= @venue.address %></p>
+  <h2>Reviews</h2>
+  <% @venue.bookings.each do |booking| %>
+    <% if !booking.review.nil? %>
+      <h2><%= booking.review.content %></h2>
+      <% if booking.review.photos.attached? %>
+        <% booking.review&.photos.each do |photo| %>
+          <%= cl_image_tag(photo.key) %>
         <% end %>
-    </div>
-  </div>
+      <% end %>
+      <h2><%= booking.review.rating %></h2>
+    <% end %>
+  <% end %>
 </div>
 
-  <div class="address">
-    <h3>Address</h3>
-      <p>Rudi-Dutschke-Straße 26, 10965 Berlin</p>
-  </div>
-  <div class="reviews-block">
-    <div class="title-reviews">
-      <h2 style="margin:0">Reviews</h2>
-      <div class="circle-container-add-review">
-        <%= link_to new_booking_review_path(@venue) do %>
-          <i class="bi bi-plus-circle-fill"></i>
-        <% end %>
-      </div>
-    </div>
-</div>
+<%# Hide generated QR code %>
+<%# <div class="d-none"> %>
+ <%#= @svg.html_safe %>
+<%# </div> %>

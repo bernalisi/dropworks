@@ -1,7 +1,106 @@
-.btn {
-  display: block;
-  width: 100%;
+body {
+  --gl-star-size: 36px !important;
+  // this is for the star size in the review.
 }
+
+.gl-star-rating--stars > span {
+  margin: 4px !important;
+  // This is for spacing the stars out evenly
+}
+
+.btn.btn-primary{
+  // display: block;
+  width: 100%;
+  display: flex;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+
+  color: var(--White, #FFF);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.4px;
+
+  border-radius: 12px;
+  background: var(--Label-Item-Blue, #007AFF);
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+.tag-item {
+  display: inline-block;
+  padding: 70px;
+  border-radius: 6px;
+  width: 100%;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  border-radius: 6px;
+  background: var(--White, #FFF);
+  border: none !important;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+  padding: 100px;
+}
+
+
+.form-label, p {
+  color: var(--Dark-Grey, #48484A);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: "SF Pro Display";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+textarea.form-control {
+  background-color: white;
+  min-height: 6em;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+::placeholder {
+  color: #999999 !important;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+}
+
+
+// ========================================================= //
+
+// .tag-selector + label {
+  //   cursor: pointer;
+//   display: inline-block;
+//   font-size: 0.7rem;
+//   border-radius: 50rem;
+//   padding: 0.1rem 0.5rem;
+//   background-color: #ECEAFF;
+//   color: #7E73FF;
+//   border: 1px solid #7E73FF;
+//   margin-right: 0.6rem;
+//   margin-bottom: 0.4rem;
+// }
+
+// .tag-selector:checked + label {
+  //   color: white;
+  // }
 
 
 // #review_photos {
@@ -13,6 +112,7 @@
 //   background-color: red !important;
 // }
 
+// ========================================================= //
 
 // .form-control{
 //   .anna input[type=file] {
@@ -31,51 +131,3 @@
 //   }
 
 // }
-
-.tag-item {
-  display: inline-block;
-  padding: 100px;
-  border-radius: 6px;
-  width: 100%;
-  height: 151px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  border-radius: 6px;
-  background: var(--White, #FFF);
-}
-
-.tag-selector {
-  position: absolute;
-  transform: scale(0);
-  padding: 100px;
-}
-
-// .tag-selector + label {
-//   cursor: pointer;
-//   display: inline-block;
-//   font-size: 0.7rem;
-//   border-radius: 50rem;
-//   padding: 0.1rem 0.5rem;
-//   background-color: #ECEAFF;
-//   color: #7E73FF;
-//   border: 1px solid #7E73FF;
-//   margin-right: 0.6rem;
-//   margin-bottom: 0.4rem;
-// }
-
-.tag-selector:checked + label {
-  background-color: #7E73FF;
-  color: white;
-}
-
-.form-label, p {
-  color: var(--Dark-Grey, #48484A);
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: "SF Pro Display";
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22px;
-}

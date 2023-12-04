@@ -1,8 +1,8 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: %i[show edit update destroy]
+  before_action :set_venue, only: %i[show edit update destroy favorite]
 
   def index
-    #scrip 5-9 responsible for search bar feature
+    # scrip 5-9 responsible for search bar feature
     if params[:query].present?
       @venues = Venue.search_by_name_and_address(params[:query])
     else
@@ -12,6 +12,13 @@ class VenuesController < ApplicationController
 
   def show
     @booking = Booking.find_by(venue: @venue)
+    @qr_code = RQRCode::QRCode.new("#{request.original_url}/bookings")
+    @svg = @qr_code.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      standalone: true
+    )
     @opening_hours = @venue.opening_hours
     # Get the current date and time
     now = Time.now
@@ -65,7 +72,6 @@ class VenuesController < ApplicationController
 
   # member_route
   def favorite
-    @venue = Venue.find(params[:id])
     @favorite = Favorite.find_by(venue: @venue)
     if @favorite
       @favorite.update(liked: !@favorite.liked)
@@ -76,43 +82,15 @@ class VenuesController < ApplicationController
       @favorite.liked = true
       @favorite.save!
     end
-
-    respond_to do |format|
-      format.html { redirect_to @venue }
-      format.js # Assuming you're using AJAX with TurboDrive
-    end
-  end
-
-  def show_opening_hours
-    @venue = Venue.find(params[:id])
-    @opening_hours = @venue.opening_hours.order(:day)
-  end
-
-  def update_opening_hour
-    @opening_hour = OpeningHour.find(params[:opening_hour_id])
-
-    if @opening_hour.update(opening_hour_params)
-      redirect_to @opening_hour.venue, notice: 'Opening hour updated successfully.'
-    else
-      # Handle validation errors or other failure cases
-      render 'show', status: :unprocessable_entity
-    end
   end
 
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :address, :overview, image_urls:[], photos: [])
-  end
-
-  def opening_hour_params
-    params.require(:opening_hour).permit(:day, :open_time, :close_time)
+    params.require(:venue).permit(:name, :address, :overview, image_urls: [], photos: [])
   end
 
   def set_venue
     @venue = Venue.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "Venue with ID #{params[:id]} not found."
-    redirect_to root_path # or handle the error in a way that makes sense for your application
   end
 end

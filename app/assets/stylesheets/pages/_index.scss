@@ -1,22 +1,29 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "show";
-
 
 .venue-card {
-  font-family: "JetBrains Mono", "monospace";
+  font-family: "SF Pro Display";
   box-shadow: 0 0 10px rgba(128, 128, 128, 0.3);
-  margin-bottom: 30px;
-  padding: 10px;
+  margin-bottom: 16px;
+  padding: 8px;
   border-radius: 7px;
   background: var(--White, #FFF);
   box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
+  position: relative;
+  text-decoration: none !important;
 }
 
-
+.favorite-heart {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  z-index: 1;
+  width: 11px;
+  height: 5px;
+  font-size: 25px;
+}
 
 h6, .h6 {
-  font-size: calc(1.325rem + 0.9vw);
   color: var(--Black, #000);
   font-family: "SF Pro Display";
   font-size: 17px;
@@ -26,7 +33,6 @@ h6, .h6 {
 }
 
 .info {
-
   div{
     display: flex;
     align-items: center;
@@ -35,15 +41,34 @@ h6, .h6 {
 
 .image {
   img {
-
     vertical-align: middle;
     width: 100%;
     border-radius: 7px;
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
+    height: 160px;
+    object-fit: cover;
   }
 }
 
 p {
   font-size: 12px;
+
+}
+
+.info{
+  color: #48484A;
+  .seat-available {
+    font-weight: 600;
+  }
+  .card-wifi-speed, .card-distance {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+  }
+  .card-overview-text {
+    color: var(--Black, #000);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+  }
 }
