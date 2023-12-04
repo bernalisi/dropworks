@@ -7,15 +7,11 @@ Rails.application.routes.draw do
       patch :favorite
     end
     resources :bookings, only: %i[new create]
-
-
   end
 
   resources :bookings, only: %i[show edit update destroy] do
     resources :reviews,  only: %i[new create edit update]
   end
-
-
 
   get "/dashboard", to: "pages#dashboard"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

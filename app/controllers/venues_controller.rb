@@ -1,8 +1,8 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: %i[show edit update destroy]
+  before_action :set_venue, only: %i[show edit update destroy favorite]
 
   def index
-    #scrip 5-9 responsible for search bar feature
+    # scrip 5-9 responsible for search bar feature
     if params[:query].present?
       @venues = Venue.search_by_name_and_address(params[:query])
     else
@@ -12,6 +12,13 @@ class VenuesController < ApplicationController
 
   def show
     @booking = Booking.find_by(venue: @venue)
+    @qr_code = RQRCode::QRCode.new("#{request.original_url}/bookings")
+    @svg = @qr_code.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      standalone: true
+    )
   end
 
   def new
@@ -46,7 +53,6 @@ class VenuesController < ApplicationController
 
   # member_route
   def favorite
-    @venue = Venue.find(params[:id])
     @favorite = Favorite.find_by(venue: @venue)
     if @favorite
       @favorite.update(liked: !@favorite.liked)
@@ -62,7 +68,7 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :address, :overview, image_urls:[], photos: [])
+    params.require(:venue).permit(:name, :address, :overview, image_urls: [], photos: [])
   end
 
   def set_venue
