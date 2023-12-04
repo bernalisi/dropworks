@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+body {
+  font-family: "SF Pro Display";
+  overflow-x: hidden;
+}
+
 .map-card {
   display: flex;
   overflow: hidden;
@@ -7,7 +12,6 @@
 
 .image-container {
   flex: 1;
-
 }
 
 .info-card {
@@ -41,6 +45,14 @@
 h1 {
   margin-top: 1rem;
   margin-bottom: .75rem;
+  color: var(--Black, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px; /* 121.429% */
+  letter-spacing: -0.4px;
 }
 // added this or a bit more breathing space. -FS
 
@@ -55,54 +67,65 @@ p {
 a {
   text-decoration: none;
 }
-.favorite-heart {
-  width: 11px;
-  height: 5px;
-  position: relative;
-  top: -224px;
-  left: 310px;
-  font-size: 25px;
-}
-.favorite-heart-inside {
-  width: 11px;
-  height: 5px;
-  font-size: 25px;
-}
 
-.splide__slide {
-  // height: 500px;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-}
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}
+// .favorite-heart {
+//   width: 11px;
+//   height: 5px;
+//   position: relative;
+//   font-size: 25px;
+// }
+// To me it was better to have the styling for the favorite-heart in the the index.scss file.
 
-.container-icons {
-  display: flex;
-  justify-content: space-between;
-}
+//.favorite-heart {
+// width: 11px;
+// height: 5px;
+// position: relative;
+// top: -224px;
+// left: 310px;
+// font-size: 25px;
+// }
+// .favorite-heart-inside {
+// width: 11px;
+// height: 5px;
+// font-size: 25px;
+// }
 
-.circle-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px; /* Set the desired width and height for the circle */
-  height: 30px;
-  border-radius: 50%; /* Make it a circle */
-  background-color: #007bff; /* Set the background color */
-  color: #fff; /* Set the text color */
-}
+// .splide__slide {
+// // height: 500px;
+// background-color: #eee;
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// font-size: 24px;
+// }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
+// .container {
+// margin-right: auto;
+// margin-left: auto;
+// padding-right: 15px;
+// padding-left: 15px;
+// }
+
+// .container-icons {
+// display: flex;
+// justify-content: space-between;
+// }
+
+// .circle-container {
+// display: flex;
+// align-items: center;
+// justify-content: center;
+// width: 30px; /* Set the desired width and height for the circle */
+// height: 30px;
+// border-radius: 50%; /* Make it a circle */
+// background-color: #007bff; /* Set the background color */
+// color: #fff; /* Set the text color */
+// }
+
+// @media (min-width: 576px) {
+// .container {
+//   max-width: 540px;
+// }
+// }
+
