@@ -56,6 +56,28 @@ h1 {
 }
 // added this or a bit more breathing space. -FS
 
+h2 {
+  color: var(--Black, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 100% */
+  letter-spacing: -0.4px;
+}
+
+h3 {
+  color: var(--Dark-Grey, #48484A);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  margin-top: 16px;
+}
+
 h4 {
   margin-top: 0;
 }
@@ -128,4 +150,3 @@ a {
 //   max-width: 540px;
 // }
 // }
-
