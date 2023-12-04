@@ -30,46 +30,55 @@ venue1 = Venue.create!(name: "St. Oberholz",
   overview: "Dive into the heart of Berlin at St. Oberholz Mitte, a trendy coworking space fostering collaboration and creativity. This vibrant workspace offers a terrific environment with a café, bar, and lounge for work, relaxation, and socializing.",
   address: "Rosenthaler Str. 72A, 10119 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipOXv-uGu9PoYe9bJPxAAxLLlJjQXRjEYCp7LpY=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMN-Kbe0wlFKp2OYv51DtX47SXYrMoUO-YbNcpC=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipO3BVEy-N-u-q2CGCjPubwxQEKFtmSNShwMh-Lq=s1360-w1360-h1020"],
+  wifi_speed: 127,
   user: anna)
 venue2 = Venue.create!(name: "betahaus",
   overview: "betahaus in Berlin is not just a coworking space; it's a lifestyle. This innovative hub balances work and play, providing a stimulating environment for creative minds. Join a community where ideas flow freely, fostering growth, innovation, and professional connections.",
   address: "Rudi-Dutschke-Straße 23, 10969 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipMF7ZT-a5V0BIgu3ZvstuLKHj9ZFOlOvQt18Zge=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipM45NGO6qXHOpuOeK4TexjoZOFS22qGfPPEjpOx=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipNEYDnoByS7LQJUqJXDB9zmW0nZQeGQJ4JsSf1K=s1360-w1360-h1020"],
+  wifi_speed: 132,
   user: anna)
 venue3 = Venue.create!(name: "Denizen Eiswerk",
   overview: "Experience a unique coworking blend at Denizen Eiswerk in Berlin, where practicality meets creative charm. This space invites you to work surrounded by inspiration, offering a distinctive atmosphere that puts your ideas in the spotlight.",
   address: "Köpenicker Str. 40, 10179 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipOLZQx718ZhjSmJ_DdzQiNqnjfmrphz9TDB3Csx=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipML0YLHcy146sIA-ehoaslQ2MXXgUcwf15YM--x=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipOWWxtDSjepQQrchdhqRLfL6b9koqdcniH2QA28=s1360-w1360-h1020"],
+  wifi_speed: 349,
   user: anna)
 venue4 = Venue.create!(name: "Techspace X-Berg",
   overview: "Tech enthusiasts, welcome to Techspace Kreuzberg – a cutting-edge coworking experience in Berlin. Designed for innovation, this space provides state-of-the-art facilities and a tech-driven community, where collaboration meets technology for boundless productivity.",
   address: "Lobeckstraße 36-40, 10969 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipP7DMZQ7WOVFkbpvBeBJ99e1sYP7E9kb7psK3EL=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMZH_o_gRW4uBA__b2YRmubM6rH9EVmHT-gEzwT=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMi8ZdXRt6aN3sPsnW5ePVYS5iTqB2gBbTuLGJE=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipO88YKLk-2rxG-ldE9axNvUPVohkLFO1-Wu2830=s1360-w1360-h1020"],
+  wifi_speed: 322,
   user: anna)
 venue5 = Venue.create!(name: "Soho House",
   overview: "Soho House in Berlin is where luxury meets productivity. This coworking space is about embracing a sophisticated lifestyle while offering an exclusive setting for work. From private offices to communal areas, it's a fusion of elegance and innovation.",
   address: "Torstraße 1, 10119 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipN9_0pE9kEKvEddJr48QZ8oiuqJSW14THRf3eUH=s1360-w1360-h1020", "https://res.cloudinary.com/soho-house/image/upload/f_auto,q_auto,fl_progressive:steep,w_800/t_dc_base/sitecore-prod/images/dotcom-sites/house-pages/berlin/10-may-update/03_berlin_update_43.jpg", "https://res.cloudinary.com/soho-house/image/upload/f_auto,q_auto,fl_progressive:steep,w_800/t_dc_base/sitecore-prod/images/dotcom-sites/house-pages/berlin/2023-house-page-update/07_berlin_housepage_43.jpg"],
+  wifi_speed: 209,
   user: anna)
 venue6 = Venue.create!(name: "Sir Savigny",
   overview: "Sir Savigny in Berlin is not just a hotel; it's a curated elegance experience. With modern design and classic charm, this accommodation offers a sophisticated haven for those who appreciate the finer things in life.",
   address: "Kantstraße 144, 10623 Berlin",
   image_urls: ["https://www.sirhotels.com/media/images/sir-savigny-berlin-public-spaces_.2e16d0ba.fill-1710x966.jpg", "https://cf.bstatic.com/xdata/images/hotel/max1024x768/83995735.jpg?k=6827b8824390a2a4b6dbb2c25865117505db8c111837ae43824320c98f464d64&o=&hp=1", "https://media.cntraveler.com/photos/5b916decc65ac82d277946cd/16:9/w_2560,c_limit/Sir-Savigny-Hotel_StevevHerud_2018_Sir-Savigny-image-credit--Steve-Herud-(8).jpg"],
+  wifi_speed: 92,
   user: anna)
 venue7 = Venue.create!(name: "Student Hotel",
   overview: "The Student Hotel in Berlin redefines accommodation, creating a vibrant community for students, professionals, and travelers. With modern amenities and a dynamic atmosphere, it's a home away from home, whether for a short visit or an extended stay.",
   address: "Alexanderstraße 40, 10179 Berlin",
   image_urls: ["https://masquespacio.com/wp-content/uploads/2022/01/The-Student-Hotel-Berlin-Masquespacio-Gregory-Abbate-05.jpeg", "https://images.squarespace-cdn.com/content/v1/598b56ce1e5b6cbabca9322f/1537212073286-64KLRJUNOI4GE40BR6T7/15The-Student-Hotel-Campus-Barcelona-Masquespacio.jpg", "https://masquespacio.com/wp-content/uploads/2022/01/The-Student-Hotel-Berlin-Masquespacio-Gregory-Abbate-10.jpeg"],
+  wifi_speed: 189,
   user: anna)
 venue8 = Venue.create!(name: "25h Hotel",
   overview: "Experience the unique charm of 25h Hotel in Berlin, where each room tells a story. Beyond conventional accommodation, this hotel offers a journey through creativity and design, providing a delightful surprise in every detail.",
   address: "Budapester Str. 40, 10787 Berlin",
   image_urls: ["https://www.visitberlin.de/system/files/styles/visitberlin_hero_visitberlin_desktop_2x/private/image/25hours_075_c_visitBerlin_Mo_Wuestenhagen_web.jpg?h=1c9b88c9&itok=cg5qKpQq", "https://www.top10berlin.de/sites/top10berlin.de/files/styles/juicebox/public/location/slider/2014/06/02/fullsize_25h_bikini_berlin_betreiber_1.jpg?itok=Rs8EDU1M", "https://cf.bstatic.com/xdata/images/hotel/max1024x768/34271668.jpg?k=b1d53875c40cbbc96aa9853f5057354253bf4d75468affb7c6c2cb1ea45e214d&o=&hp=1"],
+  wifi_speed: 402,
   user: anna)
 venue9 = Venue.create!(name: "Katerschmaus",
   overview: "Katerschmaus in Berlin is where gastronomy becomes an art form. This restaurant celebrates flavors and creativity in a vibrant atmosphere. From a menu inspired by local ingredients to eclectic ambiance, it offers a culinary experience that transcends the ordinary.",
   address: "Holzmarktstraße 25, 10243 Berlin",
   image_urls: ["https://www.tagesspiegel.de/berlin/images/fame/alternates/BASE_16_9_W1400/fame.jpeg", "https://lh3.googleusercontent.com/p/AF1QipOUOnM3Dc2gIM4wVTJe-lCd3nwBDURbZRWWf4O0=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipNowcFPXbqhtRVZm_GCrWdoGbpJyUwBTQeOt0EI=s1360-w1360-h1020"],
+  wifi_speed: 221,
   user: anna)
 
 
