@@ -1,5 +1,15 @@
+body {
+  --gl-star-size: 36px !important;
+  // this is for the star size in the review.
+}
+
+.gl-star-rating--stars > span {
+  margin: 4px !important;
+  // This is for spacing the stars out evenly
+}
+
 .btn {
-  display: block;
+  // display: block;
   width: 100%;
   border-radius: 6px;
   box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
@@ -39,13 +49,18 @@
 
 textarea.form-control {
   background-color: white;
-  color: var(--labels-tertiary, rgba(60, 60, 67, 0.30));
+  min-height: 6em;
+}
+
+::placeholder {
+  color: #999999 !important;
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: SF Pro Display;
   font-size: 17px;
   line-height: 22px;
   letter-spacing: -0.4px;
 }
+
 
 // ========================================================= //
 
