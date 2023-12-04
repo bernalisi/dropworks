@@ -48,7 +48,6 @@
 }
 
 .mapboxgl-popup-content {
-
   position: fixed !important;
   top: calc(100vh + -205px);
   pointer-events: auto;
@@ -70,15 +69,30 @@
   font-size: 15px;
 }
 
-.info-card h4 {
+.info-card h4, .info-card p {
   text-decoration: none !important;
   color: black !important;
 }
 
-.info-card p {
-  text-decoration: none !important;
-  color: black !important;
+.info-window-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.icon-info-pair {
+  display: flex;
+  gap: 3px;
+  p {
+    color: #48484A !important;
+    font-style: normal;
+    font-weight: 300;
+  }
+  i {
+    color: #48484A !important;
+  }
+}
+
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
