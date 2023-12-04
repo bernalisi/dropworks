@@ -12,8 +12,6 @@ class VenuesController < ApplicationController
 
   def show
     @booking = Booking.find_by(venue: @venue)
-    @opening_hours = @venue.opening_hours
-
   end
 
   def new
@@ -59,27 +57,6 @@ class VenuesController < ApplicationController
       @favorite.liked = true
       @favorite.save!
     end
-
-    respond_to do |format|
-      format.html { redirect_to @venue }
-      format.js # Assuming you're using AJAX with TurboDrive
-    end
-  end
-
-  def show_opening_hours
-    @venue = Venue.find(params[:id])
-    @opening_hours = @venue.opening_hours.order(:day)
-  end
-
-  def update_opening_hour
-    @opening_hour = OpeningHour.find(params[:opening_hour_id])
-
-    if @opening_hour.update(opening_hour_params)
-      redirect_to @opening_hour.venue, notice: 'Opening hour updated successfully.'
-    else
-      # Handle validation errors or other failure cases
-      render 'show', status: :unprocessable_entity
-    end
   end
 
   private
@@ -88,14 +65,7 @@ class VenuesController < ApplicationController
     params.require(:venue).permit(:name, :address, :overview, image_urls:[], photos: [])
   end
 
-  def opening_hour_params
-    params.require(:opening_hour).permit(:day, :open_time, :close_time)
-  end
-
   def set_venue
     @venue = Venue.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "Venue with ID #{params[:id]} not found."
-    redirect_to root_path # or handle the error in a way that makes sense for your application
   end
 end
