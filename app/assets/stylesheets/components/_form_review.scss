@@ -1,36 +1,9 @@
 .btn {
   display: block;
   width: 100%;
+  border-radius: 6px;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
 }
-
-
-// #review_photos {
-//   border: 5px solid green !important;
-//   background-color: green;
-// }
-
-// input[type="file"] {
-//   background-color: red !important;
-// }
-
-
-// .form-control{
-//   .anna input[type=file] {
-//     margin-left: -2px !important;
-//     background-color: red !important;
-//   }
-
-//   .anna input[type=file]::-webkit-file-upload-button {
-
-//     background-color: red !important;
-//   }
-
-//   .anna input[type=file]::file-selector-button {
-
-//     background-color: red !important;
-//   }
-
-// }
 
 .tag-item {
   display: inline-block;
@@ -53,8 +26,31 @@
   padding: 100px;
 }
 
+
+.form-label, p {
+  color: var(--Dark-Grey, #48484A);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: "SF Pro Display";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+textarea.form-control {
+  background-color: white;
+  color: var(--labels-tertiary, rgba(60, 60, 67, 0.30));
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: SF Pro Display;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+}
+
+// ========================================================= //
+
 // .tag-selector + label {
-//   cursor: pointer;
+  //   cursor: pointer;
 //   display: inline-block;
 //   font-size: 0.7rem;
 //   border-radius: 50rem;
@@ -67,30 +63,35 @@
 // }
 
 // .tag-selector:checked + label {
-//   color: white;
+  //   color: white;
+  // }
+
+
+// #review_photos {
+//   border: 5px solid green !important;
+//   background-color: green;
 // }
 
-.form-label, p {
-  color: var(--Dark-Grey, #48484A);
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: "SF Pro Display";
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22px;
-}
+// input[type="file"] {
+//   background-color: red !important;
+// }
 
-.btn {
-  border-radius: 6px;
-  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
-}
+// ========================================================= //
 
-textarea.form-control {
-  background-color: white;
-  color: var(--labels-tertiary, rgba(60, 60, 67, 0.30));
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: SF Pro Display;
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: -0.4px;
-}
+// .form-control{
+//   .anna input[type=file] {
+//     margin-left: -2px !important;
+//     background-color: red !important;
+//   }
+
+//   .anna input[type=file]::-webkit-file-upload-button {
+
+//     background-color: red !important;
+//   }
+
+//   .anna input[type=file]::file-selector-button {
+
+//     background-color: red !important;
+//   }
+
+// }
