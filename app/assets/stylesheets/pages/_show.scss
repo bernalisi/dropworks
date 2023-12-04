@@ -68,6 +68,12 @@
   position:absolute;
 }
 
+.isDisabled {
+  
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .save p {
   width: 31px;
   height: 16px;

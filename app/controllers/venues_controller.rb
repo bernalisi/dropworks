@@ -27,6 +27,11 @@ class VenuesController < ApplicationController
 
     # The logic to fetch and display the venue goes here
     @venue = Venue.find(params[:id])
+
+    @current_user_bookings = @venue.bookings.select do |booking|
+      booking.user == current_user
+    end
+
   end
 
   def new
