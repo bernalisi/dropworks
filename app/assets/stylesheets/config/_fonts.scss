@@ -7,11 +7,8 @@ $headers-font: "SF Pro Display", "Helvetica", "sans-serif";
 // $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
+@font-face {
+  font-family: "SF Pro Display";
+  src: font-url("/app/assets/fonts/SF-Pro-Display-Regular.otf");
+}
 // $my-font: "Font Name";
