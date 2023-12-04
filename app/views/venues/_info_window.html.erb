@@ -7,7 +7,7 @@
       <div class="info-card">
         <%= link_to venue_path(venue.id) do %>
           <h4><%= venue.name %></h4>
-          <p><%= venue.overview.truncate(29) %></p>
+          <p><%= venue.overview.truncate(40) %></p>
           <div class="info-window-icon-container">
             <div class="icon-info-pair">
               <i class="bi-person-add"></i>
@@ -19,7 +19,7 @@
             </div>
             <div class="icon-info-pair">
               <i class="bi-cursor"></i>
-              <p>15 m</p>
+              <p><%= venue.distance_to %></p>
             </div>
           </div>
         <% end %>
