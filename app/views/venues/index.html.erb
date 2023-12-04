@@ -20,6 +20,7 @@
           </div>
           <%= link_to venue_path(venue.id) do %>
             <div class="image">
+
               <img class="img-properties-form" src="<%= venue.image_urls.first %>" alt="Venue-picture">
                 <div>
                   <% if venue.photos.attached? %>

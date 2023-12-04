@@ -84,7 +84,7 @@ venues = [
   venue8,
   venue9
 ]
-seeding bookings
+# seeding bookings
 puts("4. Seeding Bookings for Gio...")
 
 
