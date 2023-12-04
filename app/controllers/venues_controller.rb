@@ -13,7 +13,20 @@ class VenuesController < ApplicationController
   def show
     @booking = Booking.find_by(venue: @venue)
     @opening_hours = @venue.opening_hours
+    # Get the current date and time
+    now = Time.now
 
+    # Get the day of the week (Sunday is 0 and Saturday is 6)
+    current_day_index = now.wday
+
+    # List of days
+    days_of_week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+    # Get the current day
+    @current_day = days_of_week[current_day_index]
+
+    # The logic to fetch and display the venue goes here
+    @venue = Venue.find(params[:id])
   end
 
   def new

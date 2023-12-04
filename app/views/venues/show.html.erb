@@ -108,8 +108,8 @@
   
   <div class="day-dropdown" data-controller="day-selector">
     <button type="button" data-action="click->day-selector#toggleDropdown">
-      Show hours
-      </button>
+      <p>Current Day: <%= @current_day %></p>
+    </button>
   
     <ul class="day-list closed"  data-day-selector-target="dropdown">
       <% @opening_hours.each do |opening_hour| %>
