@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :reviews,  only: %i[new create edit update]
   end
   get "/qrcode", to: "venues#qrcode"
+  get "/index", to: "venues#index"
   get "/dashboard", to: "pages#dashboard"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
