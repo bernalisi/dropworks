@@ -30,7 +30,7 @@
 .container-title-description h1{
   color: var(--Black, #000);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: SF Pro Display;
+  // font-family: SF Pro Display;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -41,7 +41,7 @@
 .block-text-overview p {
   color: var(--Dark-Grey, #48484A);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: SF Pro Display;
+  // font-family: SF Pro Display;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -69,7 +69,7 @@
 }
 
 .isDisabled {
-  
+
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -140,7 +140,7 @@
   height: 22px;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 12px; 
+  margin-right: 12px;
   color:#007AFF;
 }
 
@@ -154,7 +154,7 @@
   height: 22px;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 12px; 
+  margin-right: 12px;
 }
 
 .seat-available i, .wifi-speed i {
@@ -167,7 +167,7 @@
   height: 22px;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 12px; 
+  margin-right: 12px;
 }
 
 .other-value i {
@@ -204,9 +204,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 31px; 
+  width: 31px;
   height: 31px;
-  border-radius: 50%; 
+  border-radius: 50%;
   background-color: white;
   margin:auto;
 }
@@ -225,7 +225,7 @@
 .block-opening-hours h3, .address h3 {
   color: var(--Black, #000);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: SF Pro Display;
+  // font-family: SF Pro Display;
   font-size: 17px;
   font-style: normal;
   font-weight: 600;
@@ -243,7 +243,7 @@
   font-size: 13px;
   color: var(--Dark-Grey, #48484A);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: SF Pro Display;
+  // font-family: SF Pro Display;
   font-style: normal;
   font-weight: 400;
   line-height: 22px; /* 169.231% */
@@ -307,7 +307,7 @@
   width: 31px; /* Set the desired width and height for the circle */
   height: 31px;
   border-radius: 50%; /* Make it a circle */
-  color: #007AFF; 
+  color: #007AFF;
 }
 
 .reviews-block {
