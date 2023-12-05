@@ -12,13 +12,6 @@ class VenuesController < ApplicationController
 
   def show
     @booking = Booking.find_by(venue: @venue)
-    @qr_code = RQRCode::QRCode.new("#{request.original_url}/bookings")
-    @svg = @qr_code.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      standalone: true
-    )
     @opening_hours = @venue.opening_hours
     # Get the current date and time
     now = Time.now
@@ -81,6 +74,16 @@ class VenuesController < ApplicationController
       @favorite.liked = true
       @favorite.save!
     end
+  end
+
+  def qrcode
+    @qrcode = RQRCode::QRCode.new("#{request.original_url}/bookings")
+    @svg = @qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      standalone: true
+    )
   end
 
   private
