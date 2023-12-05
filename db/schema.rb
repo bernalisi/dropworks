@@ -63,10 +63,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_093837) do
   end
 
   create_table "opening_hours", force: :cascade do |t|
-    t.integer "day"
+    t.string "day"
     t.time "open_time"
     t.time "closing_time"
-    t.integer "venue_id", default: 0, null: false
+    t.bigint "venue_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["venue_id"], name: "index_opening_hours_on_venue_id"
