@@ -37,9 +37,21 @@ class VenuesController < ApplicationController
 
     @current_user_booking = @venue.bookings.find_by(user: current_user)
     @has_reviewed = @current_user_booking&.review.present?
+    # @is_venue_open = @current_day_opening_hour.present? && venue_open?(@current_day_opening_hour)
+    # Find the current day
+    current_day_name = Time.now.strftime('%A')
 
-    @current_day_opening_hour = OpeningHour.find_by(day: Time.now.strftime('%A'))
-    @is_venue_open = @current_day_opening_hour.present? && venue_open?(@current_day_opening_hour)
+    # Find the venue's opening hours for the current day
+    # @current_day_opening_hour = Venue.last.opening_hours.find_by(day: current_day_name)
+      @today_check = @venue.opening_hours.select do |opening_hour|
+        current_day_name == opening_hour.day.capitalize
+      end.first
+    @open =  Time.now.strftime('%H:%M') <= @today_check.closing_time.strftime('%H:%M') ? { text: "open", color: "green" } : { text:"close", color: "red" }
+    # puts "Current Day: #{current_day_name}"
+    # puts "Opening Hour: #{@current_day_opening_hour&.inspect}"
+    # puts "Current Day: #{Time.now.strftime('%A')}"
+    # puts "Opening Hour: #{@current_day_opening_hour&.inspect}"
+    # puts "Is Venue Open? #{@is_venue_open}"
   end
 
   def new

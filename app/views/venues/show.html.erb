@@ -91,18 +91,7 @@
   <div class="infos-venue">
     <div class="first-column-values">
       <div class="open-hour-text">
-        <% if @current_day_opening_hour.present? %>
-          <p>Today's Opening Hours:</p>
-          <p><strong>Open Time:</strong> <%= @current_day_opening_hour.open_time %></p>
-          <p><strong>Closing Time:</strong> <%= @current_day_opening_hour.closing_time %></p>
-          <% if @is_venue_open %>
-            <p>Open</p>
-          <% else %>
-            <p>Closed.</p>
-          <% end %>
-        <% else %>
-          <p>No opening hours found for the current day.</p>
-        <% end %>
+      
       </div>
       <div class="other-value">
         <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
@@ -123,15 +112,13 @@
   <h3>Opening Hours</h3>
 
   <div class="day-dropdown" data-controller="day-selector">
-    <button type="button" data-action="click->day-selector#toggleDropdown">
+    <button class="dropdown-button" type="button" data-action="click->day-selector#toggleDropdown">
       <p>Current Day: <%= @current_day %></p>
     </button>
   
     <ul class="day-list closed"  data-day-selector-target="dropdown">
       <% @opening_hours.each do |opening_hour| %>
-        <li>
-          <%= "#{opening_hour.day.capitalize} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
-        </li>
+        
       <% end %>
     </ul>
   </div>
