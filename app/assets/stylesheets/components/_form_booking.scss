@@ -3,19 +3,18 @@
 .booking-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   gap: 40px;
 }
 
 // Title
 .title-bf {
-  // layout
+  // sub-container
   display: flex;
-  width: 390px;
   padding: 0px 16px;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 5px;
 
   h2 {
