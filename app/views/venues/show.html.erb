@@ -65,7 +65,7 @@
           <% end %>
         </div>
       </div>
-      <div class="review <%= 'isDisabled' if !@current_user_booking.present? || @has_reviewed %>" 
+      <div class="review <%= 'isDisabled' if !@current_user_booking.present? || @has_reviewed %>"
         data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
         <div class="circle-container">
           <% if @current_user_booking.present? && !@has_reviewed %>
@@ -98,10 +98,10 @@
       </div>
     </div>
     <div class="second-column-values">
-        <div class="seat-available">        
+        <div class="seat-available">
           <p class="gap-text-icon"><i class= "bi bi-people"></i> 5/12 seats available</p>
         </div>
-        <div class="wifi-speed">        
+        <div class="wifi-speed">
           <p class="gap-text-icon"><i class="bi bi-wifi"></i> 200 mbit/s</p>
         </div>
     </div>
@@ -115,7 +115,7 @@
     <button type="button" data-action="click->day-selector#toggleDropdown">
       <p>Current Day: <%= @current_day %></p>
     </button>
-  
+
     <ul class="day-list closed"  data-day-selector-target="dropdown">
       <% @opening_hours.each do |opening_hour| %>
         <li>

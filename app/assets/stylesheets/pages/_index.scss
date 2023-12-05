@@ -3,7 +3,7 @@
 @import "show";
 
 .venue-card {
-  font-family: "SF Pro Display";
+  // font-family: "SF Pro Display";
   box-shadow: 0 0 10px rgba(128, 128, 128, 0.3);
   margin-bottom: 16px;
   padding: 8px;
@@ -26,7 +26,7 @@
 
 h6, .h6 {
   color: var(--Black, #000);
-  font-family: "SF Pro Display";
+  font-family: $headers-font;
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
@@ -52,6 +52,7 @@ h6, .h6 {
 
 p {
   font-size: 12px;
+  font-family: $body-font;
 }
 
 .info{
