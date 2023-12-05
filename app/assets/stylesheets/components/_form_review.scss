@@ -20,7 +20,7 @@ body {
 
   color: var(--White, #FFF);
   font-feature-settings: 'clig' off, 'liga' off;
-  // font-family: SF Pro Display;
+  font-family: SF Pro Display;
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
@@ -58,7 +58,7 @@ body {
 .form-label, p {
   color: var(--Dark-Grey, #48484A);
   font-feature-settings: 'clig' off, 'liga' off;
-  // font-family: "SF Pro Display";
+  font-family: "SF Pro Display";
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
@@ -76,7 +76,7 @@ textarea.form-control {
 ::placeholder {
   color: #999999 !important;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: $body-font;
+  font-family: SF Pro Display;
   font-size: 17px;
   line-height: 22px;
   letter-spacing: -0.4px;
