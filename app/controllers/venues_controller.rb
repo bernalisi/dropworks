@@ -19,7 +19,6 @@ class VenuesController < ApplicationController
       shape_rendering: 'crispEdges',
       standalone: true
     )
-    raise
     @opening_hours = @venue.opening_hours
     # Get the current date and time
     now = Time.now
@@ -38,6 +37,9 @@ class VenuesController < ApplicationController
 
     @current_user_booking = @venue.bookings.find_by(user: current_user)
     @has_reviewed = @current_user_booking&.review.present?
+
+    @current_day_opening_hour = OpeningHour.find_by(day: Time.now.strftime('%A'))
+    @is_venue_open = @current_day_opening_hour.present? && venue_open?(@current_day_opening_hour)
   end
 
   def new
@@ -92,5 +94,10 @@ class VenuesController < ApplicationController
 
   def set_venue
     @venue = Venue.find(params[:id])
+  end
+
+  def venue_open?(opening_hour)
+    current_time = Time.now.strftime('%H:%M:%S')
+    current_time.between?(opening_hour.open_time, opening_hour.closing_time)
   end
 end
