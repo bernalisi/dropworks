@@ -93,12 +93,7 @@ class VenuesController < ApplicationController
 
   def qrcode
     @qrcode = RQRCode::QRCode.new("#{request.original_url}/bookings")
-    @svg = @qrcode.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      standalone: true
-    )
+    @svg = @qrcode.as_svg
   end
 
   private
