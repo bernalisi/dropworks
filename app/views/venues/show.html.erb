@@ -91,7 +91,8 @@
   <div class="infos-venue">
     <div class="first-column-values">
       <div class="open-hour-text">
-      
+          <p class="gap-text-icon-open-hours" style="color: <%= @open[:color] %>"><%= @open[:text] %></p> 
+          <p>closes at <%= @today_check.closing_time.strftime('%H:%M') %></p>
       </div>
       <div class="other-value">
         <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
