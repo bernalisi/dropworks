@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @booking.venue = @venue
   end
 
   def create
@@ -29,8 +30,6 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    # @venue = Venue.find(params[:venue_id])
-    # @booking.venue_id = @venue.id
     @booking.destroy
     redirect_to dashboard_path
   end
