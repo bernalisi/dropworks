@@ -8,6 +8,22 @@
         <%= link_to venue_path(venue.id) do %>
           <h4><%= venue.name %></h4>
           <p><%= venue.overview.truncate(40) %></p>
+          <p>
+            <% if venue.average_rating %>
+              <% full_stars = venue.average_rating.to_i %>
+              <% full_stars.times do %>
+                <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
+              <% end %>
+              <% (5 - full_stars).times do %>
+                <i class="bi bi-star" style="color: #FF8500; font-size: 17px;"></i>
+              <% end %>
+
+            <% else %>
+              <% 5.times do %>
+                <i class="bi bi-star" style="color: #D1D1D6; font-size: 17px;"></i>
+              <% end %>
+            <% end %>
+          </p>
           <div class="info-window-icon-container">
             <div class="icon-info-pair">
               <i class="bi-person-add"></i>

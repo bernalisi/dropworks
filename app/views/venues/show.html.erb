@@ -91,15 +91,15 @@
   <div class="infos-venue">
     <div class="first-column-values">
       <div class="open-hour-text">
-      
+
       </div>
       <div class="other-value">
         <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
       </div>
     </div>
     <div class="second-column-values">
-        <div class="seat-available">
-          <p class="gap-text-icon"><i class= "bi bi-people"></i> 5/12 seats available</p>
+        <div class="people-icon">
+          <p class="gap-text-icon"><i class="bi bi-people" style="color: #007AFF;"></i> 5/12 seats available</p>
         </div>
         <div class="wifi-speed">
           <p class="gap-text-icon"><i class="bi bi-wifi"></i> 200 mbit/s</p>
@@ -118,7 +118,7 @@
 
     <ul class="day-list closed"  data-day-selector-target="dropdown">
       <% @opening_hours.each do |opening_hour| %>
-        
+
       <% end %>
     </ul>
   </div>

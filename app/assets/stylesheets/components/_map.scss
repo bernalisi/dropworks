@@ -69,9 +69,13 @@
   font-size: 15px;
 }
 
-.info-card h4, .info-card p {
+.info-card h4 {
   text-decoration: none !important;
   color: black !important;
+}
+
+.info-card p {
+  font-weight: 300 !important;
 }
 
 .info-window-icon-container {
