@@ -1,6 +1,6 @@
 <div class="show-page-container container">
-  <div class="container d-flex pb-4">
-    <div class="container image-container p-0">
+  <div class="container ">
+    <div class="container image-container">
       <div class="splide" data-controller="splide">
         <div class="splide__track">
           <!-- Additional required wrapper -->
@@ -14,7 +14,7 @@
             <% else %>
               <% @venue.image_urls.each do |venue_image| %>
                 <li class="splide__slide">
-                  <img class="w-100" src="<%= venue_image %>">
+                  <img class="image-carousel" src="<%= venue_image %>">
                 </li>
               <% end %>
             <% end %>
@@ -91,7 +91,7 @@
   <div class="infos-venue">
     <div class="first-column-values">
       <div class="open-hour-text">
-        <p class="gap-text-icon"><i class="bi bi-clock"></i>Open • Closes at 18.00</p>
+      
       </div>
       <div class="other-value">
         <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
@@ -112,15 +112,13 @@
   <h3>Opening Hours</h3>
 
   <div class="day-dropdown" data-controller="day-selector">
-    <button type="button" data-action="click->day-selector#toggleDropdown">
+    <button class="dropdown-button" type="button" data-action="click->day-selector#toggleDropdown">
       <p>Current Day: <%= @current_day %></p>
     </button>
 
     <ul class="day-list closed"  data-day-selector-target="dropdown">
       <% @opening_hours.each do |opening_hour| %>
-        <li>
-          <%= "#{opening_hour.day.capitalize} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
-        </li>
+        
       <% end %>
     </ul>
   </div>
