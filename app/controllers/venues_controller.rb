@@ -19,6 +19,7 @@ class VenuesController < ApplicationController
       shape_rendering: 'crispEdges',
       standalone: true
     )
+    raise
     @opening_hours = @venue.opening_hours
     # Get the current date and time
     now = Time.now
