@@ -2,7 +2,7 @@
   <%= render "shared/search_bar" %>
 <%# grid system to display venues %>
   <h1> Spaces close to you...</h1>
-  <div class="row" style="margin-bottom: 100px">
+  <div class="row" style="padding-bottom: 100px">
       <% @venues.each do |venue| %>
         <div class="venue-card" data-controller="favorite">
           <div class="favorite-heart">
