@@ -1,6 +1,8 @@
-  <h1><%= @venue.name %></h1>
-
- 
-
-
-  <%= render "shared/form_review", booking: @booking, review: @review %>
+<div style="height: 150vh; background: white">
+  <%= image_tag @venue.image_urls.first, height: "200px", width: "100%", :style => "object-fit: cover"%>
+  <div style="padding: 16px; padding-bottom: 100px">
+    <h2>Write a review for</h2>
+    <h1 style="margin-top: 0"><%= @venue.name %>...</h1>
+    <%= render "shared/form_review", booking: @booking, review: @review %>
+  </div>
+</div>

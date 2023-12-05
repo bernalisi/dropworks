@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking_id = @booking.id
     @venue = Venue.find(@booking.venue_id)
-    
+
     if @review.save
       redirect_to venue_path(@venue)
     else
@@ -20,9 +20,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    
+
     @review = @booking.review
-  
+
   end
 
   def update
@@ -41,6 +41,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content,:rating, photos: [])
+    params.require(:review).permit(:content, :rating, photos: [])
   end
 end
