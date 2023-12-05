@@ -7,30 +7,34 @@ export default class extends Controller {
   static targets = ["reader", "result"]
 
   connect() {
-    console.log(this.resultTarget)
-    setTimeout(() => {
+    console.log("hi josh hi anna")
+
 
       this.scanned = false
 
     // console.log(this.element)
-    this.qrScanner = new QrScanner(
-      this.readerTarget,
-      result =>
-        this.createTag(result), {
-      highlightCodeOutline: true
+
+    this.qrScanner = new QrScanner(this.readerTarget,
+      result => this.createTag(result),
+      {
+        highlightCodeOutline: true
       }
     )
 
-    qrScanner.setCamera(facingModeOrDeviceId);
+
 
     this.qrScanner.start();
-    console.log(this.qrScanner)
 
-    }, 500);
+
+
+
+
+
 
     }
 
     createTag(url) {
+      console.log(url)
       url = "https://dropworks-ae9dcc6994cc.herokuapp.com/index"
       const atag = `<a href=${url}> Confirm </a>`
         this.readerTarget.insertAdjacentHTML("beforeend", atag)
@@ -38,5 +42,9 @@ export default class extends Controller {
         this.qrScanner.stop();
     }
 
+
+    testClick() {
+      console.log("working")
+    }
 
 }

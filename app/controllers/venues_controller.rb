@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: %i[show edit update destroy favorite]
+  before_action :set_venue, only: %i[show edit update destroy favorite confirm]
 
   def index
     # scrip 5-9 responsible for search bar feature
@@ -39,16 +39,25 @@ class VenuesController < ApplicationController
       @today_check = @venue.opening_hours.select do |opening_hour|
         current_day_name == opening_hour.day.capitalize
       end.first
-    @open =  Time.now.strftime('%H:%M') <= @today_check.closing_time.strftime('%H:%M') ? { text: "open", color: "green" } : { text:"close", color: "red" }
+    # @open =  Time.now.strftime('%H:%M') <= @today_check.closing_time.strftime('%H:%M') ? { text: "open", color: "green" } : { text:"close", color: "red" }
     # puts "Current Day: #{current_day_name}"
     # puts "Opening Hour: #{@current_day_opening_hour&.inspect}"
     # puts "Current Day: #{Time.now.strftime('%A')}"
     # puts "Opening Hour: #{@current_day_opening_hour&.inspect}"
     # puts "Is Venue Open? #{@is_venue_open}"
+    url_to_pass_to_qr = confirm_venue_path(@venue)
+
+    @qrcode = RQRCode::QRCode.new("#{request.base_url}/#{url_to_pass_to_qr}")
+    @svg = @qrcode.as_svg
+
   end
 
   def new
     @venue = Venue.new
+  end
+
+  def confirm
+
   end
 
   def create
@@ -89,11 +98,6 @@ class VenuesController < ApplicationController
       @favorite.liked = true
       @favorite.save!
     end
-  end
-
-  def qrcode
-    @qrcode = RQRCode::QRCode.new("#{request.original_url}/bookings")
-    @svg = @qrcode.as_svg
   end
 
   private
