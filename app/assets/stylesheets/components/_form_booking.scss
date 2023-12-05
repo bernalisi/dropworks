@@ -85,33 +85,29 @@
   align-items: center;
   gap: 26px;
   align-self: stretch;
-
-  input {
-    display: flex;
-    width: 370px;
-    height: 42px;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
-  }
-
-  .button-container-bf {
-    display: flex;
-    padding: 14px 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    align-self: stretch;
-
-    .btn-booking-form {
-
-
-      border-radius: 12px;
-      background: var(--Label-Item-Blue, #007AFF);
-
-    }
-  }
 }
 
+.input-bf {
+  display: flex;
+  width: 370px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
+}
 
 // button styling
+
+.button-container-bf {
+  display: flex;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.btn-booking-form {
+  border-radius: 12px;
+  background: var(--Label-Item-Blue, #007AFF);
+}
