@@ -1,7 +1,17 @@
 
   <%= simple_form_for [venue, booking] do |f| %>
+    <%  %>
+
+
     <%= f.input :booking_date,
     as: :string,
     input_html: { data: { controller: "datepicker" }, class:"input-bf" } %>
+    <%= f.input :start_time,
+    collection: (1..5).to_a, label: false, prompt: false,
+    input_html: { class:"input-bf"}
+    %>
+    <%= f.input :session_length,
+    collection: (1..5).to_a, label: false, prompt: false,
+    input_html: { class:"input-bf"} %>
     <%= f.submit "Reserve now", class:"btn btn-primary" %>
   <% end %>
