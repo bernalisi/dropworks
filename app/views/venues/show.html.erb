@@ -119,7 +119,7 @@
     <ul class="day-list closed"  data-day-selector-target="dropdown">
       <% @opening_hours.each do |opening_hour| %>
         <li>
-          <%= "#{opening_hour.day} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
+          <%= "#{opening_hour.day.capitalize} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
         </li>
       <% end %>
     </ul>
