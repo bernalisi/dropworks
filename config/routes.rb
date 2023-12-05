@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :venues do
     member do
       patch :favorite
+      get :confirm
     end
     resources :bookings, only: %i[new create]
 
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[show edit update destroy] do
     resources :reviews,  only: %i[new create edit update]
   end
-  get "/qrcode", to: "venues#qrcode"
+  
   get "read", to: "pages#read"
 
   get "/dashboard", to: "pages#dashboard"
