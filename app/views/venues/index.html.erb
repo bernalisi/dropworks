@@ -36,9 +36,21 @@
               <div class="mt-2">
                 <h6 style="width:45%; margin-bottom: 0"><%= venue.name %></h6>
                 <p style="width:33%;">
-                  <% 5.times do %>
+                <% if venue.average_rating %>
+                  <% full_stars = venue.average_rating.to_i %>
+                  <% full_stars.times do %>
                     <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
                   <% end %>
+
+                  <% (5 - full_stars).times do %>
+                    <i class="bi bi-star" style="color: #FF8500; font-size: 17px;"></i>
+                  <% end %>
+
+                <% else %>
+                  <% 5.times do %>
+                    <i class="bi bi-star" style="color: #D1D1D6; font-size: 17px;"></i>
+                  <% end %>
+                <% end %>
                 </p>
                 <p style="width:22%; text-align: right" class="card-wifi-speed"><i class="bi-wifi"></i> <%= venue.wifi_speed %> mbit/s</p>
               </div>
