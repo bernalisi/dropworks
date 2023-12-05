@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import Instascan from 'instascan';
 
 // Connects to data-controller="camera"
 export default class extends Controller {
@@ -6,7 +7,11 @@ export default class extends Controller {
   static targets = ["input", "parag"]
 
   connect() {
-    console.log(this.element)
+    const scanner = new Instascan.Scanner ({ video: this.inputTarget});
+    scanner.addListener('scan', function (content) {
+    this.qrResultTarget.innerText = content;
+  });
+    // console.log(this.element)
   }
 
   openCamera(e){
