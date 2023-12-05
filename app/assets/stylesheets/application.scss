@@ -20,3 +20,26 @@
 body {
   overflow-x: hidden;
 }
+
+
+.card-video {
+  background-color: none;
+}
+
+@media (max-width:600px) {
+  .card-camera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // height:
+  }
+
+  .camera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+  }
+
+}
