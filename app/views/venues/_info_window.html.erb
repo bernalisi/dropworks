@@ -7,7 +7,21 @@
       <div class="info-card">
         <%= link_to venue_path(venue.id) do %>
           <h4><%= venue.name %></h4>
-          <p><%= venue.address %></p>
+          <p><%= venue.overview.truncate(40) %></p>
+          <div class="info-window-icon-container">
+            <div class="icon-info-pair">
+              <i class="bi-person-add"></i>
+              <p><%= venue.capacity %></p>
+            </div>
+            <div class="icon-info-pair">
+              <i class="bi-wifi"></i>
+              <p><%= venue.wifi_speed %> mbit/s</p>
+            </div>
+            <div class="icon-info-pair">
+              <i class="bi-cursor"></i>
+              <p><%= venue.distance_to %></p>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
