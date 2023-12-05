@@ -35,6 +35,7 @@ class VenuesController < ApplicationController
     current_day_name = Time.now.strftime('%A')
 
     # Find the venue's opening hours for the current day
+
     # @current_day_opening_hour = Venue.last.opening_hours.find_by(day: current_day_name)
       @today_check = @venue.opening_hours.select do |opening_hour|
         current_day_name == opening_hour.day.capitalize
@@ -49,6 +50,7 @@ class VenuesController < ApplicationController
 
     @qrcode = RQRCode::QRCode.new("#{request.base_url}/#{url_to_pass_to_qr}")
     @svg = @qrcode.as_svg
+
 
   end
 
