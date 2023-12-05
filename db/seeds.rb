@@ -120,7 +120,7 @@ booking_dates = [
 
 # Seed opening hours for Venue 1
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue1);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue1)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '18:00:00', venue: venue1) 
@@ -130,70 +130,70 @@ OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '18:00:00', venu
 
 # Seed opening hours for Venue 2
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue2)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue2);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue2)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue2) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue2) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue2) 
 OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue2) 
 OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue2) 
 
-# Seed opening hours for Venue 2
+# Seed opening hours for Venue 3
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue3)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue3);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue3)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue3) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue3) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue3) 
 OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue3) 
 OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue3) 
 
-# Seed opening hours for Venue 2
+# Seed opening hours for Venue 4
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue4)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue4);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue4)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue4) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue4) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue4) 
 OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue4) 
 OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue4) 
 
-# Seed opening hours for Venue 2
+# Seed opening hours for Venue 5
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue5)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue5);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue5)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue5) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue5) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue5) 
 OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue5) 
 OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue5) 
 
-# Seed opening hours for Venue 2
+# Seed opening hours for Venue 6
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue6)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue6);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue6)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue6) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue6) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue6) 
 OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue6) 
 OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue6) 
 
-# Seed opening hours for Venue 2
+# Seed opening hours for Venue 7
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue7)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue7);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue7)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue7) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue7) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue7) 
 OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue7) 
 OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue7) 
 
-# Seed opening hours for Venue 2
+# Seed opening hours for Venue 8
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue8)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue8);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue8)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue8) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue8) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue8) 
 OpeningHour.create(day: 5, open_time: '10:00:00', closing_time: '18:00:00', venue: venue8) 
 OpeningHour.create(day: 6, open_time: '10:00:00', closing_time: '19:00:00', venue: venue8) 
 
-# Seed opening hours for Venue 2
+# Seed opening hours for Venue 9
 OpeningHour.create(day: 0, open_time: '10:00:00', closing_time: '16:00:00', venue: venue9)  
-OpeningHour.create(day: 1 , open_time: '09:00:00', closing_time: '17:00:00', venue: venue9);
+OpeningHour.create(day: 1, open_time: '09:00:00', closing_time: '17:00:00', venue: venue9)
 OpeningHour.create(day: 2, open_time: '10:00:00', closing_time: '18:00:00', venue: venue9) 
 OpeningHour.create(day: 3, open_time: '10:00:00', closing_time: '18:00:00', venue: venue9) 
 OpeningHour.create(day: 4, open_time: '10:00:00', closing_time: '19:00:00', venue: venue9) 
