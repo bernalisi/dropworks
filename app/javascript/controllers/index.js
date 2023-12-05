@@ -10,5 +10,5 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
-import SplideController from './splide_controller';
-application.register('splide', SplideController);
+// import SplideController from './splide_controller';
+// application.register('splide', SplideController);
