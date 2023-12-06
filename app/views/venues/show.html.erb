@@ -166,7 +166,7 @@
         <i class="bi-plus-circle-fill" style="color: #D1D1D6"></i>
       <% end %>
     </h2>
-    <div>
+    <div class="review-list">
       <% @venue.bookings.each do |booking| %>
         <% if !booking.review.nil? %>
           <p class="review-user-name"><%= booking.review.user.first_name %> <%= booking.review.user.last_name %></h3>

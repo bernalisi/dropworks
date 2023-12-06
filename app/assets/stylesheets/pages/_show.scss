@@ -375,11 +375,13 @@ body {
 .review-images-small {
   width: 43px;
   height: 43px;
+  margin-top: 8px;
+  object-fit: cover;
 }
 
 .review-images-big {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: auto;
 }
 
 
@@ -543,4 +545,8 @@ body {
 .review-user-name {
   font-size: 13px;
   font-weight: 700;
+}
+
+.review-list {
+  padding-bottom: 10px;
 }
