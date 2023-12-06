@@ -377,7 +377,7 @@ margin-right: 12px;
 // -----------------------------------------------------------------------------
 // Franz CSS:
 
-.show-page-buttons {
+.show-page-buttons-container {
   border-top: 0.5px solid #999;
   border-bottom: 0.5px solid #999;
   padding: 18px;
@@ -386,27 +386,92 @@ margin-right: 12px;
   align-self: stretch;
 }
 
-.icon-text-button-pair {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  p {
-    color: #007AFF;
-  }
-}
-
 .circle-icon-container {
   width: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 36px;
-  background-color: white;
+  background-color: #D1D1D6;
   border-radius: 100%;
-  border: 1px solid #007AFF;
+  border: none;
   i {
-    color: #007AFF;
+    color: white;
     font-size: 16px;
+  }
+}
+
+.icon-text-button-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .circle-icon-container {
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #007AFF;
+    i {
+      color: #007AFF;
+      font-size: 16px;
+    }
+  }
+  p {
+    color: #007AFF;
+    text-align: center;
+  }
+}
+
+.icon-text-button-pair-disabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .circle-icon-container {
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    background-color: #D1D1D6;
+    border-radius: 100%;
+    border: none;
+    i {
+      color: white;
+      font-size: 16px;
+    }
+  }
+  p {
+    color: #D1D1D6 !important;
+    text-align: center;
+  }
+}
+
+.icon-text-button-pair-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .circle-icon-container {
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    background-color: #007AFF;
+    border-radius: 100%;
+    border: none;
+    i {
+      color: white;
+      font-size: 16px;
+    }
+  }
+  p {
+    color: #007AFF;
+    text-align: center;
   }
 }

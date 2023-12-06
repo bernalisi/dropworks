@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   // Connect this controller to a "favorite" button
-  static targets = ["heartIcon"];
+  static targets = ["heartIcon", "saveText"];
 
   connect() {
     // Your favorite logic goes here
@@ -15,5 +15,14 @@ export default class extends Controller {
     // Toggle the heart icon class based on the favorite status
     this.heartIconTarget.classList.toggle("bi-bookmark-heart-fill");
     this.heartIconTarget.classList.toggle("bi-bookmark-heart");
+    if (this.saveTextTarget) {
+      if (this.saveTextTarget.innerHTML === "Save") {
+        this.saveTextTarget.innerHTML = "Saved"
+      } else {
+        this.saveTextTarget.innerHTML = "Save"
+      }
+    } else {
+      // Code to be executed if the element doesn't exist
+    }
   }
 }
