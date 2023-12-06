@@ -1,1 +1,14 @@
-<h1>Success</h1>
+<div class="blurry-background">
+  <img class="img-properties-form" src="<%= @venue.image_urls.first %>" alt="Venue-picture">
+</div>
+
+<div class="success-container">
+  <div class="icon-style">
+    <i class="bi bi-check-lg"></i>
+  </div>
+  <h1>Success</h1>
+  <h3> Thank you for check-in. Here is address: <%= @venue.address %></h3>
+  <div class="success-button">
+    <%= link_to "See Bookings", dashboard_path %>
+  </div>
+</div>
