@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: %i[show edit update destroy favorite]
+  before_action :set_venue, only: %i[show edit update destroy favorite confirm success]
 
   def index
     # scrip 5-9 responsible for search bar feature
@@ -12,13 +12,6 @@ class VenuesController < ApplicationController
 
   def show
     @booking = Booking.find_by(venue: @venue)
-    @qr_code = RQRCode::QRCode.new("#{request.original_url}/bookings")
-    @svg = @qr_code.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      standalone: true
-    )
     @opening_hours = @venue.opening_hours
     # Get the current date and time
     now = Time.now
@@ -42,18 +35,32 @@ class VenuesController < ApplicationController
     current_day_name = Time.now.strftime('%A')
 
     # Find the venue's opening hours for the current day
-    @today_check = @venue.opening_hours.select do |opening_hour|
-      current_day_name == opening_hour.day.capitalize
-    end.first
-    if @today_check.present?
-      open_time = @today_check.open_time.strftime('%H:%M')
-      closing_time = @today_check.closing_time.strftime('%H:%M')
-    end
-    @open = Time.now.strftime('%H:%M') <= @today_check.closing_time.strftime('%H:%M') ? { text: "open", color: "green" } : { text:"close", color: "red" }
+
+    # @current_day_opening_hour = Venue.last.opening_hours.find_by(day: current_day_name)
+      @today_check = @venue.opening_hours.select do |opening_hour|
+        current_day_name == opening_hour.day.capitalize
+      end.first
+    @open =  Time.now.strftime('%H:%M') <= @today_check.closing_time.strftime('%H:%M') ? { text: "open", color: "green" } : { text:"close", color: "red" }
+    # puts "Current Day: #{current_day_name}"
+    # puts "Opening Hour: #{@current_day_opening_hour&.inspect}"
+    # puts "Current Day: #{Time.now.strftime('%A')}"
+    # puts "Opening Hour: #{@current_day_opening_hour&.inspect}"
+    # puts "Is Venue Open? #{@is_venue_open}"
+    url_to_pass_to_qr = confirm_venue_path(@venue)
+
+    @qrcode = RQRCode::QRCode.new("#{request.base_url}/#{url_to_pass_to_qr}")
+    @svg = @qrcode.as_svg
+
   end
 
   def new
     @venue = Venue.new
+  end
+
+  def confirm
+  end
+
+  def success
   end
 
   def create

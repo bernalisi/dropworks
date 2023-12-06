@@ -1,0 +1,10 @@
+<div class="container">
+  <% if @venue.present? %>
+      <h1>Do you want to confirm <%= @venue.name %></h1>
+      <%= @venue.address %>
+      <%= link_to "Need to think", venues_path(@venues) %>
+      <%= link_to "Confirm Booking", success_venue_path(@venue) %>
+  <% else %>
+    <p>Venue not found</p>
+  <% end %>
+</div>

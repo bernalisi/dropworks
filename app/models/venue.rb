@@ -37,4 +37,17 @@ class Venue < ApplicationRecord
       return "#{distance_m.to_int} m"
     end
   end
+
+  def average_rating
+    ratings = []
+    self.bookings.each do |booking|
+      if booking.review
+        ratings.push(booking.review.rating)
+      end
+    end
+
+    return nil if ratings.empty?
+
+    return (ratings.sum / ratings.length).round
+  end
 end

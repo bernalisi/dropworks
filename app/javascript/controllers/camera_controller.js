@@ -1,24 +1,34 @@
 import { Controller } from "@hotwired/stimulus"
+import QrScanner from 'qr-scanner';
 
 // Connects to data-controller="camera"
 export default class extends Controller {
 
-  static targets = ["input", "parag"]
+  static targets = ["reader", "result"]
 
   connect() {
-    console.log(this.element)
+
+      this.scanned = false
+
+    this.qrScanner = new QrScanner(this.readerTarget,
+      result => this.createTag(result),
+      {
+        highlightCodeOutline: true
+      }
+    )
+
+    this.qrScanner.start();
+
   }
 
-  openCamera(e){
+    createTag(url) {
+      console.log(url)
+    const finalurl = url.data
+        this.qrScanner.stop();
+        window.location.replace(finalurl);
+    }
 
-    const allButtons = document.querySelectorAll('.navbar-icons');
-    allButtons.forEach(button => {
-      button.querySelector('i').classList.remove('active-item');
-      button.querySelector('p').classList.remove('active-item');
-    });
-
-    this.inputTarget.click()
-    e.currentTarget.classList.add("active-item")
-    this.paragTarget.classList.add("active-item")
-  }
+    testClick() {
+      console.log("working")
+    }
 }

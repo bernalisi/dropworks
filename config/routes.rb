@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :venues do
     member do
       patch :favorite
+      get :confirm
+      get :success
     end
     resources :bookings, only: %i[new create]
 
@@ -15,7 +17,9 @@ Rails.application.routes.draw do
     resources :reviews,  only: %i[new create edit update]
   end
 
+  get "read", to: "pages#read"
   get "/dashboard", to: "pages#dashboard"
+  get "/activity", to: "pages#activity"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

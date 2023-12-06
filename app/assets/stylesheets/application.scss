@@ -16,12 +16,30 @@
 //   background-color: white;
 // }
 
-@font-face {
-  font-family: "SF-Pro-Display-Regular";
-  src: url("/app/assets/fonts/SF-Pro-Display-Regular.otf");
-}
 
 body {
-  font-family: "SF Pro Display";
   overflow-x: hidden;
+}
+
+
+.card-video {
+  background-color: none;
+}
+
+@media (max-width:600px) {
+  .card-camera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // height:
+  }
+
+  .camera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+  }
+
 }
