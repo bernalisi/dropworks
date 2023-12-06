@@ -91,10 +91,16 @@
   <div class="infos-venue">
     <div class="first-column-values">
       <div class="open-hour-text">
-
           <p class="gap-text-icon-open-hours" style="color: <%= @open[:color] %>"><%= @open[:text] %></p>
-          <p>closes at <%= @today_check.closing_time.strftime('%H:%M') %></p>
-
+          <% if @today_check.present? %>
+            <% if @today_check.open_time.present? %>
+              <p>closes at <%= @today_check.closing_time.strftime('%H:%M') %></p>
+            <% else %>
+              <p>opens at <%= @today_check.open_time.strftime('%H:%M') %></p>
+            <% end %>
+          <% else %>
+            <p>Opening hours not available.</p>
+          <% end %>
       </div>
       <div class="other-value">
         <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
@@ -138,8 +144,7 @@
 </div>
 
   <div class="address">
-    <h3>Address</h3>
-      <p>Rudi-Dutschke-Straße 26, 10965 Berlin</p>
+    <p><%=  @venue.address %></p>
   </div>
   <div class="reviews-block">
     <div class="title-reviews">
@@ -150,6 +155,37 @@
         <% end %>
       </div>
     </div>
+    <div>
+      <% @venue.bookings.each do |booking| %>
+        <% if !booking.review.nil? %>
+          <h3><%= booking.review.user.first_name %> <%= booking.review.user.last_name %></h3>
+          <p><%= booking.review.content %></p>
+          <% if booking.review.photos.attached? %>
+            <% booking.review.photos.each do |photo| %>
+            <%= link_to "#", id: "imageModalTrigger", data: { controller: "modal-trigger", action:"click->modal-trigger#open"} do %>
+            <%= cl_image_tag photo.key, class: "review-images-small"%>
+            <% end %>
+
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <%=  cl_image_tag photo.key, class: "review-images-big" %>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- Additional buttons or content can be added here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <% end %>        
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
     <div class=""><%=  @svg.html_safe  %></div>
 </div>
