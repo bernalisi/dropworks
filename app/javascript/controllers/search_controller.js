@@ -5,21 +5,18 @@ export default class extends Controller {
   static targets = ["cards", "results"]
 
   connect() {
-    console.log("ciao")
   }
 
   update(event) {
     const user_input = event.currentTarget[0].value
     const index_url = event.currentTarget.action
     const endpoint = `${index_url}?query=${user_input}`
-    console.log(endpoint);
 
     event.preventDefault()
 
     fetch(endpoint, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
     .then((data) => {
-      console.log(data);
       this.resultsTarget.innerHTML = data
     })
   }
