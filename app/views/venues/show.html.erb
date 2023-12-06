@@ -59,16 +59,16 @@
         <% unless favorite && favorite.liked %>
           <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
             <div class="circle-icon-container">
-              <i class="bi-bookmark-heart" data-favorite-target="heartIcon"></i>
+              <i class="bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
             </div>
-            <p data-favorite-target="saveText">Save</p>
+            <p data-favorite-target="saveText">Saved</p>
           <% end %>
         <% else %>
           <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
             <div class="circle-icon-container">
-              <i class="bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
+              <i class="bi-bookmark-heart" data-favorite-target="heartIcon"></i>
             </div>
-            <p data-favorite-target="saveText">Saved</p>
+            <p data-favorite-target="saveText">Save</p>
           <% end %>
         <% end %>
       <% end %>
