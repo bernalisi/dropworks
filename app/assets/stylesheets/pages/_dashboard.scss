@@ -10,6 +10,13 @@
   gap: 14px;
 }
 
+.dashboard-edit-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
 .dashboard-subcontainer-profile{
   display: flex;
   flex-direction: column;
@@ -25,6 +32,8 @@
   align-items: flex-start;
   gap: 12px;
   align-self: stretch;
+  border-top: 0.5px solid #999;
+  border-bottom: 0.5px solid #999;
 }
 
 .dashboard-subcontainer-reviews {
@@ -34,6 +43,8 @@
   align-items: flex-start;
   gap: 12px;
   align-self: stretch;
+  border-top: 0.5px solid #999;
+  border-bottom: 0.5px solid #999;
 }
 
 // css for elements

@@ -3,19 +3,19 @@
     <%# hardcoded bernardo/franz pic %>
     <img class="dashboard-img-profile" src="https://media.licdn.com/dms/image/D4D03AQGSzPOPlJ6ftg/profile-displayphoto-shrink_400_400/0/1699563716584?e=1707350400&v=beta&t=1w2uQ-QobWayZzyf0zaHjrDe7F1Y3iBkivCzUfDMnzg" alt="user-picture">
     <h1 class="dashboard-user-name"> Bernardo Lisi </h1>
+    <div class="dashboard-edit-info-container">
+      <%= link_to "edit profile", dashboard_path, class:"btn btn-primary"%>
+      <%= link_to "delete profile", dashboard_path, class:"btn btn-primary" %>
+    </div>
   </div>
 
 
   <div class="dashboard-subcontainer-venues">
-
-
-
+    <%= render "shared/table_venues", user_venues: @user_venues %>
   </div>
 
   <div class="dashboard-subcontainer-reviews">
-
-
-
+    <%= render "shared/table_reviews" %>
   </div>
 
 
