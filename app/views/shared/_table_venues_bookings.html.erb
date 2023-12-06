@@ -8,10 +8,10 @@
         </tr>
     </thead>
     <tbody>
-      <% my_venues_booked.each do |v| %>
+      <% my_venues_booked.each do |b| %>
         <tr class="border-bottom p-2">
             <td><%= v.id %></td>
-            <td><%= "#{v.user.first_name} #{v.user.last_name}" %></td>
+            <td><%= "#{b.user.first_name} #{b.user.last_name}" %></td>
             <td><%= v.venue.name %></td>
             <td><%= v.booking_date %></td>
         </tr>
