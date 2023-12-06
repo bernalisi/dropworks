@@ -1,33 +1,22 @@
-<h1> <%= current_user.first_name %></h1>
-<hr>
-<h3>Bookings</h3>
-
-<% @user_bookings.each do |b| %>
-  <p><%= b.booking_date %></p>
-  <%= link_to "Delete your Booking", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-sm text-white"%>
-  <% if b.review.nil? %>
-    <%= link_to "Make a Review",  new_booking_review_path(b), class: "btn btn-primary btn-sm" %>
-  <% else %>
-    <%# link_to "Update a Review",  edit_booking_review_path(b, b.review), class: "btn btn-primary btn-sm" %>
-    <p> Review Already Sent </p>
-  <% end %>
-<% end %>
-
-<hr>
-
-<h3>Owned Venues</h3>
-<% @user_venues.each do |v| %>
-<p><%= v.name%></p>
-<% end %>
-
-<hr>
-
-<h3>Reviews</h3>
-<% @user_reviews.each do |r| %>
-<p><%= r.content%></p>
-<p><%= r.rating%></p>
-<% end %>
+<div class="dashboard-container">
+  <div class="dashboard-subcontainer-profile">
+    <%# hardcoded bernardo/franz pic %>
+    <img class="dashboard-img-profile" src="https://media.licdn.com/dms/image/D4D03AQGSzPOPlJ6ftg/profile-displayphoto-shrink_400_400/0/1699563716584?e=1707350400&v=beta&t=1w2uQ-QobWayZzyf0zaHjrDe7F1Y3iBkivCzUfDMnzg" alt="user-picture">
+    <h1 class="dashboard-user-name"> Bernardo Lisi </h1>
+  </div>
 
 
-<hr>
-<%= link_to "Add new Venue", new_venue_path, class: "btn btn-dark btn-sm"%>
+  <div class="dashboard-subcontainer-venues">
+
+
+
+  </div>
+
+  <div class="dashboard-subcontainer-reviews">
+
+
+
+  </div>
+
+
+</div>
