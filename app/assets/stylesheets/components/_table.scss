@@ -1,0 +1,23 @@
+/* Style for the entire table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white; /* Set the background color of the table */
+}
+
+/* Style for table headers (th) */
+th {
+  font-weight: bold; /* Make the header text bold */
+  background-color: white; /* Set the background color of the header cells */
+  border-bottom: 2px solid #ccc; /* Add a bottom border to the header cells */
+}
+
+/* Style for table rows (tr) */
+tr {
+  border-bottom: 1px solid #ccc; /* Add a bottom border to each row */
+}
+
+/* Optional: Style for table cells (td) */
+td {
+  padding: 8px; /* Add padding to the cells for better spacing */
+}

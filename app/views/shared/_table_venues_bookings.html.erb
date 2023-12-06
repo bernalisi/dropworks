@@ -1,0 +1,18 @@
+<table class="styled-table mt-4">
+    <thead class="border-bottom p-2">
+        <tr>
+            <th>#id</th>
+            <th>Venue</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% my_venues_booked.each do |v| %>
+        <tr class="border-bottom p-2">
+            <td><%= v.id %></td>
+            <td><%= v.venue.name %></td>
+            <td><%= v.booking_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
