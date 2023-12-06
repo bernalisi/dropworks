@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.booking_id = @booking.id
+    @review.user_id = current_user.id
     @venue = Venue.find(@booking.venue_id)
 
     if @review.save
@@ -41,6 +42,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :rating, photos: [])
+    params.require(:review).permit(:content, :user_id, :rating, photos: [])
   end
 end
