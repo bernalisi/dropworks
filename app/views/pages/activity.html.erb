@@ -1,0 +1,6 @@
+<h1> Your Bookings </h1>
+
+<%= render "shared/table_bookings", user_bookings: @user_bookings %>
+
+<h1> Bookings on your Venues </h1>
+<%= render "shared/table_venues_bookings", my_venues_booked: @my_venues_booked %>

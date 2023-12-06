@@ -23,6 +23,16 @@ class PagesController < ApplicationController
     @user_reviews = current_user.reviews
   end
 
+  def activity
+    @user_bookings = current_user.bookings
+    @user_venues = current_user.venues
+    @user_reviews = current_user.reviews
+
+    # accessing the bookings made on owned venues of current_users
+    my_venue_ids = @user_venues.pluck(:id)
+    @my_venues_booked = Booking.where(venue_id: my_venue_ids  )
+  end
+
   def read
 
   end

@@ -1,0 +1,21 @@
+<table class="styled-table mt-4">
+    <thead class="border-bottom p-2">
+        <tr>
+            <th>#id</th>
+            <th>Venue</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% user_bookings.each do |b| %>
+        <tr class="border-bottom p-2">
+            <td><%= b.id %></td>
+            <td><%= b.venue.name %></td>
+            <td><%= b.booking_date %></td>
+            <td>
+              <%= link_to "Give feedback➔", new_booking_review_path(b) %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

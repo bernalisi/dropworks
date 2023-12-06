@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[show edit update destroy] do
     resources :reviews,  only: %i[new create edit update]
   end
-  
-  get "read", to: "pages#read"
 
+  get "read", to: "pages#read"
   get "/dashboard", to: "pages#dashboard"
+  get "/activity", to: "pages#activity"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
