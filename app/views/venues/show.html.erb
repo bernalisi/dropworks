@@ -44,11 +44,11 @@
 
     <div class="icon-text-button-pair">
       <div class="circle-icon-container">
-        <%= link_to root_path do %>
+        <%= link_to "https://maps.google.de/?q=#{@venue.name}+#{@venue.address}" do %>
           <i class="bi-cursor"></i>
         <% end %>
       </div>
-      <%= link_to root_path do %>
+      <%= link_to "https://maps.google.de/?q=#{@venue.name}+#{@venue.address}" do %>
         <p>Navigate</p>
       <% end %>
     </div>
