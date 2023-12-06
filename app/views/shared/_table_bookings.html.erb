@@ -13,7 +13,7 @@
             <td><%= b.venue.name %></td>
             <td><%= b.booking_date %></td>
             <td>
-              <%= link_to "Give feedback➔", new_booking_review_path(b) %>
+              <%= link_to "See Booking ➔", booking_path(b.venue_id, b) %>
             </td>
         </tr>
       <% end %>
