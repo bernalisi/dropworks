@@ -102,65 +102,60 @@
 
   </div>
 
-  <div class="infos-venue">
-    <div class="first-column-values">
-      <div class="open-hour-text">
-          <p class="gap-text-icon-open-hours" style="color: <%= @open[:color] %>"><%= @open[:text] %></p>
+  <div class="live-info">
+    <div class="info-column">
+      <div class="live-info-icon-text-pair">
+        <i class="bi-clock"></i>
+        <div class="open-hour-text">
+          <p> <span style="margin-right: 4px; font-weight: 700; color: <%= @open[:color] %>"><%= @open[:text] %></span>
           <% if @today_check.present? %>
             <% if @today_check.open_time.present? %>
-              <p>closes at <%= @today_check.closing_time.strftime('%H:%M') %></p>
+              <p>• Closes at <%= @today_check.closing_time.strftime('%H:%M') %></p>
             <% else %>
-              <p>opens at <%= @today_check.open_time.strftime('%H:%M') %></p>
+              <p>• Opens at <%= @today_check.open_time.strftime('%H:%M') %></p>
             <% end %>
           <% else %>
-            <p>Opening hours not available.</p>
+            <p>Opening hours unavailable</p>
           <% end %>
+          </p>
+        </div>
       </div>
-      <div class="other-value">
-        <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
+      <div class="live-info-icon-text-pair">
+        <i class="bi-question-circle"></i>
+        <p>Never visited<p>
       </div>
     </div>
-    <div class="second-column-values">
-        <div class="people-icon">
-          <p class="gap-text-icon"><i class="bi bi-people" style="color: #007AFF;"></i> 5/12 seats available</p>
-        </div>
-        <div class="wifi-speed">
-          <p class="gap-text-icon"><i class="bi bi-wifi"></i> 200 mbit/s</p>
-        </div>
+    <div class="info-column">
+      <div class="live-info-icon-text-pair">
+        <i class="bi-people"></i>
+        <p><%= @venue.capacity %> seats available<p>
+      </div>
+      <div class="live-info-icon-text-pair">
+        <i class="bi-wifi"></i>
+        <p><%= @venue.wifi_speed %> mbit/s<p>
+      </div>
     </div>
   </div>
-  <!-- app/views/venues/show.html.erb -->
 
-<div class="block-opening-hours">
-  <h3>Opening Hours</h3>
-
-  <div class="day-dropdown" data-controller="day-selector">
-    <button class="dropdown-button" type="button" data-action="click->day-selector#toggleDropdown">
-      <p>Current Day: <%= @current_day %></p>
-    </button>
-
-    <ul class="day-list closed"  data-day-selector-target="dropdown">
-      <% @opening_hours.each do |opening_hour| %>
-
-      <% end %>
-    </ul>
+  <div class="static-info-container">
+    <h3>Opening Hours</h3>
+    <div class="day-dropdown" data-controller="day-selector">
+      <button class="dropdown-button" type="button" data-action="click->day-selector#toggleDropdown">
+        <p>Current Day: <%= @current_day %></p>
+      </button>
+      <ul class="day-list closed"  data-day-selector-target="dropdown">
+        <% @opening_hours.each do |opening_hour| %>
+        <% end %>
+      </ul>
+    </div>
+    <h3>Address</h3>
+    <p><%= @venue.address %></p>
+    <p><%= link_to "See address on Google Maps ", "https://maps.google.de/?q=#{@venue.name}+#{@venue.address}" %><i class="bi-box-arrow-up-right"></i></p>
   </div>
-  <div class="floating-reserve-button">
-    <%= link_to new_venue_booking_path(@venue) do %>
-      <div class="circle-container-white">
-        <i class="bi bi-calendar-plus"></i>
-      </div>
-    <% end %>
-    <p>Reserve</p>
-  </div>
-</div>
 
-  <div class="address">
-    <p><%=  @venue.address %></p>
-  </div>
   <div class="reviews-block">
     <div class="title-reviews">
-      <h2 style="margin:0">Reviews</h2>
+      <h2>Reviews</h2>
       <div class="circle-container-add-review">
         <%= link_to new_booking_review_path(@venue) do %>
           <i class="bi bi-plus-circle-fill"></i>
@@ -198,6 +193,13 @@
       <% end %>
     </div>
   </div>
-
+  <div class="floating-reserve-button">
+    <%= link_to new_venue_booking_path(@venue) do %>
+      <div class="circle-container-white">
+        <i class="bi bi-calendar-plus"></i>
+      </div>
+    <% end %>
+    <p>Reserve</p>
+  </div>
     <div class="d-none"><%=  @svg.html_safe  %></div>
 </div>

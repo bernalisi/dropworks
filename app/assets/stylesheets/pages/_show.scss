@@ -75,9 +75,6 @@ body {
   // align-self: stretch;
 }
 
-.show-page-icon-button {
-
-}
 
 // .navigate p, .save p, .review p, .reserve p {
 //   width: 31px;
@@ -135,31 +132,38 @@ body {
 //   border-bottom: 0.5px solid #999;
 // }
 
-.infos-venue {
-  padding-top:10px;
-  display: flex;
-  padding: 0px 7px;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 18px;
-  align-self: stretch;
-}
+// Commented out because not needed - FS
 
-.gap-text-icon i, .gap-text-icon p {
-  margin-right: 12px;
-}
+// .infos-venue {
+//   padding-top:10px;
+//   display: flex;
+//   padding: 0px 7px;
+//   justify-content: space-between;
+//   align-items: flex-start;
+//   gap: 18px;
+//   align-self: stretch;
+// }
 
-p.gap-text-icon-open-hours {
-margin-right: 12px;
-}
+// Commented out because not needed - FS
 
-.first-column-values .second-column-values {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  flex: 1 0 0;
-}
+// implemented the gap with inline CSS - FS
+// .gap-text-icon i, .gap-text-icon p {
+//   margin-right: 12px;
+// }
+
+// p.gap-text-icon-open-hours {
+//   margin-right: 12px;
+// }
+
+// Commented out because not needed - FS
+
+// .first-column-values .second-column-values {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 12px;
+//   flex: 1 0 0;
+// }
 
 
 .open-hour-text {
@@ -176,7 +180,7 @@ margin-right: 12px;
   color: #007AFF;
 }
 
-.seat-available .wifi-speed {
+.seat-available {
   display: flex;
   width: 144.5px;
   height: 22px;
@@ -189,18 +193,20 @@ margin-right: 12px;
   color: #007AFF;
 }
 
-.other-value {
-  display: flex;
-  width: 138px;
-  height: 22px;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 12px;
-}
+// Commented out because ambigous class naming - FS
 
-.other-value i {
-  color:#007AFF;
-}
+// .other-value {
+//   display: flex;
+//   width: 138px;
+//   height: 22px;
+//   justify-content: flex-end;
+//   align-items: center;
+//   margin-right: 12px;
+// }
+
+// .other-value i {
+//   color:#007AFF;
+// }
 
 .block-opening-hours > p {
   display: flex;
@@ -259,16 +265,16 @@ margin-right: 12px;
 //   }
 // }
 
-.block-opening-hours h3, .address h3 {
-  color: var(--Black, #000);
-  font-feature-settings: 'clig' off, 'liga' off;
-  // font-family: SF Pro Display;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 22px; /* 129.412% */
-  letter-spacing: -0.4px;
-}
+// .block-opening-hours h3, .address h3 {
+//   color: var(--Black, #000);
+//   font-feature-settings: 'clig' off, 'liga' off;
+//   // font-family: SF Pro Display;
+//   font-size: 17px;
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: 22px; /* 129.412% */
+//   letter-spacing: -0.4px;
+// }
 
 .address p {
   display: flex;
@@ -482,5 +488,49 @@ margin-right: 12px;
   p {
     color: #007AFF;
     text-align: center;
+  }
+}
+
+.live-info {
+  display: flex;
+  padding: 0px 7px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  align-self: stretch;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 12px;
+  flex: 1 0 0;
+}
+
+.live-info-icon-text-pair {
+  display: flex;
+  height: 22px;
+  // justify-content: flex-end;
+  // align-items: center;
+  gap: 12px;
+  i {
+    color: #007AFF;
+  }
+}
+
+.static-info-container {
+  margin: 8px 0 8px 0;
+  h3 {
+    color: var(--Black, #000);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+  }
+  i {
+    color: #007AFF;
   }
 }
