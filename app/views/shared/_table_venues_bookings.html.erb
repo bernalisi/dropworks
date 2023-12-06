@@ -2,6 +2,7 @@
     <thead class="border-bottom p-2">
         <tr>
             <th>#id</th>
+            <th>Customer</th>
             <th>Venue</th>
             <th>Date</th>
         </tr>
@@ -10,6 +11,7 @@
       <% my_venues_booked.each do |v| %>
         <tr class="border-bottom p-2">
             <td><%= v.id %></td>
+            <td><%= "#{v.user.first_name} #{v.user.last_name}" %></td>
             <td><%= v.venue.name %></td>
             <td><%= v.booking_date %></td>
         </tr>
