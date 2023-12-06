@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="search"
 export default class extends Controller {
-  static targets = ["cards"]
+  static targets = ["cards", "results"]
 
   connect() {
     console.log("ciao")
@@ -20,6 +20,7 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
       console.log(data);
+      this.resultsTarget.innerHTML = data
     })
   }
 }

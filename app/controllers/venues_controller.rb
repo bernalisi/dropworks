@@ -11,7 +11,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: "movies/list", locals: {movies: @movies}, formats: [:html] }
+      format.text { render partial: "venues/list", locals: {venues: @venues}, formats: [:html] }
     end
   end
 
