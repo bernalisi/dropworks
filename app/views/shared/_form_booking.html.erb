@@ -1,14 +1,16 @@
-<%# booking_form %>
+<div>
   <%= simple_form_for [venue, booking] do |f| %>
     <%= f.input :booking_date,
-    as: :string,
-    input_html: { data: { controller: "datepicker" }, class:"input-bf" } %>
-    <%= f.input :start_time,
-    collection: (1..5).to_a, label: false, prompt: false,
-    input_html: { class:"input-bf"}
-    %>
-    <%= f.input :session_length,
-    collection: (1..5).to_a, label: false, prompt: false,
-    input_html: { class:"input-bf"} %>
-    <%= f.submit "Reserve now", class:"btn btn-primary" %>
+      as: :string, label: false, placeholder: "e.g. Today",
+      input_html: { data: { controller: "datepicker" }, class:"input-bf" } %>
+    <div style="padding-top: 20px">
+      <h3>Reservation Request Overview:</h3>
+      <p>1 seat at <%= venue.name %>.</p>
+    </div>
+    <div style="padding-top: 40px">
+      <%= button_tag type: 'submit', class: "btn btn-primary" do %>
+        <i class="bi-calendar-plus"></i> Reserve now
+      <% end %>
+    </div>
   <% end %>
+</div>

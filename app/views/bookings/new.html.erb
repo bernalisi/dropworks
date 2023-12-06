@@ -1,17 +1,19 @@
+<div style="padding-bottom: calc(0.3 * 100vh); background: white">
+  <img class="hero-image-mobile" src="<%= @booking.venue.image_urls.first %>" alt="Venue-picture">
+  <div style="padding: 16px;">
+    <div style="padding-top: 24px;">
+      <h2>Reserve at</h1>
+      <h1  style="margin-top: 0px;"><%= @booking.venue.name %>...</h1>
+    </div>
 
-<div class="booking-container">
-  <img class="img-properties-form" src="<%= @booking.venue.image_urls.first %>" alt="Venue-picture">
-  <div class="title-bf">
-    <h2>Reserve at </h1>
-    <h1> <%= @booking.venue.name %> </h1>
-  </div>
+    <div>
+      <h3>Choose a Date</h3>
+      <p>You'll be able to work at <%= @booking.venue.name %> until they close.</p>
+      <%# We'll want to implement the opening hours here like so: <p>You'll be able to work at [@booking.venue.name] until they close.</p> %>
+    </div>
 
-  <div class="second-text-bf">
-    <h3>Choose Date & Time</h3>
-    <p>Please choose the desired reservation spot below</p>
-  </div>
-
-  <div class="container-bf">
-    <%= render "shared/form_booking", venue: @venue, booking: @booking %>
+    <div style="padding-top: 40px">
+      <%= render "shared/form_booking", venue: @venue, booking: @booking %>
+    </div>
   </div>
 </div>
