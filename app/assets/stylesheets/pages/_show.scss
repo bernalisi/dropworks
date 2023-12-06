@@ -334,6 +334,7 @@ body {
 .day-dropdown ul li:hover {
   background-color: #f0f0f0;
 }
+
 .title-reviews {
   display: flex;
   align-items: center;
@@ -366,10 +367,14 @@ body {
   align-items: flex-start;
   gap: 12px;
   align-self: stretch;
+  i {
+    font-size: 16px;
+  }
 }
+
 .review-images-small {
-  width: 30px;
-  height: 30px;
+  width: 43px;
+  height: 43px;
 }
 
 .review-images-big {
@@ -533,4 +538,9 @@ body {
   i {
     color: #007AFF;
   }
+}
+
+.review-user-name {
+  font-size: 13px;
+  font-weight: 700;
 }
