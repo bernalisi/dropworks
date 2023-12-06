@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :define_venue, only: %i[new create show edit update]
+  before_action :define_venue, only: %i[new create edit update]
 
   def new
     @booking = Booking.new
@@ -20,6 +20,9 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+
+    #important for show booking froma activity
+    @user_bookings = current_user.bookings
   end
 
   def edit
