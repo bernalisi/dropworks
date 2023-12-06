@@ -146,14 +146,12 @@
     </ul>
   </div>
   <div class="floating-reserve-button">
-      <div class="reserve-button">
-      <%= link_to new_venue_booking_path(@venue) do %>
-        <div class="circle-container-white">
-          <i class="bi bi-calendar-plus"></i>
-        </div>
-        <p>Reserve</p>
-        <% end %>
-    </div>
+    <%= link_to new_venue_booking_path(@venue) do %>
+      <div class="circle-container-white">
+        <i class="bi bi-calendar-plus"></i>
+      </div>
+    <% end %>
+    <p>Reserve</p>
   </div>
 </div>
 
