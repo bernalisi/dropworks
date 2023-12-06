@@ -1,8 +1,9 @@
-<%# search bar component - begin of script -BL %>
-  <%= render "shared/search_bar" %>
-<%# grid system to display venues %>
+<div data-controller="search">
+  <%# search bar component - begin of script -BL %>
+    <%= render "shared/search_bar" %>
+  <%# grid system to display venues %>
   <h1> Spaces close to you...</h1>
-  <div class="row" style="padding-bottom: 100px">
+  <div class="row" style="padding-bottom: 100px" data-search-target="cards">
       <% @venues.each do |venue| %>
         <div class="venue-card" data-controller="favorite">
           <div class="favorite-heart">
@@ -66,3 +67,4 @@
         </div>
       <% end %>
   </div>
+</div>

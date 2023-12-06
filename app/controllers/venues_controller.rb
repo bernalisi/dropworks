@@ -8,6 +8,11 @@ class VenuesController < ApplicationController
     else
       @venues = Venue.all
     end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "movies/list", locals: {movies: @movies}, formats: [:html] }
+    end
   end
 
   def show

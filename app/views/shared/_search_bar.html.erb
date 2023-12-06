@@ -1,6 +1,6 @@
 <div class="search-bar-wrapper">
   <div class="form-inputs-sb">
-    <%= form_with url: venues_path, method: :get, class: "simple-form-sb" do |form| %>
+    <%= form_with url: venues_path, method: :get, class: "simple-form-sb", data: { action: "keyup->search#update"} do |form| %>
       <%= text_field_tag :query,
           params[:query],
           class: "custom-input-class-sb",
