@@ -1,13 +1,21 @@
-<div class="booking-container">
+<div class="booking-container-show">
   <img class="img-properties-form" src="<%= @booking.venue.image_urls.first %>" alt="Venue-picture">
-  <div class="title-bf">
-    <h2>Reservation status </h1>
-    <h1> <%= "backend logic to be finished" %> </h1>
+  <div class="title-show ">
+    <h2>Reservation status </h2>
+    <% if @booking%>
+    <%= "Booked succesfully"%>
+    <% else%>
+    <%= "Not booked"%>
+    <% end%>
   </div>
 
-  <div class="second-text-bf">
+  <div class="second-text-show">
+    <h2>Reservation information</h2>
     <h3><%= @booking.venue.name %></h3>
-    <p>Please choose the desired reservation spot below</p>
+    <h3><%="#{@booking.user.first_name} #{@booking.user.last_name}" %></h3>
+    <h3><%= @booking.venue.address %></h3>
+    <h3><%= @booking.booking_date %></h3>
+    <p>*Reservation valid for the entire day</p>
   </div>
 
   <div class="container-bf">
