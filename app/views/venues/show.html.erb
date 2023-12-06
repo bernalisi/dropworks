@@ -119,15 +119,15 @@
 
 <div class="block-opening-hours">
   <h3>Opening Hours</h3>
-
   <div class="day-dropdown" data-controller="day-selector">
     <button class="dropdown-button" type="button" data-action="click->day-selector#toggleDropdown">
       <p>Current Day: <%= @current_day %></p>
     </button>
-
     <ul class="day-list closed"  data-day-selector-target="dropdown">
       <% @opening_hours.each do |opening_hour| %>
-
+        <li>
+          <%= "#{opening_hour.day} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
+        </li>
       <% end %>
     </ul>
   </div>

@@ -3,6 +3,8 @@
   <div style="padding: 16px; padding-bottom: 100px">
     <h2>Write a review for</h2>
     <h1 style="margin-top: 0"><%= @venue.name %>...</h1>
-    <%= render "shared/form_review", booking: @booking, review: @review %>
+      <div data-controller="preview">
+        <%= render "shared/form_review", booking: @booking, review: @review %>
+      </div>
   </div>
 </div>
