@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       patch :favorite
       get :confirm
+      get :success
     end
     resources :bookings, only: %i[new create]
 
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[show edit update destroy] do
     resources :reviews,  only: %i[new create edit update]
   end
-  
+
   get "read", to: "pages#read"
 
   get "/dashboard", to: "pages#dashboard"

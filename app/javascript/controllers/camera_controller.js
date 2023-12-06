@@ -22,6 +22,7 @@ export default class extends Controller {
   }
 
     createTag(url) {
+      console.log(url)
     const finalurl = url.data
         this.qrScanner.stop();
         window.location.replace(finalurl);
