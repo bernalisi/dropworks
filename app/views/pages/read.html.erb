@@ -1,13 +1,6 @@
-<div class="container m-2">
-  <p>Read the QR code on the table to start playing game!</p>
-</div>
-
-
-
-<div class="card-camera">
+<div class="card-camera", style="height: 100vh">
 
   <div data-controller="camera">
-    <button data-action="click->camera#testClick"></button>
     <video class="card-video" data-camera-target="reader"></video>
     <div data-camera-target="result" class="card-camera"></div>
   </div>

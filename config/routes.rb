@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       patch :favorite
       get :confirm
+      get :success
     end
     resources :bookings, only: %i[new create]
 

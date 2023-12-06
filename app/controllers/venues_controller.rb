@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: %i[show edit update destroy favorite confirm]
+  before_action :set_venue, only: %i[show edit update destroy favorite confirm success]
 
   def index
     # scrip 5-9 responsible for search bar feature
@@ -51,7 +51,6 @@ class VenuesController < ApplicationController
     @qrcode = RQRCode::QRCode.new("#{request.base_url}/#{url_to_pass_to_qr}")
     @svg = @qrcode.as_svg
 
-
   end
 
   def new
@@ -59,7 +58,9 @@ class VenuesController < ApplicationController
   end
 
   def confirm
+  end
 
+  def success
   end
 
   def create
