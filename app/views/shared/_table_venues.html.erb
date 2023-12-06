@@ -1,0 +1,19 @@
+<table class="styled-table mt-4">
+    <thead class="border-bottom p-2">
+        <tr>
+            <th>#id</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% user_venues.each do |v| %>
+        <tr class="border-bottom p-2">
+
+            <td><%= v.id %></td>
+            <td><%= v.name %></td>
+            <td><%= link_to "See Venue ➔", venue_path(v) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
