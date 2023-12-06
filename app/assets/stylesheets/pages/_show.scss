@@ -391,4 +391,18 @@ margin-right: 12px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  p {
+    color: #007AFF;
+  }
+}
+
+.circle-icon-container {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid #007AFF;
 }
