@@ -10,10 +10,10 @@
     <tbody>
       <% my_venues_booked.each do |b| %>
         <tr class="border-bottom p-2">
-            <td><%= v.id %></td>
+            <td><%= b.id %></td>
             <td><%= "#{b.user.first_name} #{b.user.last_name}" %></td>
-            <td><%= v.venue.name %></td>
-            <td><%= v.booking_date %></td>
+            <td><%= b.venue.name %></td>
+            <td><%= b.booking_date %></td>
         </tr>
       <% end %>
     </tbody>
