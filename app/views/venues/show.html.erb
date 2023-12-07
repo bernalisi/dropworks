@@ -192,7 +192,9 @@
       <% @venue.bookings.each do |booking| %>
         <% if !booking.review.nil? %>
           <div class="review-wrapper">
-          <p class="review-user-name"><%= booking.review.user.first_name %> <%= booking.review.user.last_name %></p>
+          <p class="review-user-name"><%= booking.review.user.first_name %> <%= booking.review.user.last_name %>
+            <i class="bi-star-fill" style="style: font-size: 8px; color: #FF8500"></i> <span style="font-weight: 300;"><%= booking.review.rating.to_i %></span>
+          </p>
           <p><%= booking.review.content %></p>
           <% if booking.review.photos.attached? %>
             <% booking.review.photos.each do |photo| %>
