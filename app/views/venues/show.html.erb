@@ -191,7 +191,8 @@
     <div class="review-list">
       <% @venue.bookings.each do |booking| %>
         <% if !booking.review.nil? %>
-          <p class="review-user-name"><%= booking.review.user.first_name %> <%= booking.review.user.last_name %></h3>
+          <div class="review-wrapper">
+          <p class="review-user-name"><%= booking.review.user.first_name %> <%= booking.review.user.last_name %></p>
           <p><%= booking.review.content %></p>
           <% if booking.review.photos.attached? %>
             <% booking.review.photos.each do |photo| %>
@@ -216,6 +217,7 @@
             <% end %>
           <% end %>
         <% end %>
+        </div>
       <% end %>
     </div>
   </div>
