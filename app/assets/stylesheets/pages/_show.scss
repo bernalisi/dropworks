@@ -290,7 +290,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 22px; /* 169.231% */
-  text-decoration-line: underline;
+  // text-decoration-line: underline;
 }
 
 .day-dropdown {
@@ -300,19 +300,27 @@ body {
 
 .day-dropdown button {
   padding: 8px;
+  padding-left: 0;
   cursor: pointer;
   border: none;
-  border-radius: 20%;
+}
+
+.day-list {
+  width: calc(100vw - 32px);
 }
 
 .day-dropdown ul {
   list-style: none;
-  padding: 0;
+  padding: 16px;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  li {
+    padding: 4px !important;
+  }
 }
 
 .closed {
@@ -332,7 +340,7 @@ body {
 /* Add styling for the selected day if necessary */
 .day-dropdown button:hover,
 .day-dropdown ul li:hover {
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 .title-reviews {
@@ -549,4 +557,8 @@ body {
 
 .review-list {
   padding-bottom: 10px;
+}
+
+.modal-content {
+  border-radius: 10px;
 }
