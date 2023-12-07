@@ -1,6 +1,7 @@
-<h1> Your Bookings </h1>
-
-<%= render "shared/table_bookings", user_bookings: @user_bookings %>
-<br>
-<h1> Bookings on your Venues </h1>
-<%= render "shared/table_venues_bookings", my_venues_booked: @my_venues_booked %>
+<div class="activity-container">
+  <h1> Your Activity </h1>
+  <h2> Your Bookings </h2>
+  <%= render "shared/table_bookings", user_bookings: @user_bookings %>
+  <h2> Bookings on your Venues </h2>
+  <%= render "shared/table_venues_bookings", my_venues_booked: @my_venues_booked %>
+</div>
