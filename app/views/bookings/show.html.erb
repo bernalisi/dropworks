@@ -12,12 +12,11 @@
   <div class="second-text-show">
     <h2>Reservation information</h2>
     <h3><%= @booking.venue.name %></h3>
-    <h3><%="#{@booking.user.first_name} #{@booking.user.last_name}" %></h3>
+    <h3><%="#{current_user.first_name} #{current_user.last_name}" %></h3>
     <h3><%= @booking.venue.address %></h3>
     <h3><%= @booking.booking_date %></h3>
     <p>*Reservation valid for the entire day</p>
-  </div>
-
-  <div class="container-bf">
+    <br>
+    <%= link_to "Make a review", new_booking_review_path(@booking), class: "btn btn-primary btn-sm" %>
   </div>
 </div>

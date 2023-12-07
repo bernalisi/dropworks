@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to dashboard_path(@venue), notice: "You successfully booked #{@venue.name} venue 🎉"
+      redirect_to booking_path(@venue, @booking), notice: "You successfully booked #{@venue.name} venue 🎉"
     else
       render :new, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
 
-    #important for show booking froma activity
+    #important for show booking from activity
     @user_bookings = current_user.bookings
   end
 
