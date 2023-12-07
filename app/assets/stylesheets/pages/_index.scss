@@ -71,6 +71,10 @@ p {
     font-weight: 300;
   }
   .card-overview-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     color: var(--Black, #000);
     font-size: 12px;
     font-style: normal;
