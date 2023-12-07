@@ -4,11 +4,11 @@
             <% favorite = Favorite.find_by(venue: venue) %>
             <% if favorite && favorite.liked %>
               <%= link_to favorite_venue_path(venue, favorite: favorite), remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
-                <i class="bi bi-bookmark-heart" data-favorite-target="heartIcon"></i>
+                <i class="bi bi-bookmark-heart" data-favorite-target="heartIcon" style="color: #007AFF"></i>
               <% end %>
             <% else %>
               <%= link_to favorite_venue_path(venue, favorite: favorite), remote: true, data: { action: "click->favorite#favorite", turbo_method: :patch } do %>
-                <i class="bi bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
+                <i class="bi bi-bookmark-heart-fill" data-favorite-target="heartIcon" style="color: #007AFF"></i>
               <% end %>
             <% end %>
           </div>
