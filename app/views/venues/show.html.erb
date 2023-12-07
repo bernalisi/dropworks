@@ -1,5 +1,5 @@
 <div class="show-page-container container">
-  <div class="container ">
+  <div class="container">
     <div class="container image-container">
       <div class="splide" data-controller="splide">
         <div class="splide__track">
@@ -27,143 +27,156 @@
 
 <div class="container-venue">
   <div class="container-title-description">
-    <h1><%= @venue.name %></h1>
-    <p style="width:45%;">
+    <h1 style="margin-bottom: 0px; margin-top: 18px;"><%= @venue.name %></h1>
+    <p>
+      5,0
       <% 5.times do %>
         <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
       <% end %>
+      (39)
     </p>
     <div class="block-text-overview">
       <p><%= @venue.overview %></p>
     </div>
   </div>
-    <div class="container-bootstrap-icons">
-      <div class="navigate">
-        <div class="circle-container">
-          <%= link_to root_path do %>
-          <i class="bi bi-cursor"></i>
-        </div>
-          <p>Navigate</p>
-          <%end%>
+
+  <div class="show-page-buttons-container">
+
+    <div class="icon-text-button-pair">
+      <div class="circle-icon-container">
+        <%= link_to "https://maps.google.de/?q=#{@venue.name}+#{@venue.address}" do %>
+          <i class="bi-cursor"></i>
+        <% end %>
       </div>
-      <!-- Assuming you have a Turbo Frame with the ID "favorite_frame" -->
-      <div class="save">
-        <div class="circle-container" data-controller="favorite">
-          <%= turbo_frame_tag 'favorite_frame' do %>
-            <% favorite = Favorite.find_by(venue_id: @venue) %>
-            <% unless favorite && favorite.liked %>
-              <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
-                <i class="bi bi-bookmark-heart" data-favorite-target="heartIcon"></i>
-                <p data-favorite-target="saveText">Save</p>
-              <% end %>
-            <% else %>
-              <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
-                <i class="bi bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
-              <% end %>
-              <p data-favorite-target="saveText">Saved</p>
-            <% end %>
+      <%= link_to "https://maps.google.de/?q=#{@venue.name}+#{@venue.address}" do %>
+        <p>Navigate</p>
+      <% end %>
+    </div>
+
+    <div class="icon-text-button-pair" data-controller="favorite">
+      <%= turbo_frame_tag 'favorite_frame' do %>
+        <% favorite = Favorite.find_by(venue_id: @venue) %>
+        <% unless favorite && favorite.liked %>
+          <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
+            <div class="circle-icon-container">
+              <i class="bi-bookmark-heart-fill" data-favorite-target="heartIcon"></i>
+            </div>
+            <p data-favorite-target="saveText">Saved</p>
           <% end %>
-        </div>
-      </div>
-      <div class="review <%= 'isDisabled' if !@current_user_booking.present? || @has_reviewed %>"
-        data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
-        <div class="circle-container">
-          <% if @current_user_booking.present? && !@has_reviewed %>
-            <%= link_to new_booking_review_path(@current_user_booking), data: { turbo_frame: "review_frame" } do %>
+        <% else %>
+          <%= link_to favorite_venue_path(@venue, favorite: favorite), remote: true, data: { turbo_frame: "favorite_frame", action: "click->favorite#favorite", turbo_method: :patch } do %>
+            <div class="circle-icon-container">
+              <i class="bi-bookmark-heart" data-favorite-target="heartIcon"></i>
+            </div>
+            <p data-favorite-target="saveText">Save</p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="<%= (!@current_user_booking.present? || @has_reviewed)? 'icon-text-button-pair-disabled' : 'icon-text-button-pair-primary' %>"
+      data-controller="disable-review" data-review-button-target="reviewButton" data-disable-review-enabled="false">
+
+      <div class="circle-icon-container">
+        <% if @current_user_booking.present? && !@has_reviewed %>
+          <%= link_to new_booking_review_path(@current_user_booking), data: { turbo_frame: "review_frame" } do %>
             <i class="bi bi-chat-square-text"></i>
           <% end %>
-          <% else %>
-            <i class="bi bi-chat-square-text"></i> <!-- Or any other disabled icon or styling -->
-          <% end %>
-        </div>
-          <p>Review</p>
-      </div>
-      <div class="reserve">
-        <%= link_to new_venue_booking_path(@venue) do %>
-          <div class="circle-container circle-container-booking">
-            <i class="bi bi-calendar-plus"></i>
-          </div>
-          <p>Reserve</p>
+        <% else %>
+          <i class="bi bi-chat-square-text"></i>
         <% end %>
       </div>
+      <p style="text-align: center">Review</p>
     </div>
-    <div class="gap"></div>
-  <div class="infos-venue">
-    <div class="first-column-values">
-      <div class="open-hour-text">
-          <p class="gap-text-icon-open-hours" style="color: <%= @open[:color] %>"><%= @open[:text] %></p>
+
+    <div class="icon-text-button-pair-primary">
+      <div class="circle-icon-container">
+        <%= link_to new_venue_booking_path(@venue) do %>
+          <i class="bi-calendar-plus"></i>
+        <% end %>
+      </div>
+      <%= link_to new_venue_booking_path(@venue) do %>
+        <p>Reserve</p>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="live-info">
+    <div class="info-column">
+      <div class="live-info-icon-text-pair">
+        <i class="bi-clock"></i>
+        <div class="open-hour-text">
+          <p> <span style="margin-right: 4px; font-weight: 700; color: <%= @open[:color] %>"><%= @open[:text] %></span>
           <% if @today_check.present? %>
             <% if @today_check.open_time.present? %>
-              <p>closes at <%= @today_check.closing_time.strftime('%H:%M') %></p>
+              <p>• Closes at <%= @today_check.closing_time.strftime('%H:%M') %></p>
             <% else %>
-              <p>opens at <%= @today_check.open_time.strftime('%H:%M') %></p>
+              <p>• Opens at <%= @today_check.open_time.strftime('%H:%M') %></p>
             <% end %>
           <% else %>
-            <p>Opening hours not available.</p>
+            <p>Opening hours unavailable</p>
           <% end %>
+          </p>
+        </div>
       </div>
-      <div class="other-value">
-        <p class="gap-text-icon"><i class= "bi bi-question"></i> Other value goes here</p>
+      <div class="live-info-icon-text-pair">
+        <i class="bi-question-circle"></i>
+        <p>Never visited<p>
       </div>
     </div>
-    <div class="second-column-values">
-        <div class="people-icon">
-          <p class="gap-text-icon"><i class="bi bi-people" style="color: #007AFF;"></i> 5/12 seats available</p>
-        </div>
-        <div class="wifi-speed">
-          <p class="gap-text-icon"><i class="bi bi-wifi"></i> 200 mbit/s</p>
-        </div>
+    <div class="info-column">
+      <div class="live-info-icon-text-pair">
+        <i class="bi-people"></i>
+        <p><%= @venue.capacity %> seats available<p>
+      </div>
+      <div class="live-info-icon-text-pair">
+        <i class="bi-wifi"></i>
+        <p><%= @venue.wifi_speed %> mbit/s<p>
+      </div>
     </div>
   </div>
-  <!-- app/views/venues/show.html.erb -->
 
-<div class="block-opening-hours">
-  <h3>Opening Hours</h3>
-  <div class="day-dropdown" data-controller="day-selector">
-    <button class="dropdown-button" type="button" data-action="click->day-selector#toggleDropdown">
-      <p>Current Day: <%= @current_day %></p>
-    </button>
-    <ul class="day-list closed"  data-day-selector-target="dropdown">
-      <% @opening_hours.each do |opening_hour| %>
-        <li>
+  <div class="static-info-container">
+    <h3>Opening Hours</h3>
+    <div class="day-dropdown" data-controller="day-selector">
+      <button class="dropdown-button" type="button" data-action="click->day-selector#toggleDropdown">
+        <p>Current Day: <%= @current_day %></p>
+      </button>
+      <ul class="day-list closed"  data-day-selector-target="dropdown">
+        <% @opening_hours.each do |opening_hour| %>
+        <%# Giorgios Code following: - FS %>
           <%= "#{opening_hour.day} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="container-reserve-button">
-      <div class="reserve-button">
-      <%= link_to new_venue_booking_path(@venue) do %>
-        <div class="circle-container-white">
-        <i class="bi bi-calendar-plus"></i>
-      </div>
-        <p>Reserve</p>
         <% end %>
+      </ul>
     </div>
+    <h3>Address</h3>
+    <p><%= @venue.address %></p>
+    <p><%= link_to "See address on Google Maps ", "https://maps.google.de/?q=#{@venue.name}+#{@venue.address}" %><i class="bi-box-arrow-up-right"></i></p>
   </div>
-</div>
 
-  <div class="address">
-    <p><%=  @venue.address %></p>
-  </div>
   <div class="reviews-block">
-    <div class="title-reviews">
-      <h2 style="margin:0">Reviews</h2>
-      <div class="circle-container-add-review">
-        <%= link_to new_booking_review_path(@venue) do %>
-          <i class="bi bi-plus-circle-fill"></i>
+    <%# Found this much more elegant way to implement the h2 and the plus button: -FS %>
+    <h2>
+      Reviews
+      <span style="color: #48484A; font-weight: 400;">(<%= @venue.bookings.length.to_s %>)</span>
+      <% if @current_user_booking.present? && !@has_reviewed %>
+        <%= link_to new_booking_review_path(@current_user_booking), data: { turbo_frame: "review_frame" } do %>
+          <i class="bi-plus-circle-fill"></i>
         <% end %>
-      </div>
-    </div>
-    <div>
+      <% else %>
+        <i class="bi-plus-circle-fill" style="color: #D1D1D6"></i>
+      <% end %>
+    </h2>
+    <div class="review-list">
       <% @venue.bookings.each do |booking| %>
         <% if !booking.review.nil? %>
-          <h3><%= booking.review.user.first_name %> <%= booking.review.user.last_name %></h3>
+          <p class="review-user-name"><%= booking.review.user.first_name %> <%= booking.review.user.last_name %></h3>
           <p><%= booking.review.content %></p>
           <% if booking.review.photos.attached? %>
             <% booking.review.photos.each do |photo| %>
-            <%= link_to "#", id: "imageModalTrigger", data: { controller: "modal-trigger", action:"click->modal-trigger#open"} do %>
-            <%= cl_image_tag photo.key, class: "review-images-small"%>
+              <%= link_to "#", id: "imageModalTrigger", data: { controller: "modal-trigger", action:"click->modal-trigger#open"} do %>
+              <%= cl_image_tag photo.key, class: "review-images-small"%>
             <% end %>
 
             <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -186,6 +199,13 @@
       <% end %>
     </div>
   </div>
-
+  <div class="floating-reserve-button">
+    <%= link_to new_venue_booking_path(@venue) do %>
+      <div class="circle-container-white">
+        <i class="bi bi-calendar-plus"></i>
+      </div>
+    <% end %>
+    <p>Reserve</p>
+  </div>
     <div class="d-none"><%=  @svg.html_safe  %></div>
 </div>

@@ -45,7 +45,7 @@ class VenuesController < ApplicationController
       @today_check = @venue.opening_hours.select do |opening_hour|
         current_day_name == opening_hour.day.capitalize
       end.first
-    @open =  Time.now.strftime('%H:%M') <= @today_check.closing_time.strftime('%H:%M') ? { text: "open", color: "green" } : { text:"close", color: "red" }
+    @open =  Time.now.strftime('%H:%M') <= @today_check.closing_time.strftime('%H:%M') ? { text: "Open", color: "#4CD964" } : { text: "Closed", color: "#FF2D55" }
     # puts "Current Day: #{current_day_name}"
     # puts "Opening Hour: #{@current_day_opening_hour&.inspect}"
     # puts "Current Day: #{Time.now.strftime('%A')}"
