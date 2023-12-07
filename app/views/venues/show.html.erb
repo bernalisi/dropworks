@@ -145,6 +145,8 @@
       </button>
       <ul class="day-list closed"  data-day-selector-target="dropdown">
         <% @opening_hours.each do |opening_hour| %>
+        <%# Giorgios Code following: - FS %>
+          <%= "#{opening_hour.day} from #{opening_hour.open_time.strftime('%H:%M')} to #{opening_hour.closing_time.strftime('%H:%M')}" %>
         <% end %>
       </ul>
     </div>
