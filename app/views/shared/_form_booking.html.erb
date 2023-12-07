@@ -1,8 +1,8 @@
 <div>
   <%= simple_form_for [venue, booking] do |f| %>
     <%= f.input :booking_date,
-      as: :string, label: false, placeholder: "e.g. Today",
-      input_html: { data: { controller: "datepicker" }, class:"input-bf" } %>
+      as: :string, label: false,
+      input_html: {  placeholder: "e.g. Today", data: { controller: "datepicker" }, class:"input-bf" } %>
     <div style="padding-top: 20px">
       <h3>Reservation Request Overview:</h3>
       <p>1 seat at <%= venue.name %>.</p>
