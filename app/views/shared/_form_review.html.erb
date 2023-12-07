@@ -6,17 +6,17 @@
   <h3 style="font-size: 17px;">Add pictures (optional)</h3>
   <span><img class="preview-blob d-none" data-preview-target="preview"></img></span>
   <div data-preview-target="tagwrapper">
-    <%= f.input :photos, as: :file, 
-    input_html: { 
-      multiple: true, 
-      class: "tag-selector", 
+    <%= f.input :photos, as: :file,
+    input_html: {
+      multiple: true,
+      class: "tag-selector",
       data: {
         action: "change->preview#readURLS"
-        }}, 
-      label: "+", 
+        }},
+      label: "+",
       wrapper_html: {
         class: "tag-item"
-        }, 
+        },
         prompt: "" %>
   </div>
     <div>

@@ -98,3 +98,22 @@
   background-color: white !important;
   height: 42px;
 }
+
+.input-container {
+  position: relative;
+}
+
+// .placeholder {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   pointer-events: none;
+//   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+// }
+
+// .input-bf:focus + .placeholder,
+// .input-bf:not(:placeholder-shown) + .placeholder,
+// .input-bf:not(:placeholder-shown):valid + .placeholder {
+//   transform: translateY(-100%);
+//   opacity: 0;
+// }

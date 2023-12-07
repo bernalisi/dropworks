@@ -1,8 +1,9 @@
-<div>
+<div class="input-container">
   <%= simple_form_for [venue, booking] do |f| %>
     <%= f.input :booking_date,
-      as: :string, label: false,
+      as: :integer, label: false,
       input_html: {  placeholder: "e.g. Today", data: { controller: "datepicker" }, class:"input-bf" } %>
+    <%# <label class="placeholder" for="venue_booking_booking_date" style="background-color: white; color: #48484a">heyhey</label> %>
     <div style="padding-top: 20px">
       <h3>Reservation Request Overview:</h3>
       <p>1 seat at <%= venue.name %>.</p>
