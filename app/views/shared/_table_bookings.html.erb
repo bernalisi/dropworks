@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-      <% user_bookings.each do |b| %>
+       <% user_bookings.sort_by { |b| [b.booking_date, b.venue.name] }.each do |b| %>
         <tr class="border-bottom p-2">
             <td><%= b.id %></td>
             <td><%= b.venue.name %></td>
