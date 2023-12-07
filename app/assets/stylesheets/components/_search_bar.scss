@@ -28,8 +28,9 @@
   font-size: 16px;
   border-radius: 7px;
   background: white;
-  border: #FFF;
-  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25) !important;
+  border: none;
+  box-shadow: 0px 1px 4px 0px rgba(23, 22, 22, 0.95) !important;
+  z-index: 9999;
 }
 
 ::placeholder {
