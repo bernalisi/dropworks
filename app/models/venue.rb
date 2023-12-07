@@ -48,6 +48,6 @@ class Venue < ApplicationRecord
 
     return nil if ratings.empty?
 
-    return (ratings.sum / ratings.length).round
+    return (ratings.sum / ratings.length)
   end
 end
