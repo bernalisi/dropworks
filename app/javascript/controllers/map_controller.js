@@ -39,11 +39,11 @@ export default class extends Controller {
             // Check if there is a currently selected marker
             if (currentMarker) {
               // Reset the color of the previously selected marker
-              this.changeMarkerColor(currentMarker, "#3FB1CE", false);
+              this.changeMarkerColor(currentMarker, "#4ca1ff", false);
             }
 
             // Update the color of the clicked marker
-            this.changeMarkerColor(mapMarker, "#0500FF", true);
+            this.changeMarkerColor(mapMarker, "blue", true);
 
             // Set the current marker to the clicked marker
             currentMarker = mapMarker;

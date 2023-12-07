@@ -58,7 +58,7 @@
   backdrop-filter: blur( 1px ) !important;;
   box-shadow: 0 8px 32px 0 rgba(17, 17, 17, 0.37);
   // border: 1px solid rgba( 255, 255, 255, 0.18 );
-  
+
   // border-radius: 13px;
 }
 
@@ -97,6 +97,10 @@
   }
 }
 
+path {
+  // fill: rgba(60, 79, 255, 0.5);
+  fill: #4ca1ff;
+}
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
