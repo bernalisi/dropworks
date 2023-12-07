@@ -1,13 +1,13 @@
 <div class="confirm">
   <% if @venue.present? %>
-      <img src="https://i.ibb.co/vVh0R2W/ms-icon-310x310.png" style="width: 150px; height: 150px; border-radius: 100%;" alt="DropWorks Logo">
+      <img src="https://i.ibb.co/vVh0R2W/ms-icon-310x310.png" class="dropworks-logo" alt="DropWorks Logo">
       <h3>Do you want to check-in to</h3>
       <h1><%= @venue.name %>?</h1>
       <br>
       <%= @venue.address %>
       <br>
       <div class="button-container">
-        <%= link_to success_venue_path(@venue), class: "btn btn-secondary" do %>
+        <%= link_to root_path, class: "btn btn-secondary" do %>
           <i class="bi-x-circle"></i> Cancel
         <% end %>
         <%= link_to success_venue_path(@venue), class: "btn btn-primary" do %>
