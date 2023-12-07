@@ -1,22 +1,24 @@
 <div class="booking-container-show">
   <img class="img-properties-form" src="<%= @booking.venue.image_urls.first %>" alt="Venue-picture">
   <div class="title-show ">
-    <h2>Reservation status </h2>
+    <h1>Your Reservation </h1>
     <% if @booking%>
-    <%= "Booked succesfully"%>
+      <%= "Booked succesfully"%>
     <% else%>
-    <%= "Not booked"%>
+      <%= "Not booked"%>
     <% end%>
   </div>
 
   <div class="second-text-show">
-    <h2>Reservation information</h2>
+    <h2 style="margin-bottom: 1em;">Reservation Information</h2>
     <h3><%= @booking.venue.name %></h3>
+    <h6><%= @booking.venue.address %></h6>
     <h3><%="#{current_user.first_name} #{current_user.last_name}" %></h3>
-    <h3><%= @booking.venue.address %></h3>
-    <h3><%= @booking.booking_date %></h3>
+    <h6><%= @booking.booking_date %></h6>
     <p>*Reservation valid for the entire day</p>
     <br>
-    <%= link_to "Make a review", new_booking_review_path(@booking), class: "btn btn-primary btn-sm" %>
+    <%= link_to new_booking_review_path(@booking), class: "btn btn-primary" do %>
+      <i class="bi-chat-square-text"></i> Write a review
+    <% end %>
   </div>
 </div>
