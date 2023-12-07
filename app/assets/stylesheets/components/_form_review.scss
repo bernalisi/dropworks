@@ -82,6 +82,13 @@ textarea.form-control {
   letter-spacing: -0.4px;
 }
 
+.preview-blob {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 24px;
+  margin-top: 8px;
+}
 
 // ========================================================= //
 
