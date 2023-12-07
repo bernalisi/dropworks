@@ -1,19 +1,17 @@
-<table class="styled-table mt-4">
+<table class="styled-table">
     <thead class="border-bottom p-2">
         <tr>
-            <th>#id</th>
-            <th>Customer</th>
-            <th>Venue</th>
-            <th>Date</th>
+          <th>Venue</th>
+          <th>Date</th>
+          <th>Guest Name</th>
         </tr>
     </thead>
     <tbody>
-      <% my_venues_booked.sort_by { |b| b.booking_date }.each do |b| %>
+      <% my_venues_booked.sort_by { |b| b.booking_date }.reverse.each do |b| %>
         <tr class="border-bottom p-2">
-            <td><%= b.id %></td>
-            <td><%= "#{b.user.first_name} #{b.user.last_name}" %></td>
             <td><%= b.venue.name %></td>
             <td><%= b.booking_date %></td>
+            <td><%= "#{b.user.first_name} #{b.user.last_name}" %></td>
         </tr>
       <% end %>
     </tbody>
