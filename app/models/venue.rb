@@ -50,4 +50,5 @@ class Venue < ApplicationRecord
 
     return (ratings.sum / ratings.length)
   end
+  public :average_rating
 end

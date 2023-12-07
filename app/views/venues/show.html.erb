@@ -29,11 +29,29 @@
   <div class="container-title-description">
     <h1 style="margin-bottom: 0px; margin-top: 18px;"><%= @venue.name %></h1>
     <p>
-      5,0
-      <% 5.times do %>
-        <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
-      <% end %>
-      (39)
+     <% if @venue.average_rating %>
+      <%= @venue.average_rating.round(1) %>
+            <% full_stars = @venue.average_rating.to_i %>
+                    <% full_stars.times do %>
+                      <i class="bi bi-star-fill" style="color: #FF8500; font-size: 17px;"></i>
+                    <% end %>
+
+                    <% if @venue.average_rating.to_s.split(".")[1].to_i > 2 && @venue.average_rating.to_s.split(".")[1].to_i < 8 %>
+                      <i class="bi bi-star-half" style="color: #FF8500; font-size: 17px;"></i>
+                      <% empty_stars = 5 - full_stars - 1 %>
+                    <% else %>
+                      <% empty_stars = 5 - full_stars %>
+                    <% end %>
+
+                    <% (empty_stars).times do %>
+                      <i class="bi bi-star" style="color: #FF8500; font-size: 17px;"></i>
+                    <% end %>
+
+                  <% else %>
+                    <% 5.times do %>
+                      <i class="bi bi-star" style="color: #D1D1D6; font-size: 17px;"></i>
+                    <% end %>
+                  <% end %>
     </p>
     <div class="block-text-overview">
       <p><%= @venue.overview %></p>
