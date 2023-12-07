@@ -3,26 +3,69 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   margin: 0;
   text-align: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  // padding: 20px;
+  background-color: white;
   flex-direction: column;
   border-radius: 5px;
 }
 
 
 
-.confirm-button {
-  padding: 25px;
-    a {
-      border: 2px solid;
-      border-color: #007AFF;
-      border-radius: 3px;
-      background: #007AFF;
-      color: white;
-      padding: 10px;
-      margin: 10px;
-  }
+// .confirm-button {
+//   padding: 25px;
+//     a {
+//       border: 2px solid;
+//       border-color: #007AFF;
+//       border-radius: 3px;
+//       background: #007AFF;
+//       color: white;
+//       padding: 10px;
+//       margin: 10px;
+//   }
+// }
+
+.button-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 40px;
+}
+
+
+.btn.btn-secondary{
+  // display: block;
+  width: 100%;
+  display: flex;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+
+  color: #007AFF;
+  font-feature-settings: 'clig' off, 'liga' off;
+  // font-family: SF Pro Display;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.4px;
+
+  border: 1px solid #007AFF;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+.dropworks-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  margin-bottom: 32px;
+  box-shadow: 0px 1px 4px 0px rgba(153, 153, 153, 0.45);
 }

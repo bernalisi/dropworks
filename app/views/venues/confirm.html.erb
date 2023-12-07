@@ -1,16 +1,20 @@
 <div class="confirm">
   <% if @venue.present? %>
+      <img src="https://i.ibb.co/vVh0R2W/ms-icon-310x310.png" class="dropworks-logo" alt="DropWorks Logo">
       <h3>Do you want to check-in to</h3>
       <h1><%= @venue.name %>?</h1>
       <br>
       <%= @venue.address %>
       <br>
-      <div class="confirm-button">
-        <br>
-      <%= link_to "Come back", venues_path(@venues)%>
-      <%= link_to "Confirm Booking", success_venue_path(@venue)%>
+      <div class="button-container">
+        <%= link_to root_path, class: "btn btn-secondary" do %>
+          <i class="bi-x-circle"></i> Cancel
+        <% end %>
+        <%= link_to success_venue_path(@venue), class: "btn btn-primary" do %>
+          <i class="bi-check-lg"></i> Check in
+        <% end %>
       </div>
   <% else %>
-    <p>Venue not found</p>
+    <p>Venue not found... <br>Why don't you open a DropWorks venue yourself? 😇</p>
   <% end %>
 </div>
