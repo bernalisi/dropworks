@@ -330,14 +330,14 @@ Review.create!(
 )
 
 Review.create!(
-  content: "If you enjoy a tranquil atmosphere, this spot is perfect. It's a peaceful retreat with great amenities.",
+  content: "Forget about peaceful retreats and serene atmospheres; this place is a hub of noise and confusion. ",
   rating: 2,
   booking_id: 12,
   user: adam
 )
 
 Review.create!(
-  content: "The views from this place are breathtaking. It's an ideal location for nature lovers and photographers.",
+  content: "This place sucks. Sorry about that.",
   rating: 1,
   booking_id: 13,
   user: lucas
