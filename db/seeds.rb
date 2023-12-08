@@ -62,14 +62,14 @@ venue4 = Venue.create!(name: "Techspace X-Berg",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipP7DMZQ7WOVFkbpvBeBJ99e1sYP7E9kb7psK3EL=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMZH_o_gRW4uBA__b2YRmubM6rH9EVmHT-gEzwT=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipMi8ZdXRt6aN3sPsnW5ePVYS5iTqB2gBbTuLGJE=s1360-w1360-h1020", "https://lh3.googleusercontent.com/p/AF1QipO88YKLk-2rxG-ldE9axNvUPVohkLFO1-Wu2830=s1360-w1360-h1020"],
   wifi_speed: 322,
   capacity: 36,
-  user: bernardo)
+  user: anna)
 venue5 = Venue.create!(name: "Soho House",
   overview: "Soho House in Berlin is where luxury meets productivity. This coworking space is about embracing a sophisticated lifestyle while offering an exclusive setting for work. From private offices to communal areas, it's a fusion of elegance and innovation.",
   address: "Torstraße 1, 10119 Berlin",
   image_urls: ["https://lh3.googleusercontent.com/p/AF1QipN9_0pE9kEKvEddJr48QZ8oiuqJSW14THRf3eUH=s1360-w1360-h1020", "https://res.cloudinary.com/soho-house/image/upload/f_auto,q_auto,fl_progressive:steep,w_800/t_dc_base/sitecore-prod/images/dotcom-sites/house-pages/berlin/10-may-update/03_berlin_update_43.jpg", "https://res.cloudinary.com/soho-house/image/upload/f_auto,q_auto,fl_progressive:steep,w_800/t_dc_base/sitecore-prod/images/dotcom-sites/house-pages/berlin/2023-house-page-update/07_berlin_housepage_43.jpg"],
   wifi_speed: 209,
   capacity: 28,
-  user: bernardo)
+  user: anna)
 venue6 = Venue.create!(name: "Sir Savigny",
   overview: "Sir Savigny in Berlin is not just a hotel; it's a curated elegance experience. With modern design and classic charm, this accommodation offers a sophisticated haven for those who appreciate the finer things in life.",
   address: "Kantstraße 144, 10623 Berlin",
@@ -215,10 +215,10 @@ venues = [
 ]
 
 booking_dates = [
-  "2024-01-15",
-  "2024-02-28",
-  "2024-03-10",
-  "2024-04-22",
+  "2023-01-15",
+  "2023-02-28",
+  "2023-03-10",
+  "2023-04-22",
   "2023-12-14",
   "2023-06-18",
   "2023-07-01",
@@ -240,7 +240,7 @@ Booking.create!(booking_date: booking_dates[8]  , venue: venue3, user: users[8])
 Booking.create!(booking_date: booking_dates[6]  , venue: venue4, user: users[9])
 Booking.create!(booking_date: booking_dates[0]  , venue: venue4, user: users[0])
 Booking.create!(booking_date: booking_dates[1]  , venue: venue4, user: users[1])
-Booking.create!(booking_date: booking_dates[2]  , venue: venue5, user: users[2])
+Booking.create!(booking_date: booking_dates[2]  , venue: venue5, user: users[3])
 Booking.create!(booking_date: booking_dates[3]  , venue: venue5, user: users[3])
 Booking.create!(booking_date: booking_dates[4]  , venue: venue5, user: users[4])
 Booking.create!(booking_date: booking_dates[5]  , venue: venue6, user: users[5])
